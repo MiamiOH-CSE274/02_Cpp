@@ -37,16 +37,18 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Success
+2. defix - Success
+3. sumSlice - Success
+4. square - Prints the correct square to the console for inputs 1-5
+5. listPrimes - Success
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+
+Header files allow for the re-usability of code.  Each separate .cpp file may make use of the same declarations, therefore it makes sense to re-use this information instead of adding it to each .cpp file.  The header file contains the necessary libraries and declarations, acting as a framework for a class.   Each individual .cpp file can #include the singular header file, and the compiler will reference that header when it compiles the .cpp file.  Java has a two stage compiler that looks at all classes and interfaces during its first phase, then performs a second compilation knowing exactly what it needs to include.  C++ only goes through compilation once; so by #including a header file with each .cpp file, the compiler will know exactly what to do with only one pass through the code.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -17,7 +18,17 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime(int n){
+	if(n<2)
+		return false;
+	if(n==2)
+		return true;
+	for(int i = 2; i<n; i++){
+		if(n%i == 0)
+			return false;
+	}
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -51,7 +62,12 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
-
+std::string defix(std::string s){
+	std::string dash = "-";
+	std::size_t pos = s.find(dash);
+	s = s.substr(pos+1);
+	return s;
+}
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -84,6 +100,15 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int* arr, int s, int len){
+	if(s < 0 || len < 0)
+		return 0;
+	int sum = 0;
+	for(int i=s; i<(s+len);i++){
+		sum += arr[i];
+	}
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -134,7 +159,54 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n){
+	if(n<=0)
+		return;
+	
+	std::string plus = "+";
+	std::string min = "-";
+	std::string o = "o";
+	std::string line = "|";
+	
+	for(int i=1; i<=n; i++){
+		std::string s;
+		for(int j=1; j<=n; j++){
+			
+			if(j == 1 || j == n){
+				if(i == 1 || i == n ){
+					s+= plus;
+				}
+				else{
+					s+= line;
+				}
+			}
+			if(j > 1 && j < n){
+				if(i > 1 && i < n){
+					s+= o;
+				}
+				else{
+					s+= min;
+				}
+			}
 
+						
+		}
+		std::cout << s << std::endl;
+	}
+}
+
+void testSquare(){
+	std::cout << "\nsquare(1):" << std::endl;
+	square(1);	  
+	std::cout << "\nsquare(2):" << std::endl;
+	square(2);	  
+	std::cout << "\nsquare(3):" << std::endl;
+	square(3);	 
+	std::cout << "\nsquare(4):" << std::endl;
+	square(4);	  
+	std::cout << "\nsquare(5):" << std::endl;
+	square(5);
+}
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -147,6 +219,21 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+	int* arr = new int[n];
+
+	int count = 0;
+	int i = 0;
+	while(i<n){
+		if(prime(count)){
+			arr[i] = count;
+			i++;
+		}
+		count++;
+	}
+	return arr;
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -170,6 +257,7 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
+  testSquare();
   testListPrimes();
 
   return 0;
