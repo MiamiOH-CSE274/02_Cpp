@@ -37,25 +37,43 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Success
+2. defix - Success
+3. sumSlice - Success
+4. square - Prints the correct square to the console for inputs 1-5
+5. listPrimes - Success
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+Header files allow for the re-usability of code.  Each separate .cpp file may make use of the same declarations, therefore it makes sense to re-use this information instead of adding it to each .cpp file.  The header file contains the necessary libraries and declarations, acting as a framework for a class.   Each individual .cpp file can #include the singular header file, and the compiler will reference that header when it compiles the .cpp file.  Java has a two stage compiler that looks at all classes and interfaces during its first phase, then performs a second compilation knowing exactly what it needs to include.  C++ only goes through compilation once; so by #including a header file with each .cpp file, the compiler will know exactly what to do with only one pass through the code.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+Preprocessor: Makes modifications to the source code and internal compiler options for the compiler to read.  It parses two directives, the preprocessor directives and compiler directives.  The preprocessor directives tell the preprocessor how to modify the source code, and the compiler directives tell the compiler what internal compiler options to modify.  These directives are the statements starting with a # at the top of source code.  The preprocessor handels our #include statements.
+
+Compiler: Takes the information added to the source code by the preprocessor and generates an object file.  It performs a Lexical Analysis, which converts the source code into tokens.  This process involves removing all whitespace and incompatible characters, making the data types, identifiers, values, and keywords into a sequence of tokens for the program to use.  Next, the code goes through a Syntax Analysis, which involves examining the validity of the tokens created by the Lexical Analysis and arranging them into an executable program.
+
+Linker:  The Linker combines the object files and necessary libraries into an executable program.  Functions have either internal or external linkage.  The compiler deals with all internal functions, writing them out in memory and saving an address at the appropriate spot, the linker does not touch these.  The compiler leaves a placeholder for externaly linked functions, and writes the machine code and leaves an address in the objet file for the linker to find.  The linker finds these external declarations and uses an 'extern' variable to point to its location in memory.
 
 #### 3. What is a "pointer"?
 
+A pointer is a variable that stores a reference to another variable.  They 'point to' a variable whose address in memory it stores.
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+Use the address of operator, int y = &x; where y now holds the address in memory of where x exists.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+Declare it as a pointer, int* p;
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+Java handles its own memory, while C++ does not.  Objects created in Java are deleted when they are done being used, C++ requires the programmer to delete them once they fall out of scope.  If the programmer does not properly delete dynamically created objects, then they are left sitting on the heap after they fall out of scope, with no way to reclaim them.  These objects take up memory the program could be using to execute faster, this is called a memory leak.  Using the delete or delete[] operation properly to de-allocate memory after it has been dynamically allocated prevents a program from experiencing one of these memory leaks.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Can you explain member dereferencing operators (.*) and member indirection operators (->*) and give examples of how these work, and the difference between the two?
