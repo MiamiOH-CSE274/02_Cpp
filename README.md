@@ -1,3 +1,6 @@
+Author
+==========
+"Contini, Nick", continnd
 02_Cpp
 ======
 
