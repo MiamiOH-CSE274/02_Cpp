@@ -64,6 +64,12 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 string defix(string input){
 
+	int prefixStart =  input.find_first_of('-');
+
+	if(prefixStart != -1){
+		return input.substr(++prefixStart);
+	}
+
 	return input;
 }
 
@@ -198,7 +204,7 @@ void testListPrimes(){
 
 int main(){
   testPrime();
-  //testDefix();
+  testDefix();
   //testSumSlice();
   //testListPrimes();
 	
