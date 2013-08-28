@@ -107,8 +107,22 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 int sumSlice(int arrayToSum[], int startingIndex, int endingIndex){
 
+	if(startingIndex < 0) return 0;
+	if(endingIndex < 0) return 0;
 
-	return -1;
+	//Wanted to mess around with pointers, haven't had too much experience with them.
+	int* arrayPtr = arrayToSum;
+	arrayPtr += startingIndex;
+
+	//The sum to return after adding all the values
+	int sum = 0;
+
+	for(int i = startingIndex; i < startingIndex+endingIndex; i++){
+		sum += *arrayPtr; //Add the value of the pointers position in the array to the sum
+		arrayPtr++; //Push the pointer one index further in the array
+	}
+
+	return sum;
 }
 
 
@@ -162,6 +176,12 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 void square(int n){
+	if(n <= 0) return;
+
+	if(n == 1) cout << "+" << endl; return;
+	if(n == 2) cout << "++\n++" << endl; return;
+
+
 
 	return;
 }
@@ -205,7 +225,9 @@ void testListPrimes(){
 int main(){
   testPrime();
   testDefix();
-  //testSumSlice();
+  testSumSlice();
+  square(1);
+  square(2);
   //testListPrimes();
 	
   return 0;
