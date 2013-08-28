@@ -37,11 +37,11 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - I believe it is working, I tested extreme cases and it passed my tests.
+2. defix - Yes, I believe it is working as specified by the examples. 
+3. sumSlice - Yes, I do believe this works.
+4. square - Yes, and I did my best to get it working as fast as possible. Currently just prints out without storing allocating any extra memory.
+5. listPrimes - Yes I do, although this is the one I would think would be the most likely to have bugs. As far as I tested, it seems to work as desired.
 
 Questions
 =======
