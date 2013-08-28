@@ -237,7 +237,26 @@ void printEdge(int n){
 
 //TODO: Declare and implement listPrimes here
 int* listPrimes(int n){
-	return new int[-1, -2, -3];
+
+	int* primeArray = new int[n];
+	int currentSize = 0; // Not going to use a Vector, so need to keep track of the current size
+	int iterator = 2; // Start with the first prime number, this is used to iterate through the numbers later
+
+	while(currentSize < n){
+		cout << "Am I here?" << endl;
+		if(prime(iterator)){
+			primeArray[currentSize] = iterator;
+			currentSize++;
+			
+		}
+		if(currentSize >= n) 
+			break;
+		
+
+		iterator++;
+	}
+	
+	return primeArray;
 }
 
 
@@ -268,7 +287,7 @@ int main(){
   square(-1);
   square(-10000);
   square(15);
-  //testListPrimes();
+  testListPrimes();
 	
   return 0;
 }
