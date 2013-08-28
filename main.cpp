@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -17,7 +18,17 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
+bool prime(int num){
+	//First, convert to a positive integer.
+	if(num < 2) return false;
 
+	if(num == 2 || num == -2) return true;
+
+	for(int i = 2; i < num; i++)
+		if(num%i == 0)return false;
+
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -51,6 +62,10 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+string defix(string input){
+
+	return input;
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -84,6 +99,12 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int arrayToSum[], int startingIndex, int endingIndex){
+
+
+	return -1;
+}
+
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -134,6 +155,11 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n){
+
+	return;
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -147,6 +173,10 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+	return new int[-1, -2, -3];
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -168,9 +198,9 @@ void testListPrimes(){
 
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
-
+  //testDefix();
+  //testSumSlice();
+  //testListPrimes();
+	
   return 0;
 }
