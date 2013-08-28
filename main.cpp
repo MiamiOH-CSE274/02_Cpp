@@ -174,16 +174,53 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
+//Need to declare/initialize the function so I don't get errors.
+void printEdge(int n);
+
 //TODO: Declare and implement "square" function here
 void square(int n){
 	if(n <= 0) return;
 
-	if(n == 1) cout << "+" << endl; return;
-	if(n == 2) cout << "++\n++" << endl; return;
+	if(n == 1){ cout << "+" << endl; return;}
+	if(n == 2){ cout << "++\n++" << endl; return;}
 
+	//If I assigned the values, and then printed them, it would go slower.
+	//If I simply print the values without saving. . . I assume it would be faster..
 
+	//First loop to print the top frame...
+	printEdge(n);
+
+	//Loop to print out the rows between the top and bottom edges...
+	for(int i = 1; i < n-1; i++){
+		cout << "|";
+
+		for(int j = 1; j < n-1; j++)
+			cout << "o";
+
+		cout << "|" << endl;
+	}
+
+	//Print the bottom Edge
+	printEdge(n);
 
 	return;
+}
+
+/**
+ * The point of this is avoid repeating code, prints out an edge. Can be used for
+ * both the top and bottom edges of the square.
+ *
+ * @param n The number passed to the past function, how many rows and columns to pass
+ * returns void
+ *
+ */
+void printEdge(int n){
+	cout << "+";
+
+	for(int i = 1; i < n-1; i++)
+		cout << "-";
+
+	cout << "+" << endl;
 }
 
 
@@ -228,6 +265,9 @@ int main(){
   testSumSlice();
   square(1);
   square(2);
+  square(-1);
+  square(-10000);
+  square(15);
   //testListPrimes();
 	
   return 0;
