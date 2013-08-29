@@ -1,6 +1,26 @@
 #include <iostream>
 using namespace std; // so I don't have to keep typing out std::
 
+
+/*
+ *@author: Garrett Emrick
+ * 
+ * Instructor: Dr. Brinkman
+ * Class: CSE 274
+ *   - Monday/Wednesday 8:30-9:50
+ *
+ * Homework 2
+ * Date of Completion: 8/28/2013
+ *
+ * Hardest Problem? 5
+ *
+ * ^ Just not used to pointers, so I had a little trouble at first,
+ * Granted I did try to do this way ahead of time!
+ *
+ * 
+ *
+ */
+
 bool prime(int num){
 	if(num < 2) return false;
 
