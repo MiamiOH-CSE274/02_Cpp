@@ -19,7 +19,6 @@ using namespace std;
 
 //TODO: Declare and implement "prime" function here
 bool prime(int num){
-	//First, convert to a positive integer.
 	if(num < 2) return false;
 
 	if(num == 2 || num == -2) return true;
@@ -242,17 +241,17 @@ int* listPrimes(int n){
 	int currentSize = 0; // Not going to use a Vector, so need to keep track of the current size
 	int iterator = 2; // Start with the first prime number, this is used to iterate through the numbers later
 
+	//Loop to find the lowest primes and add them to the array
 	while(currentSize < n){
-		cout << "Am I here?" << endl;
 		if(prime(iterator)){
 			primeArray[currentSize] = iterator;
 			currentSize++;
 			
 		}
-		if(currentSize >= n) 
+		if(currentSize >= n) //Just in case something weird happens
 			break;
 		
-
+		//Increment the iterator
 		iterator++;
 	}
 	
@@ -278,6 +277,7 @@ void testListPrimes(){
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
+//The main, plus some of my own created test cases
 int main(){
   testPrime();
   testDefix();
