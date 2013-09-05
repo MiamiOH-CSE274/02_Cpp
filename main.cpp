@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+using namespace std;
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -17,12 +19,14 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-boolean prime(int num){
-	boolean output = true;
+bool prime(int num){
+	bool output = true;
 	if(num>2)
 		for(int i=2; i<=num/2; i++)
-			if(num%i=0)
+			if(num%i==0)
 				output = false;
+	return output;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -58,18 +62,18 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 
 //This is a basic tester for "defix"
-void testDefix(){
+void testdefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
     if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+      std::cout << "testdefix: error: expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
       return;
     }
   }
 
-  std::cout << "testDefix: SUCCESS" << std::endl;
+  std::cout << "testdefix: success" << std::endl;
 }
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
@@ -91,7 +95,7 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 
 //This is a basic tester for "sumSlice"
-void testSumSlice(){
+void testsumslice(){
   int arrays[5][4] = { {1, 2, 3, 4},
 		      {1, 2, 3, 4},
 		      {1, -1, 1, -1},
@@ -102,12 +106,12 @@ void testSumSlice(){
   int outputs[] = {2, 9, 0, 0, -1};
 
   for(int i=0; i<5; i++){
-    if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
-      std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
+    if(sumslice(arrays[i],s[i],len[i]) != outputs[i]){
+      std::cout << "testsumslice: error: on index i=" << i << " expected " << outputs[i] << " but got " << sumslice(arrays[i],s[i],len[i]) << std::endl;
       return;
     }
   }
-  std::cout << "testSumSlice: SUCCESS" << std::endl;
+  std::cout << "testsumslice: success" << std::endl;
 }
 
 //4. Create a function called "square" which takes an int, n, as input,
