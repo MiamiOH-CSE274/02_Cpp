@@ -17,7 +17,16 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime (int n) {
+	bool isPrime = true;
+	if (n < 2)
+		isPrime = false;
+	for (int i = 2; i < n-1; i++) {
+		if (n%i == 0)
+			isPrime =  false;
+	}
+	return isPrime;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
