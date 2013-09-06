@@ -22,11 +22,14 @@ bool prime(int n){
     if(n<2)
         return false;
     
+    if(n==2)
+        return true;
+    
     for (int i = n-1; i>1; --i) {
         if(n%i == 0)
-            return true;
+            return false;
     }
-    return false;
+    return true;
 }
 
 //This is a basic tester for the "prime" function
@@ -63,7 +66,7 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 
 std::string defix(std::string word){
-    int dashIndex = (word.find("-",0));
+    unsigned long dashIndex = (word.find("-",0));
     word.substr(dashIndex+1);
         return word;
 }
@@ -219,12 +222,12 @@ void sqaure(int n){
 //TODO: Declare and implement listPrimes here
 
 int* listPrimes(int n){
-    int* primesList[n];
+    int* primesList = new int[n];
     int numberToCheck = 2;
     int index = 0;
     while (sizeof(primesList)<n) {
         if(prime(numberToCheck)){
-            primesList[index] = &numberToCheck;
+            primesList[index] = numberToCheck;
             ++index;
         }
         ++numberToCheck;
@@ -252,9 +255,9 @@ void testListPrimes(){
 
 int main(){
     testPrime();
-//    testDefix();
-//    testSumSlice();
-//    testListPrimes();
+    testDefix();
+    testSumSlice();
+    testListPrimes();
     
 
     
