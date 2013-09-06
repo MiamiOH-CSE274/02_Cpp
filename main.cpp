@@ -101,6 +101,18 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice( int nums[] , int startingIndex, int len){
+    if (startingIndex <0 || len<0) {
+        return 0;
+    }
+    int sum = 0;
+    for (int i = startingIndex; startingIndex<(startingIndex+len); ++startingIndex) {
+        sum += nums[i];
+    }
+    
+    return sum;
+}
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
     int arrays[5][4] = { {1, 2, 3, 4},
