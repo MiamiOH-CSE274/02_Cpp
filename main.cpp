@@ -184,7 +184,7 @@ void sqaure(int n){
                     std::cout<<verticalBorder;
                 }
                 
-                if (xPosition == n-1 && (yPosition==0 || yPosition==n-1)) {
+                else if (xPosition == n-1 && (yPosition==0 || yPosition==n-1)) {
                     std::cout<<corner+"\n";
                 }
                 
@@ -196,7 +196,7 @@ void sqaure(int n){
                     if ((xPosition>0 && xPosition<n-1) && (yPosition>0 && yPosition<n-1)) {
                         std::cout<<innards;
                     }
-                    if ((xPosition==0 || xPosition==n-1) && (yPosition==0 && yPosition==n-1)) {
+                    if ((xPosition>0 && xPosition<n-1) && (yPosition==0 || yPosition==n-1)) {
                         std::cout<<horizontalBorder;
                     }
 
@@ -257,6 +257,7 @@ int main(){
     testDefix();
     testSumSlice();
     testListPrimes();
+    sqaure(0);
     
 
     
