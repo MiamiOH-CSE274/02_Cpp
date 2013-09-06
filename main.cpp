@@ -218,6 +218,20 @@ void sqaure(int n){
 
 //TODO: Declare and implement listPrimes here
 
+int* listPrimes(int n){
+    int* primesList[n];
+    int numberToCheck = 2;
+    int index = 0;
+    while (sizeof(primesList)<n) {
+        if(prime(numberToCheck)){
+            primesList[index] = &numberToCheck;
+            ++index;
+        }
+        ++numberToCheck;
+    }
+    return primesList;
+}
+
 void testListPrimes(){
     int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
     for(int i=1;i<10;i++){
