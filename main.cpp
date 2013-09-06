@@ -108,8 +108,8 @@ int sumSlice( int nums[] , int startingIndex, int len){
         return 0;
     }
     int sum = 0;
-    for (int i = startingIndex; startingIndex<(startingIndex+len); ++startingIndex) {
-        sum += nums[i];
+    for (int i = startingIndex; i<(startingIndex+len); ++i) {
+        sum = sum + nums[i];
     }
     
     return sum;
@@ -224,7 +224,7 @@ int* listPrimes(int n){
     int* primesList = new int[n];
     int numberToCheck = 2;
     int index = 0;
-    while (sizeof(primesList)<n) {
+    while (index<n) {
         if(prime(numberToCheck)){
             primesList[index] = numberToCheck;
             ++index;
