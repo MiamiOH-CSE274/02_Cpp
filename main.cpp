@@ -163,6 +163,48 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+void sqaure(int n){
+    if (n<1) {
+        return;
+    }
+
+    else{
+        std::string corner = "+";
+        std::string verticalBorder = "|";
+        std::string horizontalBorder = "-";
+        std::string innards = "o";
+        for (int yPosition=0; yPosition<n; ++yPosition) {
+            for (int xPosition=0; xPosition<n; ++xPosition) {
+                if (xPosition==0 && (yPosition==0 || yPosition==n-1)) {
+                    std::cout<<corner;
+                }
+                else if (xPosition == 0){
+                    std::cout<<verticalBorder;
+                }
+                
+                if (xPosition == n-1 && (yPosition==0 || yPosition==n-1)) {
+                    std::cout<<corner+"\n";
+                }
+                
+                else if (xPosition == n-1){
+                    std::cout<<verticalBorder + "\n";
+                }
+                
+                if (n>2){
+                    if ((xPosition>0 && xPosition<n-1) && (yPosition>0 && yPosition<n-1)) {
+                        std::cout<<innards;
+                    }
+                    if ((xPosition==0 || xPosition==n-1) && (yPosition==0 && yPosition==n-1)) {
+                        std::cout<<horizontalBorder;
+                    }
+
+                }
+                
+            }
+        }
+    }
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
