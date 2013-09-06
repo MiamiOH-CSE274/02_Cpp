@@ -62,7 +62,11 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
-
+std::string defix(std::string word){
+    int dashIndex = (word.find("-",0));
+    word.substr(dashIndex+1);
+        return word;
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
