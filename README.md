@@ -37,11 +37,11 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - I think prime is working as it should be, especially because the logic of the code makes sense.
+2. defix - Works correctly, especially seeing as important test cases passed the tester method.
+3. sumSlice - works, now that I fixed my errors in the for loop parameters.
+4. square - Tested square(0) - square(5) and received expected results.
+5. listPrimes - Should work as long as my prime() works.
 
 Questions
 =======

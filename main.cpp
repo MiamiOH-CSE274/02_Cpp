@@ -109,7 +109,7 @@ int sumSlice( int nums[] , int startingIndex, int len){
     }
     int sum = 0;
     for (int i = startingIndex; i<(startingIndex+len); ++i) {
-        sum = sum + nums[i];
+        sum += nums[i];
     }
     
     return sum;
