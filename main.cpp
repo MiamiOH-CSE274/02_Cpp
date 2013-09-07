@@ -31,10 +31,9 @@ bool prime(int n){
 			if(n%i==0){
 				answer = false;
 				break;
-			}
-
-		}
-	}
+			}// end if
+		}// end for loop
+	}// end else clause
 
 	return answer;
 }
@@ -45,17 +44,17 @@ bool prime(int n){
 
 //This is a basic tester for the "prime" function
 void testPrime(){
-  int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
-  bool results[] = {false, false, false, false, true, true, false, true, false};
-  for(int i=0; i<9;i++){
-    if(prime(nums[i]) != results[i]){
-      std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
-      return;
-    }
-  }
-  
-  std::cout << "testPrime: SUCCESS" << std::endl;
+	int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
+	bool results[] = {false, false, false, false, true, true, false, true, false};
+	for(int i=0; i<9;i++){
+		if(prime(nums[i]) != results[i]){
+			std::string res = prime(nums[i]) ? "true" : "false";
+			std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+			return;
+		}
+	}
+
+	std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
 //2. Create a function, name "defix", which takes in a string and
@@ -80,26 +79,28 @@ std::string defix(std::string s){
 	std::string fixedS =s;
 
 	std::size_t found = s.find_first_of("-");
-	 if(found!=std::string::npos)
-		 fixedS=s.substr(found+1);
-	 
-    
+	if(found!=std::string::npos)
+		fixedS=s.substr(found+1);
+
+
 	return fixedS;
 }
 
+
+
 //This is a basic tester for "defix"
 void testDefix(){
-  std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
-  std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
+	std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
+	std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
-  for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
-      return;
-    }
-  }
+	for(int i=0;i<5;i++){
+		if(outputs[i] != defix(inputs[i])){
+			std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+			return;
+		}
+	}
 
-  std::cout << "testDefix: SUCCESS" << std::endl;
+	std::cout << "testDefix: SUCCESS" << std::endl;
 }
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
@@ -119,7 +120,6 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
-
 int sumSlice(int nums[], int s, int len){
 	int sum = 0;
 
@@ -130,24 +130,26 @@ int sumSlice(int nums[], int s, int len){
 	return sum;
 }
 
+
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
-  int arrays[5][4] = { {1, 2, 3, 4},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1}};
-  int s[] = {1, 1, 0, 1, 1};
-  int len[] = {1, 3, 4, 0, 3};
-  int outputs[] = {2, 9, 0, 0, -1};
+	int arrays[5][4] = { {1, 2, 3, 4},
+	{1, 2, 3, 4},
+	{1, -1, 1, -1},
+	{1, 2, 3, 4},
+	{1, -1, 1, -1}};
+	int s[] = {1, 1, 0, 1, 1};
+	int len[] = {1, 3, 4, 0, 3};
+	int outputs[] = {2, 9, 0, 0, -1};
 
-  for(int i=0; i<5; i++){
-    if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
-      std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
-      return;
-    }
-  }
-  std::cout << "testSumSlice: SUCCESS" << std::endl;
+	for(int i=0; i<5; i++){
+		if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
+			std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
+			return;
+		}
+	}
+	std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
 //4. Create a function called "square" which takes an int, n, as input,
@@ -184,6 +186,8 @@ void square(int n){
 	if(n>0){
 		for(int i =0; i<n; i++){
 			for(int j =0; j<n; j++){
+				/* Position at the following will display "+": first row first column, 
+				first row last column,  last row first column, last row last column */
 				if((j-i==0)&&(i==0||i==n-1) || (j-i==n-1||j-i==-(n-1)))
 					std::cout << "+";
 				else if (i ==0 || i==n-1)
@@ -217,9 +221,11 @@ int* listPrimes(int n){
 	int* pInt = new int[n];
 	pInt[0] = 2;
 
+	/* j is used to track the array index,
+	   i ise used to increase number*/
 	int j =1;
 	int i =3;
-	
+
 	while(j<n){
 		if(prime(i)){
 			pInt[j]=i;
@@ -228,7 +234,7 @@ int* listPrimes(int n){
 
 		i++;
 	}
-	
+
 	return pInt;
 
 }
@@ -236,28 +242,28 @@ int* listPrimes(int n){
 
 
 void testListPrimes(){
-  int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
-  for(int i=1;i<10;i++){
-    int* ret = listPrimes(i);
-    for(int j=1;j<i;j++){
-      if(ret[j] != some_primes[j]){
-	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] << 
-	  " but got " << ret[j] << std::endl;
-	delete[] ret;
-	return;
-      }
-    }
-    delete[] ret;
-  }
-  
-  std::cout << "testListPrimes: SUCCESS" << std::endl;
+	int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+	for(int i=1;i<10;i++){
+		int* ret = listPrimes(i);
+		for(int j=1;j<i;j++){
+			if(ret[j] != some_primes[j]){
+				std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] << 
+					" but got " << ret[j] << std::endl;
+				delete[] ret;
+				return;
+			}
+		}
+		delete[] ret;
+	}
+
+	std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
 int main(){
-  testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+	testPrime();
+	testDefix();
+	testSumSlice();
+	testListPrimes();
 
-  return 0;
+	return 0;
 }
