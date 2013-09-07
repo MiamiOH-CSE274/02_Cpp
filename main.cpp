@@ -94,6 +94,17 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice(int nums[],int ind, int len) {
+	int sum = 0;
+	for (int i = ind; i <= ind+len-1; i++) {
+		sum = sum + nums[i];
+
+	}
+
+	std::cout << sum << std::endl;
+	return sum;
+}
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
