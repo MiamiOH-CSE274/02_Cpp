@@ -21,6 +21,8 @@ using namespace std;
 //TODO: Declare and implement "prime" function here
 bool prime(int num){
 	bool output = true;
+	if(num == 1)
+		return false;
 	if(num>2)
 		for(int i=2; i<=num/2; i++)
 			if(num%i==0)
@@ -155,7 +157,7 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 void square(int n){
-	if(n!=1){
+	if(n>1){
 		string end = "+";
 		for(int i=0; i<n-2; i++)
 			end += "-";
@@ -170,8 +172,8 @@ void square(int n){
 		result += end;
 		std::cout << result;
 	}
-	else{
-		std::cout << "+";
+	else if(n == 1){
+		std::cout << "+" << std::endl;
 	}
 }
 
@@ -187,6 +189,18 @@ void square(int n){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+	int* primes = new int[n];
+	int j = 2;
+	for(int i = 0; i < n; i++){
+		if(prime(j))
+			primes[i] = j;
+		else
+			i--;
+		j++;
+	}
+	return primes;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -211,6 +225,14 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
+  square(-1);
+  square(0);
+  square(1);
+  square(2;
+  square(2);
+  square(3);
+  square(4);
+  square(5);
 
   return 0;
 }
