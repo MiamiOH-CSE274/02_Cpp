@@ -63,11 +63,21 @@ declarations alone, which means we need to help it by including those declaratio
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
+1.A compiler is a program that translates the source code into the computer's
+native machine language. The input of the compiler is source files and the 
+output is object files.
+2.The linker comes into play after the compiler converts source files into
+object files. The linker can link the object files to a standard library, link your object files with other object files, or create other object files that havefunction can be called by another object file. The linke input all of the
+necessary functions in your program references and creates a single executable.
+3.The preprocessors gives instruction to the compiler to preprocess the 
+information before compilation starts. The preprocessor directives begin with #,it can input an expression, a statement, a block or simply anything.
+
+
 #### 3. What is a "pointer"?
 
 A pointer is a variable whose value is the address of another variable. Like 
 any variable or constant, you must declare a pointer before you can work with
-ut.
+it.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
