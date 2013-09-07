@@ -60,9 +60,14 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+string defix(string str){
+	if(str.find("-")!=string::npos)
+		return str.substr(str.find("-")+1);
+	return str;
+}
 
 //This is a basic tester for "defix"
-void testdefix(){
+void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
@@ -73,7 +78,7 @@ void testdefix(){
     }
   }
 
-  std::cout << "testdefix: success" << std::endl;
+  std::cout << "testDefix: success" << std::endl;
 }
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
@@ -95,7 +100,7 @@ void testdefix(){
 //TODO: Declare and implement sumSlice here
 
 //This is a basic tester for "sumSlice"
-void testsumslice(){
+void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
 		      {1, 2, 3, 4},
 		      {1, -1, 1, -1},
@@ -106,12 +111,12 @@ void testsumslice(){
   int outputs[] = {2, 9, 0, 0, -1};
 
   for(int i=0; i<5; i++){
-    if(sumslice(arrays[i],s[i],len[i]) != outputs[i]){
+    if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
       std::cout << "testsumslice: error: on index i=" << i << " expected " << outputs[i] << " but got " << sumslice(arrays[i],s[i],len[i]) << std::endl;
       return;
     }
   }
-  std::cout << "testsumslice: success" << std::endl;
+  std::cout << "testSumSlice: success" << std::endl;
 }
 
 //4. Create a function called "square" which takes an int, n, as input,
