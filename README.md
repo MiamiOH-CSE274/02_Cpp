@@ -48,6 +48,8 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+The .h files (header files) are the links between the .cpp files that would prevent the compiler from complaining if it tried to compile the entire program at once.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
