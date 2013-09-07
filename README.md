@@ -47,15 +47,17 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-
+The compiler needs the .h files to know if certain classes or methods have been defined. Because it looks at .cpp files individually, the compiler does not know if a specific method or class is defined in a different file. The .h files can be used to check if a class or function has been created and defined in a different file.
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
+A pointer is a piece of data that associates a variable with the actual data. The pointer can be thought of a path to a specific part of memory. Pointers do not make up and integer's data or a String's data, but instead lead from a variable name directly to a piece of information that has been assigned to that specific variable name.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-
+You should declare p to be an int*.
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-
+We need 'delete' in C++ to manage data and allow programs to be more efficient. If you do not delete variables or pointers when they are no longer needed the program will slow down and be less efficient. In Java, there was "Garbage Collection" where unused data is disposed of when the program no longer needs it. In C++, it is the programmer's job to manage data leakage and overall efficiency, which could not be done with out 'delete'.
 #### 7. What is one question about C++ that you would like me to explain in class?
+The difference between #include in C++ and import in Java. At one point when coding I was completely stumped why != and << would not work to compare or print a string variable. I eventually figured out that I needed to use #include<string> instead of just using std::string to use Strings.
