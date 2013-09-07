@@ -48,7 +48,7 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
-Because the compiler compiles each .cpp file separately, without looking at the others. If one .cpp file contains reference of methods from another .cpp file, then without the . h files (declaration files), the compiler will not be able to reference the methods. We then need to use .h files (declaration files) to reference both of the .cpp files. 
+Because the compiler compiles each .cpp file separately, without looking at the others. If one .cpp file contains reference of methods from another .cpp file, then without the . h files (declaration files), the compiler will not be able to know where are the methods. We need to use .h files (declaration files) to reference two of more .cpp files. 
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
