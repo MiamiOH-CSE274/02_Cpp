@@ -55,9 +55,19 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+The need of using header files is to separate the interface from the implementation. So in this way, the header files don't need to know what is the detail in
+.cpp file which is this implementation. It will reduce compilation time and 
+recompilation time. Additionally, the C++ compiler can not search for symbol 
+declarations alone, which means we need to help it by including those declarations by using header file. Thus, the header file is still necessary.
+
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
+
+A pointer is a variable whose value is the address of another variable. Like 
+any variable or constant, you must declare a pointer before you can work with
+ut.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
