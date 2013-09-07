@@ -76,9 +76,15 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
-string defix(String s){
+std::string defix(std::string s){
+	std::string fixedS =s;
 
-
+	std::size_t found = s.find_first_of("-");
+	 if(found!=std::string::npos)
+		 fixedS=s.substr(found+1);
+	 
+    
+	return fixedS;
 }
 
 //This is a basic tester for "defix"
@@ -113,6 +119,16 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+
+int sumSlice(int nums[], int s, int len){
+	int sum = 0;
+
+	for(int i =s; i<s+len; i++){
+		sum+= nums[i];
+	}
+
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -163,6 +179,26 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+
+void square(int n){
+	if(n>0){
+		for(int i =0; i<n; i++){
+			for(int j =0; j<n; j++){
+				if((j-i==0)&&(i==0||i==n-1) || (j-i==n-1||j-i==-(n-1)))
+					std::cout << "+";
+				else if (i ==0 || i==n-1)
+					std::cout << "-";
+				else if(j==0 || j==n-1)
+					std::cout << "|";
+				else
+					std::cout <<"o";
+			}
+			std::cout << "\n";
+		}
+
+	}
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
