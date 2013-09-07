@@ -1,7 +1,5 @@
 #include <iostream>
 
-hello world
-	
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
@@ -19,7 +17,19 @@ hello world
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool isPrime(int number){
+	int i;
+	
+	for (i=2; i<number; i++)
+	{
+		if (number % i == 0)
+		{
+			return false;
+		}
+	}
+	
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -35,6 +45,7 @@ void testPrime(){
   
   std::cout << "testPrime: SUCCESS" << std::endl;
 }
+
 
 //2. Create a function, name "defix", which takes in a string and
 //   returns a string. If the string starts with a pre-fix attached
