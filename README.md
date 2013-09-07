@@ -81,6 +81,9 @@ it.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
+First initialize a null pointer by doing int * np, and then do np = &x, now np
+is set to be the address of the variable x. Finally print it out.
+
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
 int * p.
