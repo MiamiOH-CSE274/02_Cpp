@@ -102,7 +102,7 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 int sumSlice(int nums[], int s, int len){
 	int sum = 0;
-	for(int i = s; i==s+len; s++)
+	for(int i = s; i<s+len; i++)
 		sum += nums[i];
 	return sum;
 }
