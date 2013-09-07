@@ -214,7 +214,22 @@ void square(int n){
 //TODO: Declare and implement listPrimes here
 
 int* listPrimes(int n){
+	int* pInt = new int[n];
+	pInt[0] = 2;
 
+	int j =1;
+	int i =3;
+	
+	while(j<n){
+		if(prime(i)){
+			pInt[j]=i;
+			j++;
+		}
+
+		i++;
+	}
+	
+	return pInt;
 
 }
 
