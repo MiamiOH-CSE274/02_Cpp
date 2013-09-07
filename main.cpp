@@ -120,7 +120,7 @@ void testSumSlice(){
 
   for(int i=0; i<5; i++){
     if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
-      std::cout << "testsumslice: error: on index i=" << i << " expected " << outputs[i] << " but got " << sumslice(arrays[i],s[i],len[i]) << std::endl;
+      std::cout << "testsumslice: error: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
       return;
     }
   }
@@ -228,7 +228,7 @@ int main(){
   square(-1);
   square(0);
   square(1);
-  square(2;
+  square(2);
   square(2);
   square(3);
   square(4);
