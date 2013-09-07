@@ -91,3 +91,8 @@ int * p.
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+What is the best way to learn in order to be proficient on using POINTER in C++?
+
+
+
