@@ -21,7 +21,7 @@ using namespace std;
 //TODO: Declare and implement "prime" function here
 bool prime(int num){
 	bool output = true;
-	if(num == 1)
+	if(num <= 1)
 		return false;
 	if(num>2)
 		for(int i=2; i<=num/2; i++)
