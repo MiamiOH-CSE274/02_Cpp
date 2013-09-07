@@ -1,5 +1,7 @@
 #include <iostream>
 
+hello world
+	
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
