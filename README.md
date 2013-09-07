@@ -33,7 +33,7 @@ Homework
 7. Be sure to check the pull requests for my repo on github to make sure it worked, and that your work has been submitted.
 
 Documentation
-=========
+=========                                                                                                                            
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
@@ -67,4 +67,4 @@ We should declare p to be a pointer. A pointer variable only stores memory addre
 One of the differences between c++ and Java is that C++ lacks language level support for garbage collection while Java has built-in garbage collection to handle memory deallocation. In C++, we use the delete keyword to release memory after we no longer need it. This frees up memory to be used by the rest of the program or by other processes. 
 #### 7. What is one question about C++ that you would like me to explain in class?
 
-It would be great if you could explain a little more on pointers. 
+I had such a hard time trying to debug a single .cpp file on Visual Studio. I ran into a great deal of problems. I had to use CodeBlocks to debug my code. It would be great if you could explain the visual studio environment a little bit.
