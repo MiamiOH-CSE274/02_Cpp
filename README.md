@@ -49,12 +49,13 @@ Questions
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 The compiler needs the .h files to know if certain classes or methods have been defined. Because it looks at .cpp files individually, the compiler does not know if a specific method or class is defined in a different file. The .h files can be used to check if a class or function has been created and defined in a different file.
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
-
+The compiler looks at .cpp and .h files and examines the code for different tiypes of errors. The compiler first simplifies code into a step by step list of tasks, and then combs through the syntax of the code to make sure nothing has gone wrong. After the compiler does it's job, a new Object file is created, ready for a machine to read.
+The prepossor works before a file is compiled, and looks for various errors that can cause the compiler to crash. It looks through .cpp and .h files and prepares them for compilation.
+The linker combines all of the files required for a program, and makes them work together. The linker can take .cpp, .h, .asm, and .pas files and links them to .o, or Object files. Then, the program can refer to functions and other objects that are in other files, and even interact with different file formats.
 #### 3. What is a "pointer"?
 A pointer is a piece of data that associates a variable with the actual data. The pointer can be thought of a path to a specific part of memory. Pointers do not make up and integer's data or a String's data, but instead lead from a variable name directly to a piece of information that has been assigned to that specific variable name.
-
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
-
+You can use the '&' operator, which returns the address of the variable created by a pointer.
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 You should declare p to be an int*.
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
