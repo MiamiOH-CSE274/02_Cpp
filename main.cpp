@@ -3,9 +3,7 @@
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
-bool prime(int n){
 
-}
 // You don't have to do
 // anything tricky. Just try modding (%) it by every number
 // between 2 and n-1. If it never gives 0, then it is prime.
@@ -18,6 +16,29 @@ bool prime(int n){
 //
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
+
+bool prime(int n){
+	bool answer = true;
+	if(n<2)
+		answer = false;
+	else if(n==2)
+		answer = true;
+	else if(n%2==0)
+		answer = false;
+	else{
+
+		for(int i =3; i<n; i+=2){
+			if(n%i==0){
+				answer = false;
+				break;
+			}
+
+		}
+	}
+
+	return answer;
+}
+
 
 //TODO: Declare and implement "prime" function here
 
@@ -54,6 +75,11 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+
+string defix(String s){
+
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
