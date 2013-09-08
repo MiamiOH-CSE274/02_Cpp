@@ -17,7 +17,7 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-bool isPrime(int number){
+bool Prime(int number){
 	int i;
 	
 	for (i=2; i<number; i++)
@@ -64,6 +64,17 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+
+string defix(string input){
+	int temp = 0;
+	for(int i=0;i<input.length;i++){
+		if(input.substr == "-")
+			temp = i + 1;
+	}
+
+	return input.substring(temp, input.length);
+}
+
 
 //This is a basic tester for "defix"
 void testDefix(){
