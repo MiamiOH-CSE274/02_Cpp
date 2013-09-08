@@ -16,7 +16,42 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+
+
+
+
+//TODO:
+ #include "Homework2.h"
+
+
+bool Homework2::prime(int a){
+
+    if (a==2){
+
+        return true;
+
+    }
+
+    if (a<2) {
+
+        return false;
+
+    }
+
+    for (int i=2; i<a; i++) {
+
+        if (a%i==0){
+
+            return false;
+
+        }
+
+    }
+
+    return true;
+
+}
+
 
 
 //This is a basic tester for the "prime" function
