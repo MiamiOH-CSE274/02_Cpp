@@ -170,6 +170,29 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+void square(int dimension){
+	if(dimension == 1)
+		std::cout << "+";
+	if(dimension == 2)
+		std::cout << "++" + \n + "++";
+	if(dimension>2){
+		std::cout << "+" 
+			for(i=dimension; i<demension-2; i++){
+				cout << "-";
+			}
+		std::cout << "+" + "|";
+			for(j=dimension; j<dimension-2; j++){
+			std::cout << "o";
+			}
+		std::cout << "+";
+			for(i=dimension; i<demension-2; i++){
+				cout << "-";
+			}
+		std::cout << "+";
+
+	}
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
