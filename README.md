@@ -67,7 +67,7 @@ declarations alone, which means we need to help it by including those declaratio
 native machine language. The input of the compiler is source files and the 
 output is object files.
 2.The linker comes into play after the compiler converts source files into
-object files. The linker can link the object files to a standard library, link your object files with other object files, or create other object files that havefunction can be called by another object file. The linke input all of the
+object files. The linker can link the object files to a standard library, link your object files with other object files, or create other object files that have function can be called by another object file. The linke input all of the
 necessary functions in your program references and creates a single executable.
 3.The preprocessors gives instruction to the compiler to preprocess the 
 information before compilation starts. The preprocessor directives begin with #,it can input an expression, a statement, a block or simply anything.
