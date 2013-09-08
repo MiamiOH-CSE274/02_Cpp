@@ -103,7 +103,7 @@ void testPrime(){
 
 std :: string defix(std :: string s){
 
-	  int pos = s.find("-");
+	  int pos = s.find("-");  //If there is no dash in the string.
 
 	  if(pos == -1){
 
