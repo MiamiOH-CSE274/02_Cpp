@@ -97,6 +97,28 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 
 //This is a basic tester for "defix"
+
+
+#include <string>
+
+std :: string defix(std :: string s){
+
+	  int pos = s.find("-");
+
+	  if(pos == -1){
+
+		  return s;
+	  }
+
+	  unsigned found = s.find_last_of("-");
+
+	  std :: string newString = s.substr(found);
+
+
+	  return newString;
+ }
+
+
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
