@@ -109,6 +109,17 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice(int[] anArray, int s, int len) {
+		int sum = 0;
+		int value = s+len-1;
+		while(s <= value){
+			sum = sum + anArray[s];
+			s++;
+		}
+		
+		return sum;
+	}
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
