@@ -68,6 +68,12 @@ You use the operator &.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+It should be declared as an integer variable.
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+Java automatically deletes variables with the garbage collector. However, in cpp memory is assigned to each variable created and therefore should be deleted after its use to save memory.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+I honestly do not completedly understand question #2, I hope you can elaborate on it.
