@@ -87,6 +87,36 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+string Homework2::defix(string str) {
+    string newString="";
+    int firstDash=0;
+    bool hasDash = false;
+    for (int i=0; i<str.length(); i++) {
+        if (str.at(i)=='-') {
+            hasDash = true;
+            firstDash=i;
+            break;
+        }
+        
+    }
+    if (hasDash == false)
+        return str;
+    for (int j = firstDash+1; j<str.length(); j++){
+        newString += str.at(j);
+    
+    }
+    return newString;
+    
+}
+
+
+
+
+
+
+
+
+
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
