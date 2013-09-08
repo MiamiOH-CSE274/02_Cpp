@@ -38,23 +38,33 @@ Documentation
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
 1. prime - Done
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+2. defix - Done
+3. sumSlice - Done
+4. square - Done
+5. listPrimes - Done
+
+ps- I have completed all the programs but I cannot get the program to run at all, This is a result from my lack of knowledge on how to use Visual Basics?
+and perhaps not the code.
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
-
+From my understaning, the header files declares "what" a class will do, while the cpp file defines "how" it will perform those features.
+This reduces dependencies.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
+
+
 #### 3. What is a "pointer"?
 
+Pointer is a variable that stores a memory address.
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+You use the operator &.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
