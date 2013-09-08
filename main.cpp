@@ -167,6 +167,8 @@ int Homework2::sumSlice(int* arr, int s, int l) {
 }
 
 
+
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
@@ -215,7 +217,45 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+//TODO:
+
+ void Homework2::square(int n){
+    if (n<=0) {
+        return;
+    }
+    if (n==1) {
+        std::cout <<"*";
+        return;
+    }
+    
+    if (n==2) {
+        std::cout << "**" << endl << "**";
+        return;
+    }
+    cout << "*";
+    for (int i=0; i<(n-2); i++) {
+        cout << "-";
+    }
+    //finishes first row.
+    cout <<"*" <<endl;
+        
+    for (int j = 0; j<(n-2); j++){
+        cout << "/";
+        for (int k = 0; k<(n-2); k++) {
+            cout << "o";
+        }
+        cout<< "/" << endl;
+    }
+    cout << "*";
+    for (int i=0; i<(n-2); i++) {
+        cout << "-";
+    }
+    //finishes last row.
+    cout <<"*" <<endl;
+    
+    
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
