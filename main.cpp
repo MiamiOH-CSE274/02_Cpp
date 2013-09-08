@@ -18,7 +18,21 @@
 
 //TODO: Declare and implement "prime" function here
 
-
+bool prime(int n){
+    int minus = n-1;
+   
+    
+    if(n<=2)
+        return false;
+    
+    for(int i=2;i<=minus;i++){
+        if(n%i==0)
+            return true;
+        
+    }
+    return false;
+    
+}
 //This is a basic tester for the "prime" function
 void testPrime(){
   int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
