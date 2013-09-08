@@ -152,6 +152,41 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 
 //This is a basic tester for "sumSlice"
+
+
+int sumSlice(int* a, int s, int l){
+
+	  int sum = 0;
+
+	  //If starting index is less than 0.
+      if(s < 0)
+      {
+
+    	return 0;
+
+      }
+
+      //if l is less or equal than 0.
+      if(l <= 0)
+      {
+
+    	return 0;
+
+      }
+
+      for(int i= s ;i < s + l;i++)
+      {
+    	  sum = sum + a[i];
+
+      }
+
+         return sum;
+}
+
+
+
+
+
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
 		      {1, 2, 3, 4},
