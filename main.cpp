@@ -20,6 +20,50 @@
 
 
 //This is a basic tester for the "prime" function
+
+
+//I am going to include a header file cmath in order to use sqrt in my algorithm
+# include <cmath>
+bool prime(int a) {
+    
+    if( a < 2 )
+    {
+
+     return false;  //If the number is smaller than 2.
+
+    }
+
+    if( a == 2 )
+    {
+
+     return true;   //If the number is 2 so it is prime.
+     
+    }
+    
+    if(a % 2 == 0)  //Lets say doing some calculation here....
+    {
+
+     return false;
+
+    }
+
+    int sqrtn = (int) sqrt ((double)a);
+    bool flag = true; //set a bool variable as true.
+ 
+    for(int i = 3;i<sqrtn;i+=2) {
+        
+          if(a % i == 0)
+	  {
+	    flag = false;
+	  }
+       }
+     
+          return flag;
+
+    }
+	
+  
+
 void testPrime(){
   int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
   bool results[] = {false, false, false, false, true, true, false, true, false};
