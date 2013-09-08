@@ -148,7 +148,24 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+//TODO: 
+int Homework2::sumSlice(int* arr, int s, int l) {
+    int sum=0;
+    if (s<=0){
+        return 0;
+    }
+    if (l<0){
+        return 0;
+    }
+    if (s==l) {
+        return arr[s];
+    }
+    for (int i=s; i<=l; i++){
+        sum+=arr[i];
+    }
+    return sum;
+}
+
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
