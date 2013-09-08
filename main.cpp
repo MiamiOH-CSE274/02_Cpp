@@ -236,6 +236,70 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+
+
+void square(int n){
+	
+	//special case when n equals 1.
+
+	if(n == 1){
+
+		std :: cout << "+";
+	}
+
+	else{
+
+
+	std :: cout << "+";
+
+	for(int i = 0;i<n-2;i++)
+
+	{
+
+       std :: cout << "-";
+	}
+
+	std :: cout << "+";
+	std :: cout << "\n";
+
+
+
+	for(int i = 0;i<n-2 ;i++){
+
+		std :: cout << "|";
+
+
+		for(int j = 0;j<n-2;j++)
+
+		{
+
+
+			std :: cout << "o";
+
+		}
+		std :: cout << "|";
+
+		std :: cout << "\n";
+	    }
+
+
+	std :: cout << "+";
+
+		for(int i = 0;i<n-2;i++)
+
+		{
+
+	       std :: cout << "-";
+		}
+
+		std :: cout << "+";
+	}
+}
+
+
+
+
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
