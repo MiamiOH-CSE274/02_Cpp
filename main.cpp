@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+using namespace std
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool.
@@ -220,6 +222,8 @@ int[] listPrimes(int n){
 				n++;
 			}
 	}
+
+	return arr;
 }
 
 void testListPrimes(){
