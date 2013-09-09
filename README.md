@@ -47,9 +47,15 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+We need .h files because we have declarations and definitions in C++ like other languages however, they work a little different in C++. Typically the declarations will go into the .h file so that the declarations can be used by the rest of the program and not just one .cpp file. The actual implementation (definitions) go into the .cpp file that is using the declarations. 
+
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+The purpose of the preprocessor is to perform intermediate operations before the compiler can turn the source code into machine code. It takes in the input of source code and outputs preprocessor directives which direct the the preprocessor on how it should process the source code. Also it outputs compiler directives which tells the compiler how it should modify internal compiler options. Overall, these two directives try to make writing source code easier and more understandable. 
 
+The job of the "compiler" is to translates a computer language (source code) which is the input and transform that into machine language which outputs an object file which contains the transformed source files that can now be executed. 
+
+The linker is a program that makes executable files. Overall, the linkers job is to fix references to undefined symbols by finding the objects symbol and replacing the undefined smybol with the symbol's real address. The linker takes an input of object code and outputs an executable program which is labeled with .exe.
 #### 3. What is a "pointer"?
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
