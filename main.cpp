@@ -193,7 +193,7 @@ void testListPrimes(){
 **/
 int main(){
   testPrime();
-  //testDefix();
+  testDefix();
   //testSumSlice();
   //testListPrimes();
 
