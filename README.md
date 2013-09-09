@@ -37,14 +37,13 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - Done
-2. defix - Done
-3. sumSlice - Done
-4. square - Done
-5. listPrimes - Done
+1. prime - Done(No)
+2. defix - Done(No)
+3. sumSlice - Done(No)
+4. square - Done(No)
+5. listPrimes - Done(No)
 
-ps- I have completed all the programs but I cannot get the program to run at all, This is a result from my lack of knowledge on how to use Visual Basics?
-and perhaps not the code.
+ps- I have completed writing all the programs but none of it works, It would not compile. I believe the logic for these methods is correct because I have tested some of them in Java to make sure. I translated that over to cpp but I run into may syntax errors, some that I was able to fix by googling but some I am not able to.
 
 Questions
 =======
