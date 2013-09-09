@@ -139,7 +139,7 @@ void testSumSlice(){
   std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
-/*
+
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
 //   The function should use the std::cout object to print a square to the
@@ -181,8 +181,26 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
-
+//This method lists all the primes up to a given number
+int* listPrimes(int number)
+{
+	if (number <= 0)
+		return NULL;	
+	int* primeArray = new int[number];
+	int counter = 0, testNumber =2;
+	while (counter< number)
+	{
+		if(prime(testNumber))
+		{
+			primeArray[counter] = testNumber;
+			testNumber++;
+			counter++;
+		}
+		else
+			testNumber++;
+	}
+	return primeArray;
+}
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
@@ -200,12 +218,12 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-*/
+
 int main(){
   testPrime();
   testDefix();
   testSumSlice();
-  //testListPrimes();
+  testListPrimes();
 
   return 0;
 }
