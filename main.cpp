@@ -16,8 +16,20 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
-
+//This is the prime function
+bool prime(int number)
+{
+	if(number < 2)
+		return false;
+	for(int i=2; i<number; i++)
+	{
+		if ((number%i)==0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -66,7 +78,7 @@ void testDefix(){
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
-
+/*
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
 //   starting index, and the 3rd is an int "len" that represents the length. 
@@ -165,12 +177,12 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-
+*/
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+ // testDefix();
+  //testSumSlice();
+  //testListPrimes();
 
   return 0;
 }
