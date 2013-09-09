@@ -17,7 +17,9 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
+bool prime(int num) {
 
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
