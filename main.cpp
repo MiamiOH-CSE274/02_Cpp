@@ -171,11 +171,11 @@ void testSumSlice(){
 void square(int sidelength){
 	if(sidelength > 0){
 		if(sidelength == 1){
-			std::cout << "+";
+			std::cout << "+" << std::endl;
 		}
 		else{
 			if(sidelength == 2){
-				std::cout << "++\n++";
+				std::cout << "++\n++" << std::endl;
 			}
 
 
@@ -235,6 +235,6 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
-  square(5);
+  square(2);
   return 0;
 }
