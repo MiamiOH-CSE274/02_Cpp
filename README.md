@@ -37,25 +37,34 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - works
+2. defix - works
+3. sumSlice - works
+4. square - works
+5. listPrimes - works
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+.h files allow the compiler to look for the seperate .cpp files in order to use classes from other code and organize efficiently. If there were no .h file to make all the .cpp files work together, programmers would have to include every class they used in their code in their .cpp file, which makes a messy wall of text.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+The preprocessor tells the compiler which header files the .cpp file is using. Essentially at the beginning of a program we tell the preprocessor what "tools" to use in order to construct our code. Preprocessor directives would be something like #include program1.h
+The compiler's job is to convert our programming language into something that a computer can understand. It's a translator, translating our C++ language into binary.
+The linker outputs all the objects of our code into a nice executable or library to finalize the program. From there it can be run to see what the file outputs.
 
 #### 3. What is a "pointer"?
+This is what stores the reference of another variable.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+Using the pointer that belongs to the variable.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+std::int
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
+Delete is good to delete objects that are no longer needed. This frees up memory and ultimately increases the efficiency of the program when used appropriately.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+Why is C++ often used more professionally than Java?
