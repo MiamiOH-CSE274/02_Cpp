@@ -119,9 +119,9 @@ void testDefix(){
 int sumSlice(int a[], int s, int len) {
 	int sum = 0;
 	if (s >= 0 && len >= 0){
-		for (int i = s; i < (s+len-1); i++){
+		for (int i = s; i < (s+len); i++){
 			sum = sum + a[i];
-		}
+			}
 		return sum;
 	}
 	return 0;
@@ -227,6 +227,8 @@ int main(){
 
   return 0;
 }
+
+
 
 
 
