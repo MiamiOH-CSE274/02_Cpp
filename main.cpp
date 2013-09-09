@@ -17,7 +17,18 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime(int num){
+	if(num < 2){
+		return false;
+	}
+	else{
+		for (i = 2; i <= num -1; i++ ){
+			if (num % i == 0)
+				return false;
+		}
+		return true;
+	}
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -168,9 +179,9 @@ void testListPrimes(){
 
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+  //testDefix();
+  //testSumSlice();
+  //testListPrimes();
 
   return 0;
 }
