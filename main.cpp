@@ -20,7 +20,7 @@
 
 //TODO: Declare and implement "prime" function here
 bool prime(int n){
-	// FIX -5??
+	
 	if (n < 2){
 		return false;
 	}
@@ -180,8 +180,34 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 void square(int n){
+	if (n == 1)
+		std::cout << "+" << std::endl;
+	if (n > 1){
+		for (int i = 0; i < n; i++){
+			std::cout << "+";
+			if (n > 1){
+				for (int j = 1; j < n - 1; j++){
+					std::cout << "-";
+				}
+				std::cout << "+";
+				if (n > 2){
+					for (int h = 1; h < n - 1; h++){
+						std::cout << "|";
+						for (int k = 1; k < n-1; k++){
+							std::cout << "o";
+						}
+						std::cout << "|";
+					}
+				}
+				std::cout << "+";
+				for (int j = 1; j < n - 1; j++){
+					std::cout << "-";
+				}
+				std::cout << "+";
+			}
+		}
+	}
 }
-
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -195,9 +221,20 @@ void square(int n){
 
 
 //TODO: Declare and implement listPrimes here
-int* listPrimes(int n){
-	return 0;
+int* listPrimes(int n) {
+	int cnt = 0;
+	int num = 2;
+	int* primes = new int[n];
+	
+	while (cnt < n+1) {
+		if (prime(num) == true) {
+			primes[cnt] = num;
+			cnt++;
+		}
+	}
+	return primes;
 }
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -227,6 +264,9 @@ int main(){
 
   return 0;
 }
+
+
+
 
 
 
