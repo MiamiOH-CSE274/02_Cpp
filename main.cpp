@@ -23,12 +23,12 @@ bool prime(int number)
 		return false;
 	for(int i=2; i<number; i++)
 	{
-		if ((number%i)=0)
+		if ((number%i)==0)
 		{
-			return true;
+			return false;
 		}
 	}
-	return false;
+	return true;
 }
 
 //This is a basic tester for the "prime" function
@@ -38,7 +38,7 @@ void testPrime(){
   for(int i=0; i<9;i++){
     if(prime(nums[i]) != results[i]){
       std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
       return;
     }
   }
@@ -78,7 +78,7 @@ void testDefix(){
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
-
+/*
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
 //   starting index, and the 3rd is an int "len" that represents the length. 
@@ -177,7 +177,7 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-
+*/
 int main(){
   testPrime();
  // testDefix();
