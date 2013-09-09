@@ -170,7 +170,16 @@ void testSumSlice(){
 //TODO: Declare and implement "square" function here
 void square(int sidelength){
 	if(sidelength > 0){
-		
+		if(sidelength == 1){
+			std::cout << "+";
+		}
+		else{
+			if(sidelength == 2){
+				std::cout << "++\n++";
+			}
+
+
+		}
 	}
 }
 
