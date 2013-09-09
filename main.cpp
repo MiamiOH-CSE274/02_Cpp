@@ -211,6 +211,24 @@ void square(int dimension){
 
 //TODO: Declare and implement listPrimes here
 
+int[] listPrimes(int n){
+	int[] arr = new int[n];
+
+	while(arr[n] == 0){
+		for (int i=2; i<n; i++) 
+			for (int j=2; j<i; j++)
+			{
+				if (i % j == 0) 
+                break;
+			 else if (i == j+1)
+                arr[n] = i;
+				n++;
+			}
+	}
+
+	return arr;
+}
+
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
