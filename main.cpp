@@ -257,9 +257,6 @@ int main(){
     testDefix();
     testSumSlice();
     testListPrimes();
-    sqaure(0);
-    
-
     
     return 0;
 }
