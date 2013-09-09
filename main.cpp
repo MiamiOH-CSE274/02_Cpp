@@ -1,8 +1,8 @@
 #include <iostream>
 
 //1. Create a function, named "prime", which tests an
-// integer, n, to see if it is prime. It should return a bool. 
-// 
+// integer, n, to see if it is prime. It should return a bool.
+//
 // You don't have to do
 // anything tricky. Just try modding (%) it by every number
 // between 2 and n-1. If it never gives 0, then it is prime.
@@ -23,9 +23,9 @@
 
 
 //I am going to include a header file cmath in order to use sqrt in my algorithm
-# include <cmath>
+
 bool prime(int a) {
-    
+
     if( a < 2 )
     {
 
@@ -37,31 +37,23 @@ bool prime(int a) {
     {
 
      return true;   //If the number is 2 so it is prime.
-     
-    }
-    
-    if(a % 2 == 0)  //Lets say doing some calculation here....
-    {
-
-     return false;
 
     }
 
-    int sqrtn = (int) sqrt ((double)a);
     bool flag = true; //set a bool variable as true.
- 
-    for(int i = 3;i<sqrtn;i+=2) {
-        
-          if(a % i == 0)
-	  {
-	    flag = false;
-	  }
-       }
-     
-          return flag;
 
+    for(int i = 2;i<a;i++) {
+
+          if(a % i == 0)
+	      {
+	         flag = false;
+	      }
+
+       }
+
+          return flag;
     }
-	
+
   
 
 void testPrime(){
@@ -109,6 +101,15 @@ std :: string defix(std :: string s){
 
 		  return s;
 	  }
+	  
+	    else
+
+	  {
+		  s = s.substr(pos+1);
+		  return s;
+
+	  }
+
 
 	  unsigned found = s.find_last_of("-");
 
