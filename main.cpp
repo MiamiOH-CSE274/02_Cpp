@@ -227,6 +227,24 @@ void square(int n){
 }
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+    int* array = new int[n];
+    int count=0;
+    int i=0;
+    while(count<n){
+        if(prime(i)){
+         array[count]=i;
+            count++;
+         
+        }
+          i++;
+           
+    }
+    return array;
+    delete array;
+}
+
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
