@@ -198,7 +198,6 @@ void square(int sidelength){
 	}
 }
 
-
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -251,6 +250,10 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
+  square(-7);
+  square(1);
+  square(2);
   square(8);
+  square(15);
   return 0;
 }
