@@ -47,8 +47,27 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+	
+The simplest explanation for the need of header files is this: C++ needs a way to link together any .cpp files which make references/calls to other.cpp files. Since
+the compiler itself lacks the infrastructure to view the entire project all at once (as in Java) it uses a linker at compile time which fills in any holes at 
+pre-processing. The linker uses the header files to "tell" each .cpp file that it can compile because all dependent objects/variables/methods are properly defined and
+compiled.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+The preprocessor takes source code and outputs source code which has been modified to fill in "using 'xyz'" statements with proper variable references. Its main function
+is a "code cleanup" tool, which functions much like a refined "find and replace all" function.
+
+The compiler accepts source code and converts it to object/assembly code to be run on the machine. It checks for syntactically correct arguments as well as proper
+interactions within the methods (inside and outside a particular class). Its purpose is to tell the programmer if he/she has constructed a proper program, and then if
+so, it converts that program into runnable code.
+
+The linker is used to fill in the referential holes left behind in the main stages of preprocessing and compiling. Since each class/.cpp file is compiled separately,
+they don't actually "know" that their symbiotic independent elements exist. The programmer can put in a reference to one .cpp file method, which will allow his current
+.cpp file to compile, but without the linker, at runtime he would not have the .cpp files interacting with one another, and a runtim error would occur. The linker uses
+the header files and other information to properly string together arguments between .cpp files. If a file is missing, the linking stage will send an error to the IDE
+telling the user so. The purpose of the linker is to do what smarter language IDEs do automatically in their macroscopic environments at all times, but to do it once at
+compile time.
 
 #### 3. What is a "pointer"?
 
