@@ -103,7 +103,21 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+//This is the sumSlice method.
+int sumSlice(int intArray[], int index, int countLength)
+{
+	int count = 0;
+	if((index || countLength) <= 0)
+		return 0;
+	else if(index == countLength)
+		return intArray[index];
+	else
+		for (int i = index; i < index+countLength; i++)
+		{
+			count += intArray[i];
+		}
+	return count;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -190,7 +204,7 @@ void testListPrimes(){
 int main(){
   testPrime();
   testDefix();
-  //testSumSlice();
+  testSumSlice();
   //testListPrimes();
 
   return 0;
