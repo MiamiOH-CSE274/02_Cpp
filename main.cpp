@@ -168,6 +168,11 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int sidelength){
+	if(sidelength > 0){
+		
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -221,6 +226,6 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
-
+  square(5);
   return 0;
 }
