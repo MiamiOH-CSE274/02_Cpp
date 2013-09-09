@@ -69,7 +69,7 @@ std::string defix(std::string str)
 	if (found == std::string::npos)
 		return str;
 	else
-		return str.substr(found, std::string::npos);
+		return str.substr(found+1, std::string::npos);
 }
 
 //This is a basic tester for "defix"
@@ -78,15 +78,15 @@ void testDefix(){
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
-	  if(outputs[i].compare(defix(inputs[i])) !=0){
-		  std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str << std::endl;
+	  if(outputs[i].compare(defix(inputs[i])) !=0 ){
+		  std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
       return;
     }
   }
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
-/*
+
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
 //   starting index, and the 3rd is an int "len" that represents the length. 
@@ -125,6 +125,7 @@ void testSumSlice(){
   std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
+/*
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
 //   The function should use the std::cout object to print a square to the
@@ -188,7 +189,7 @@ void testListPrimes(){
 */
 int main(){
   testPrime();
- // testDefix();
+  testDefix();
   //testSumSlice();
   //testListPrimes();
 
