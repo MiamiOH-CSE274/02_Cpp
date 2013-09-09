@@ -20,18 +20,7 @@
 
 //TODO: Declare and implement "prime" function here
 bool prime(int n){
-	// FIX -5??
-	if (n < 2){
-		return false;
-	}
-	else {
-		for(int i = 2; i < n-1; i++){
-			if (n % i == 0){
-				return false;
-			}
-		}
-		return true;
-	}
+	return true;
 
 }
 
@@ -72,12 +61,7 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 std::string defix(std::string n){
-	std::size_t found = n.find_first_of("-");
-	while (found!=std::string::npos) {
-		std::string defixStr = n.substr(found, n.length());   
-		return defixStr;
-	}
-	return n;
+	return "";
 }
 
 //This is a basic tester for "defix"
