@@ -16,8 +16,19 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
-
+bool prime(int n) {
+	if (n < 2) {
+		return false;
+	}
+	else {
+		for (int i = 2; i <= n-1; i++) {
+			if (n % i == 0) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -50,7 +61,10 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+std::string defix(std::string x) {
+	int i = x.find("-", 0);
+	return x.substr(i+1);
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -83,7 +97,16 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+int sumSlice(int array[], int s, int len) {
+	if (s < 0 || len < 0) {
+		return 0;
+	}
+	int sum = 0;
+	for (int i = s; i <= (s+(len-1)); i++) {
+		sum = sum + array[i];
+	}
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
