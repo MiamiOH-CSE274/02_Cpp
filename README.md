@@ -49,7 +49,8 @@ Questions
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
-
+inputs outputs purpose
+The preprocessor is a separator program and performs operations on the source code before the compiler compiles the code. The preprocessor takes source code as an input. The preprocessor produces outputs that are like the input but without white space. The preprocessing directive lines in the output are replaced with blank lines. The purpose of a preprocessor is to allow the change of the input data without affecting the main program.
 #### 3. What is a "pointer"?
 A pointer is data type that points to another variable's memory location.  A pointer does not create a variable.
 
