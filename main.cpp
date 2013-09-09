@@ -188,6 +188,43 @@ void testSumSlice(){
 // listPrimes(5) should return an array containing {2, 3, 5, 7, 11}
 //
 //Hint: While loops work better than for loops for this one.
+void square(int n){
+    
+    using namespace std;    
+    if(n<=0)
+        cout<<"";
+    if(n==1)
+        cout<<"+";
+    if(n==2)
+        cout<<"++";
+    if(n>2){
+        
+    for(int i=0;i==n;i++){
+        
+        for(int j=0;j==n;j++){
+            if(i==0 && j==0)
+                cout<<"+";
+            if(i==0 && (j<n || j==0))
+                cout<<"-";
+            if(i==0 && j==n)
+                cout<<"+";
+            if(i>0 && (j==0 || j==n))
+                cout<<"|";
+            if(i>0 && j>=0 && j!=n)
+                cout<<"o";
+            if(i==n && (j==0 || j==n))
+                cout<<"+";
+            if(i==n && j>0 && j<n)
+                cout<< "-";
+        }
+        
+        
+    }
+    }
+    
+    
+       
+}
 
 //TODO: Declare and implement listPrimes here
 
