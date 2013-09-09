@@ -268,7 +268,27 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+//TODO: 
+
+int* Homework2::listPrimes(int n){
+    int* arr = new int[n];
+    int i=0;
+    int arrayPosition=0;
+    while (!(arrayPosition==n)) {
+        if (prime(i)){
+            //add i to array.
+            arr[arrayPosition] = i;
+            arrayPosition++;
+            i++;
+        }
+        if (prime(i)==false) {
+            i++;
+        }
+    }
+    return arr;
+    delete arr;
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
