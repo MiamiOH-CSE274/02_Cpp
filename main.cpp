@@ -20,7 +20,18 @@
 
 //TODO: Declare and implement "prime" function here
 bool prime(int n){
-	return true;
+	// FIX -5??
+	if (n < 2){
+		return false;
+	}
+	else {
+		for(int i = 2; i < n-1; i++){
+			if (n % i == 0){
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
 
