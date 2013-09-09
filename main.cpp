@@ -181,8 +181,23 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int lengthOfArray){
+	int* arrayOfPrimes = new int[lengthOfArray];
+	int startingNum = 2;
+	int k = 1;
+	while(lengthOfArray > 0){
+		if(prime(startingNum)){
+			arrayOfPrimes[k - 1] = startingNum;
+			if(k == lengthOfArray){
+			return arrayOfPrimes;
+			}
+			k++;
+		}
+		startingNum ++;	
+	}
+	return arrayOfPrimes;
+}
 
-/**
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
@@ -200,12 +215,12 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-**/
+
 int main(){
   testPrime();
   testDefix();
   testSumSlice();
-  //testListPrimes();
+  testListPrimes();
 
   return 0;
 }
