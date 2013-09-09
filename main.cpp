@@ -173,15 +173,31 @@ void square(int sidelength){
 		if(sidelength == 1){
 			std::cout << "+" << std::endl;
 		}
+		else if(sidelength == 2){
+			std::cout << "++\n++" << std::endl;
+		}
 		else{
-			if(sidelength == 2){
-				std::cout << "++\n++" << std::endl;
+			std::cout << "+";
+			for (int i = 1; i <= sidelength - 2; i++){
+				std::cout << "-";
 			}
-
-
+			std::cout << "+";
+			for (int j = 1; j <= sidelength - 2; j++){
+				std::cout << "\n|";
+				for (int k = 1; k <= sidelength - 2; k++){
+					std::cout << "o"; 
+				}
+				std::cout << "|";
+			}
+			std::cout << "\n+";
+			for (int i = 1; i <= sidelength - 2; i++){
+				std::cout << "-";
+			}
+			std::cout << "+" << std::endl;
 		}
 	}
 }
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -235,6 +251,6 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
-  square(2);
+  square(8);
   return 0;
 }
