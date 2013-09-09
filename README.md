@@ -56,7 +56,7 @@ This reduces dependencies.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
-
+The header runs over all the files and makes it into one compilable piece called Translation Unit. The compiler runs on each source file and outputs an object file. The linker takes all our object files and then links them into an executable program.
 
 #### 3. What is a "pointer"?
 
@@ -75,5 +75,4 @@ It should be declared as an integer variable.
 Java automatically deletes variables with the garbage collector. However, in cpp memory is assigned to each variable created and therefore should be deleted after its use to save memory.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
-
-I honestly do not completedly understand question #2, I hope you can elaborate on it.
+Could you elaborate on going about using different file types?
