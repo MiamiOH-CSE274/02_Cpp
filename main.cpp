@@ -74,7 +74,7 @@ void testPrime(){
 std::string defix(std::string n){
 	std::size_t found = n.find_first_of("-");
 	while (found!=std::string::npos) {
-		std::string defixStr = n.substr(found, n.length());   
+		std::string defixStr = n.substr(found + 1, n.length());   
 		return defixStr;
 	}
 	return n;
@@ -117,6 +117,13 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 int sumSlice(int a[], int s, int len) {
+	int sum = 0;
+	if (s >= 0 && len >= 0){
+		for (int i = s; i < (s+len-1); i++){
+			sum = sum + a[i];
+		}
+		return sum;
+	}
 	return 0;
 }
 
@@ -220,5 +227,8 @@ int main(){
 
   return 0;
 }
+
+
+
 
 
