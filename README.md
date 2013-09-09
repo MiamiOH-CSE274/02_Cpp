@@ -58,4 +58,6 @@ Questions
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+	We need  a delete button in C++ because we need to take care of garbage collection on our own. We don't have one in Java because the compiler and virtual machine take car of it for us. The 'delete' command removes any references to a given memory location; thus allowing us to keep memory usage low, and speed up our programs.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
