@@ -108,9 +108,19 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int arr[], int firstIndex, int length){
+	int sum = 0;
+	if (firstIndex < 0 || length < 0 || firstIndex > length){
+		return sum;
+	}
+	for (int index = firstIndex; index <= firstIndex + length - 1; index++){
+		sum = sum + arr[index];
+	}
+	return sum;	 
+}
 
 //This is a basic tester for "sumSlice"
-/**void testSumSlice(){
+void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
 		      {1, 2, 3, 4},
 		      {1, -1, 1, -1},
@@ -127,7 +137,7 @@ void testDefix(){
     }
   }
   std::cout << "testSumSlice: SUCCESS" << std::endl;
-} **/
+} 
 
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
@@ -194,7 +204,7 @@ void testListPrimes(){
 int main(){
   testPrime();
   testDefix();
-  //testSumSlice();
+  testSumSlice();
   //testListPrimes();
 
   return 0;
