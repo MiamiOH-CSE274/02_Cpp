@@ -40,7 +40,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 1. prime - prime is functioning properly
 2. defix - defix is functioning properly
 3. sumSlice - sumSlice is functioning properly
-4. square - TODO
+4. square - square partially complete; n > 2 doesn't work in this version
 5. listPrimes - TODO
 
 Questions

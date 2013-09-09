@@ -156,7 +156,36 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+void square(int n) {
+	if (n <= 0) {
+		return;
+	} else if (n = 1) {
+		std::cout << "+" << std::endl;
+	} else if (n = 2) {
+		std::cout << "++" << std::endl
+			      << "++" << std::endl;
+	} else {
+		std::cout << "Unable to display this figure.  See source code." << endl;
+		// Below is my attempted solution for printing squares larger than 2.
+		// It appears I am using strings incorrectly, but I cannot discern the
+		// issue.  Feedback would be appreciated.  :)
+		/*int num = n - 2; // Number of dashes, circles, and lines
+		std::string dashes = "";
+		std::string circles = "";
+		std::string lines = "";
+
+		for (int i = 0; i < num; i++) {
+			dashes.append("-");
+			circles.append("o");
+		}
+
+		std::cout << "+" << dashes << "+" << std::endl;
+		for (int j = 0; j < num; j++) {
+			std::cout << "|" << circles << "|" << std::endl;
+		}
+		std::cout << "+" << dashes << "+" << std::endl; */
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
