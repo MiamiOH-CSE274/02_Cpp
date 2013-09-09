@@ -328,6 +328,43 @@ void testSquare(){
 
 //TODO: Declare and implement listPrimes here
 
+
+int* listPrimes(int n)
+
+    {
+
+	int* ret = new int[n]; //allocate memory.
+
+   	int num = 0;  //The number to test if it is prime.
+
+	int count = 0; //The counter to count if it reaches the size of the array.
+
+    while(count < n) 
+
+    {
+    	if(prime(num) == true)
+
+    	{
+    		ret[count] = num;
+    		
+    		//Increase the counter.
+    		count++;
+    		//Increase the number.
+    		num++;
+    	}
+
+    	else
+    	{
+    		//If it is not prime,only increase the number.
+    		num++;
+
+    	}
+    }
+
+     return ret;
+  }
+
+
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
