@@ -62,7 +62,15 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+//This function strips a word of it's prefix.
+std::string defix(std::string str)
+{
+	std::size_t found = str.find_first_of("-");
+	if (found == std::string::npos)
+		return str;
+	else
+		return str.substr(found, std::string::npos);
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -70,8 +78,8 @@ void testDefix(){
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+	  if(outputs[i].compare(defix(inputs[i])) !=0){
+		  std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str << std::endl;
       return;
     }
   }
