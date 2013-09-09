@@ -296,22 +296,6 @@ void square(int n){
 	}
 }
 
-//Testing square function here.
-
-void testSquare(){
-	std::cout << "\square(1):" << std::endl;
-	square(1);	  
-	std::cout << "\square(2):" << std::endl;
-	square(2);	  
-	std::cout << "\square(3):" << std::endl;
-	square(3);	 
-	std::cout << "\square(4):" << std::endl;
-	square(4);	  
-	std::cout << "\square(5):" << std::endl;
-	square(5);
-}
-
-
 
 
 
@@ -387,7 +371,6 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
-  testSquare();
   testListPrimes();
 
   return 0;
