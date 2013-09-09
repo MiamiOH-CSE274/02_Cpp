@@ -65,6 +65,23 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string word){
+ 
+    std::string subword;
+    
+    
+    std::string str ("There are two needles in this haystack with needles.");
+    std::string str2 ("needle");
+    
+    // different member versions of find in the same order as above:
+    std::size_t found = word.find("-");
+    if (word.find("-"<0))
+        return word;
+   
+    
+    subword = word.substr (found);   // "generalities"
+    
+       return subword;
 
 //This is a basic tester for "defix"
 void testDefix(){
