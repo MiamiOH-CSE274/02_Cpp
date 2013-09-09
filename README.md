@@ -40,7 +40,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 1. prime - I think prime is working as it should be, especially because the logic of the code makes sense.
 2. defix - The defix() works correctly, especially seeing as important test cases passed the tester method.
 3. sumSlice - sumSlice() works, now that I fixed my errors in the for loop parameters.
-4. square - Tested square(0) - square(5) and received expected results.
+4. square - I tested square(0) - square(5) and received expected results, so I believe this method works.
 5. listPrimes - This method should work as long as my prime() works.
 
 Questions
