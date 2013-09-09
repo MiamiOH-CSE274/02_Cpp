@@ -51,6 +51,8 @@ Questions
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 inputs outputs purpose
 The preprocessor is a separator program and performs operations on the source code before the compiler compiles the code. The preprocessor takes source code as an input. The preprocessor produces outputs that are like the input but without white space. The preprocessing directive lines in the output are replaced with blank lines. The purpose of a preprocessor is to allow the change of the input data without affecting the main program.
+The compiler serves as a translator between the source code and the computer's native machine language. The compiler takes source code as an input. The compiler produces the translated source code in the computer's native machine language. The purpose of a compiler is to allow a program to be converted into computer language so that it can run.
+The linker 
 #### 3. What is a "pointer"?
 A pointer is data type that points to another variable's memory location.  A pointer does not create a variable.
 
