@@ -1,8 +1,8 @@
 #include <iostream>
 
 //1. Create a function, named "prime", which tests an
-// integer, n, to see if it is prime. It should return a bool. 
-// 
+// integer, n, to see if it is prime. It should return a bool.
+//
 // You don't have to do
 // anything tricky. Just try modding (%) it by every number
 // between 2 and n-1. If it never gives 0, then it is prime.
@@ -18,27 +18,40 @@
 
 //TODO: Declare and implement "prime" function here
 
+bool prime(int n){
+    if(n<2)
+        return false;
+    
+    if(n==2)
+        return true;
+    
+    for (int i = n-1; i>1; --i) {
+        if(n%i == 0)
+            return false;
+    }
+    return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
-  int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
-  bool results[] = {false, false, false, false, true, true, false, true, false};
-  for(int i=0; i<9;i++){
-    if(prime(nums[i]) != results[i]){
-      std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
-      return;
+    int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
+    bool results[] = {false, false, false, false, true, true, false, true, false};
+    for(int i=0; i<9;i++){
+        if(prime(nums[i]) != results[i]){
+            std::string res = prime(nums[i]) ? "true" : "false";
+            std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+            return;
+        }
     }
-  }
-  
-  std::cout << "testPrime: SUCCESS" << std::endl;
+    
+    std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
 //2. Create a function, name "defix", which takes in a string and
 //   returns a string. If the string starts with a pre-fix attached
 //   by a dash, strip off the prefix and the dash. Otherwise, return
 //   the string unchanged. If there is more than one prefix, remove only
-//   the first one. Note that the input and output should both be type 
+//   the first one. Note that the input and output should both be type
 //   std::string
 //
 //Example inputs:
@@ -52,24 +65,29 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+std::string defix(std::string word){
+    unsigned long dashIndex = (word.find("-"))+1;
+    return word.substr(dashIndex);
+}
+
 //This is a basic tester for "defix"
 void testDefix(){
-  std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
-  std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
-
-  for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
-      return;
+    std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
+    std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
+    
+    for(int i=0;i<5;i++){
+        if(outputs[i] != defix(inputs[i])){
+            std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+            return;
+        }
     }
-  }
-
-  std::cout << "testDefix: SUCCESS" << std::endl;
+    
+    std::cout << "testDefix: SUCCESS" << std::endl;
 }
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
-//   starting index, and the 3rd is an int "len" that represents the length. 
+//   starting index, and the 3rd is an int "len" that represents the length.
 //   Sum up all entries in the array, starting with item "s" and ending with
 //   s+len-1, and return the sum. s and len must both be >= 0. If not, return 0
 //   Note: You may assume that the array is at least s+len items long. If not,
@@ -85,24 +103,36 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice( int nums[] , int startingIndex, int len){
+    if (startingIndex <0 || len<0) {
+        return 0;
+    }
+    int sum = 0;
+    for (int i = startingIndex; i<(startingIndex+len); ++i) {
+        sum += nums[i];
+    }
+    
+    return sum;
+}
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
-  int arrays[5][4] = { {1, 2, 3, 4},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1}};
-  int s[] = {1, 1, 0, 1, 1};
-  int len[] = {1, 3, 4, 0, 3};
-  int outputs[] = {2, 9, 0, 0, -1};
-
-  for(int i=0; i<5; i++){
-    if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
-      std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
-      return;
+    int arrays[5][4] = { {1, 2, 3, 4},
+        {1, 2, 3, 4},
+        {1, -1, 1, -1},
+        {1, 2, 3, 4},
+        {1, -1, 1, -1}};
+    int s[] = {1, 1, 0, 1, 1};
+    int len[] = {1, 3, 4, 0, 3};
+    int outputs[] = {2, 9, 0, 0, -1};
+    
+    for(int i=0; i<5; i++){
+        if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
+            std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
+            return;
+        }
     }
-  }
-  std::cout << "testSumSlice: SUCCESS" << std::endl;
+    std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
 //4. Create a function called "square" which takes an int, n, as input,
@@ -135,11 +165,53 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+void sqaure(int n){
+    if (n<1) {
+        return;
+    }
+
+    else{
+        std::string corner = "+";
+        std::string verticalBorder = "|";
+        std::string horizontalBorder = "-";
+        std::string innards = "o";
+        for (int yPosition=0; yPosition<n; ++yPosition) {
+            for (int xPosition=0; xPosition<n; ++xPosition) {
+                if (xPosition==0 && (yPosition==0 || yPosition==n-1)) {
+                    std::cout<<corner;
+                }
+                else if (xPosition == 0){
+                    std::cout<<verticalBorder;
+                }
+                
+                else if (xPosition == n-1 && (yPosition==0 || yPosition==n-1)) {
+                    std::cout<<corner+"\n";
+                }
+                
+                else if (xPosition == n-1){
+                    std::cout<<verticalBorder + "\n";
+                }
+                
+                if (n>2){
+                    if ((xPosition>0 && xPosition<n-1) && (yPosition>0 && yPosition<n-1)) {
+                        std::cout<<innards;
+                    }
+                    if ((xPosition>0 && xPosition<n-1) && (yPosition==0 || yPosition==n-1)) {
+                        std::cout<<horizontalBorder;
+                    }
+
+                }
+                
+            }
+        }
+    }
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
 //   prime method here.
-//   Note: The return type of the method should be int*, 
+//   Note: The return type of the method should be int*,
 //
 //Example outputs:
 // listPrimes(5) should return an array containing {2, 3, 5, 7, 11}
@@ -148,29 +220,43 @@ void testSumSlice(){
 
 //TODO: Declare and implement listPrimes here
 
-void testListPrimes(){
-  int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
-  for(int i=1;i<10;i++){
-    int* ret = listPrimes(i);
-    for(int j=1;j<i;j++){
-      if(ret[j] != some_primes[j]){
-	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] << 
-	  " but got " << ret[j] << std::endl;
-	delete[] ret;
-	return;
-      }
+int* listPrimes(int n){
+    int* primesList = new int[n];
+    int numberToCheck = 2;
+    int index = 0;
+    while (index<n) {
+        if(prime(numberToCheck)){
+            primesList[index] = numberToCheck;
+            ++index;
+        }
+        ++numberToCheck;
     }
-    delete[] ret;
-  }
-  
-  std::cout << "testListPrimes: SUCCESS" << std::endl;
+    return primesList;
+}
+
+void testListPrimes(){
+    int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+    for(int i=1;i<10;i++){
+        int* ret = listPrimes(i);
+        for(int j=1;j<i;j++){
+            if(ret[j] != some_primes[j]){
+                std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] <<
+                " but got " << ret[j] << std::endl;
+                delete[] ret;
+                return;
+            }
+        }
+        delete[] ret;
+    }
+    
+    std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
 int main(){
-  testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
-
-  return 0;
+    testPrime();
+    testDefix();
+    testSumSlice();
+    testListPrimes();
+    
+    return 0;
 }
