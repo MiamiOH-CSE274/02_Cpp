@@ -72,7 +72,12 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 std::string defix(std::string n){
-	return "";
+	std::size_t found = n.find_first_of("-");
+	while (found!=std::string::npos) {
+		std::string defixStr = n.substr(found, n.length());   
+		return defixStr;
+	}
+	return n;
 }
 
 //This is a basic tester for "defix"
