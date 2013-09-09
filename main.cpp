@@ -110,7 +110,6 @@ int sumSlice(int nums[],int ind, int len) {
 
 	}
 
-	std::cout << sum << std::endl;
 	return sum;
 }
 
