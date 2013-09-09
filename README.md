@@ -47,6 +47,7 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+.h files are implemented to help organize the declarations needed in .cpp files. This way all the declarations can be declared in the .h file and the .cpp file only needs to look at the .h file. Otherwise, one might forget or mess up a declaration which will mess up the program.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 inputs outputs purpose
@@ -57,8 +58,10 @@ The linker
 A pointer is data type that points to another variable's memory location.  A pointer does not create a variable.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+To find out what memory address that variable is stored at write the line &x. 
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+To have a variable p that can store the address of an int, p should be declared at int* p.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 The 'delete' command is good for freeing memory.  This ensures that a leak will not occur and allows the program to run more effectively.
