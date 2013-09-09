@@ -36,15 +36,15 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 
 1. prime - Working
 2. defix - Working
-3. sumSlice - Not working
-4. square - Not working
-5. listPrimes - Not working
+3. sumSlice - working
+4. square - working
+5. listPrimes - working
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-Because .cpp files access declarations from .h files through #include statements.
+Because .cpp files access declarations from .h files through #include statements, and sometimes without the declarations compilers won't complie. 
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 A compiler is a program that translates a computer program written in one computer language into an equivalent program written in the computer's native machine language. The compiler takes source code as input, and it outputs binary code. The purpose of compiling is to translate human readable code into machine code, so that linkers can make executable programs. 
@@ -58,10 +58,10 @@ A pointer is a variable whose value is the address of another variable.
 std::cout << &x << std::endl; it would show a bunch of code on screen, and that's the address of the variable.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-A pointer. I should declare like this: int* p;
+A pointer. I should declare it like this: int* p;
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-Because we have garbage collector in Java, so it deallocate unused memory for us. However, we do not have it in C++, so we have to deallocate unused memory by ourself. When we use "delete" in C++, the memory that store new operator objects get freed up.Any allocation of memory needs to be properly deallocated or a leak will occur and our programs won't run efficiently.  
+Because we have garbage collector in Java, so it deallocates unused memory for us. However, we do not have it in C++. So, we have to deallocate unused memory by ourself. When we use "delete" in C++, the memory that store new operator objects get freed up.Any allocation of memory needs to be properly deallocated or a leak will occur and our programs won't run efficiently.  
 
 #### 7. What is one question about C++ that you would like me to explain in class?
 Can you explain the use of pointers? I'm still confused after I read the material.
