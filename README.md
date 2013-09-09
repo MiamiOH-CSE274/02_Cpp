@@ -58,5 +58,6 @@ Questions
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
         int*
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-        
+        Java doesn't need a delete command because it has garbage collection where C++ does not
 #### 7. What is one question about C++ that you would like me to explain in class?
+        Why does Miami teach Java to new students and not C++
