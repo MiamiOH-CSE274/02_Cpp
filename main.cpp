@@ -1,12 +1,11 @@
 using namespace std
-
-#include "StdAfx.h"
+#include "StdAfx.h
 #include <iostream>
 #include <string>
 
 //1. Create a function, named "prime", which tests an
-// integer, n, to see if it is prime. It should return a bool. 
-// 
+// integer, n, to see if it is prime. It should return a bool.
+//
 // You don't have to do
 // anything tricky. Just try modding (%) it by every number
 // between 2 and n-1. If it never gives 0, then it is prime.
@@ -23,7 +22,7 @@ using namespace std
 //TODO: Declare and implement "prime" function here
 bool prime(int number){
 	int i;
-	
+
 	for (i=2; i<number; i++)
 	{
 		if (number % i == 0)
@@ -31,7 +30,7 @@ bool prime(int number){
 			return false;
 		}
 	}
-	
+
 	return true;
 }
 
@@ -46,7 +45,7 @@ void testPrime(){
       return;
     }
   }
-  
+
   std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
@@ -55,7 +54,7 @@ void testPrime(){
 //   returns a string. If the string starts with a pre-fix attached
 //   by a dash, strip off the prefix and the dash. Otherwise, return
 //   the string unchanged. If there is more than one prefix, remove only
-//   the first one. Note that the input and output should both be type 
+//   the first one. Note that the input and output should both be type
 //   std::string
 //
 //Example inputs:
@@ -69,11 +68,11 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
-string defix(string input) 
+string defix(string input)
 {
 	int temp = 0;
 	for(int i=0;i<input.length();i++){
-		if(input.substr == "-")
+		if(input.substr(i) == "-")
 			temp = i + 1;
 	}
 
@@ -98,7 +97,7 @@ void testDefix(){
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
-//   starting index, and the 3rd is an int "len" that represents the length. 
+//   starting index, and the 3rd is an int "len" that represents the length.
 //   Sum up all entries in the array, starting with item "s" and ending with
 //   s+len-1, and return the sum. s and len must both be >= 0. If not, return 0
 //   Note: You may assume that the array is at least s+len items long. If not,
@@ -114,14 +113,14 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
-int sumSlice(int[] anArray, int s, int len) {
+int sumSlice(int anArray[], int s, int len) {
 		int sum = 0;
 		int value = s+len-1;
 		while(s <= value){
 			sum = sum + anArray[s];
 			s++;
 		}
-		
+
 		return sum;
 	}
 
@@ -181,11 +180,12 @@ void square(int dimension){
 	if(dimension == 2)
 		std::cout << "++\n++";
 	if(dimension>2){
-		std::cout << "+" << std::endl;
+		std::cout << "+"
 			for(int i=dimension; i<dimension-2; i++){
 				std::cout << "-";
 			}
-		std::cout << "+" + "|" << std::endl;
+		std::cout << "+" << std::endl;
+		std::cout << "|";
 			for(int j=dimension; j<dimension-2; j++){
 			std::cout << "o";
 			}
@@ -202,7 +202,7 @@ void square(int dimension){
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
 //   prime method here.
-//   Note: The return type of the method should be int*, 
+//   Note: The return type of the method should be int*,
 //
 //Example outputs:
 // listPrimes(5) should return an array containing {2, 3, 5, 7, 11}
@@ -217,7 +217,7 @@ void testListPrimes(){
     int* ret = listPrimes(i);
     for(int j=1;j<i;j++){
       if(ret[j] != some_primes[j]){
-	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] << 
+	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] <<
 	  " but got " << ret[j] << std::endl;
 	delete[] ret;
 	return;
@@ -225,7 +225,7 @@ void testListPrimes(){
     }
     delete[] ret;
   }
-  
+
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
