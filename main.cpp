@@ -115,6 +115,18 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int cow[],int s, int len){
+   
+    int sum=0;
+    if(len<0 && s<0)
+        return 0;
+    
+    for(int i =s;i<=(s+(len-1));i++){
+        sum=cow[i]+sum;
+    }
+    
+    return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
