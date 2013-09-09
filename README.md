@@ -40,7 +40,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 1. prime -Yes
 2. defix - Yes
 3. sumSlice - Yes
-4. square - TODO
+4. square - Yes, and if you run my personal main.cpp it will print out squares ranging from 0x0 to 5x5 to show that the square function works.
 5. listPrimes - Yes
 
 Questions
@@ -66,3 +66,4 @@ Questions
 	The 'delete' command removes any references to a given memory location; thus allowing us to keep memory usage low, and speed up our programs.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+	I would like to have some better informatino on pointers, inheritance, and polymorphism because they can get a little fuzzy sometimes. It has also been almost two years since my last coding class.

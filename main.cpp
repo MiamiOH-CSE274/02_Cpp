@@ -107,7 +107,7 @@ void testDefix(){
 int sumSlice(int intArray[], int index, int countLength)
 {
 	int count = 0;
-	if((index || countLength) <= 0)
+	if((index <= 0) || (countLength <= 0 ))
 		return 0;
 	else if(index == countLength)
 		return intArray[index];
@@ -168,7 +168,26 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+//This is a function that prints out an ASCII square.
+void square(int size)
+{
+	std::cout<<std::endl;
+	for(int i=0; i <size; i++)
+	{
+		for(int j=0; j <size; j++)
+		{
+			if(((i == 0) && (j == 0)) || ((i == 0) && (j == size-1)) || ((i == size-1) && (j == 0)) || ((i == size-1) && (j == size-1)))
+				std::cout<<"+";
+			else if((i == 0) || (i == size -1))
+				std::cout<<"-";
+			else if((j == 0) || (j == size -1))
+				std::cout<<"|";
+			else
+				std::cout<<"o";
+		}
+		std::cout<<std::endl;
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -224,6 +243,11 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
-
+  square(0);
+  square(1);
+  square(2);
+  square(3);
+  square(4);
+  square(5);
   return 0;
 }
