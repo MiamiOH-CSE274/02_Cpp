@@ -16,8 +16,20 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
-
+//This is the prime function
+bool prime(int number)
+{
+	if(number < 2)
+		return false;
+	for(int i=2; i<number; i++)
+	{
+		if ((number%i)=0)
+		{
+			return true;
+		}
+	}
+	return false;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -168,9 +180,9 @@ void testListPrimes(){
 
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+ // testDefix();
+  //testSumSlice();
+  //testListPrimes();
 
   return 0;
 }
