@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -17,7 +19,16 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime (int n) {
+	bool isPrime = true;
+	if (n < 2)
+		isPrime = false;
+	for (int i = 2; i < n-1; i++) {
+		if (n%i == 0)
+			isPrime =  false;
+	}
+	return isPrime;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -52,6 +63,13 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+std::string defix(std::string in) {
+	int dashIndex = 0;
+	dashIndex= in.find_first_of("-");
+	in.erase(0,dashIndex+1);
+	return in;
+}
+
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -84,6 +102,16 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+
+int sumSlice(int nums[],int ind, int len) {
+	int sum = 0;
+	for (int i = ind; i <= ind+len-1; i++) {
+		sum = sum + nums[i];
+
+	}
+
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -134,6 +162,40 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square ( int n) {
+	if (n < 0)
+		return;
+	int numOfMinus = n-2;
+	int numsOfMid = n-2;
+
+	std::string square = "+";
+	for (int i = 0; i < numOfMinus; i++) {
+		square = square+"-";
+	}
+
+	if (n != 1) {
+	square = square + "+\n";
+	}
+
+	for (int height = 0; height < numsOfMid; height++) {
+		square = square + "|";
+		for (int i = 0; i < numsOfMid; i++) {
+			square = square+"o";
+		}
+		square = square + "|\n";
+	}
+
+	square = square + "+";
+
+	for (int i = 0; i < numOfMinus; i++) {
+		square = square+"-";
+	}
+	if (n!=1)
+		square = square + "+";
+
+	std::cout << square+"\n";
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -147,6 +209,21 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes (int n) {
+	int* primes ;
+	primes = new int[n];
+	int index = 0;
+	int counter = 2;
+	while (index < n) {
+		if (prime(counter)) {
+			primes[index] = counter;
+			index++;
+		}
+		counter ++;
+	}
+	return primes;
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
