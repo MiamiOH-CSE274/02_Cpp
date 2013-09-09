@@ -21,8 +21,11 @@ bool prime(int num){
 	if(num < 2){
 		return false;
 	}
+	else if(num == 2){
+		return true;
+	}
 	else{
-		for (i = 2; i <= num -1; i++ ){
+		for (int i = 2; i <= num -1; i++ ){
 			if (num % i == 0)
 				return false;
 		}
@@ -64,7 +67,7 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 std::string defix(std::string Chars){
 	std::string str2("-");
-	std::size_t found = str.find(str2);
+	std::size_t found = Chars.find(str2);
 	if(found == std::string::npos){
 		return Chars;
 	}
@@ -107,7 +110,7 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 
 //This is a basic tester for "sumSlice"
-void testSumSlice(){
+/**void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
 		      {1, 2, 3, 4},
 		      {1, -1, 1, -1},
@@ -124,7 +127,7 @@ void testSumSlice(){
     }
   }
   std::cout << "testSumSlice: SUCCESS" << std::endl;
-}
+} **/
 
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
@@ -169,6 +172,7 @@ void testSumSlice(){
 
 //TODO: Declare and implement listPrimes here
 
+/**
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
@@ -186,7 +190,7 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-
+**/
 int main(){
   testPrime();
   //testDefix();
