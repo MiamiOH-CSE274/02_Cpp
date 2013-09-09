@@ -44,11 +44,12 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - Working Good
-2. defix - Working Good
-3. sumSlice - Working Good
-4. square - Working Good
-5. listPrimes - Working Good
+1. prime - Working Good.
+2. defix - Working Good.
+3. sumSlice - Working Good.
+4. square - Working Good.
+5. listPrimes - Working Good.
+
 
 Questions
 =======

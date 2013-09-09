@@ -1,8 +1,8 @@
 #include <iostream>
 
 //1. Create a function, named "prime", which tests an
-// integer, n, to see if it is prime. It should return a bool. 
-// 
+// integer, n, to see if it is prime. It should return a bool.
+//
 // You don't have to do
 // anything tricky. Just try modding (%) it by every number
 // between 2 and n-1. If it never gives 0, then it is prime.
@@ -23,9 +23,9 @@
 
 
 //I am going to include a header file cmath in order to use sqrt in my algorithm
-# include <cmath>
+
 bool prime(int a) {
-    
+
     if( a < 2 )
     {
 
@@ -37,31 +37,23 @@ bool prime(int a) {
     {
 
      return true;   //If the number is 2 so it is prime.
-     
-    }
-    
-    if(a % 2 == 0)  //Lets say doing some calculation here....
-    {
-
-     return false;
 
     }
 
-    int sqrtn = (int) sqrt ((double)a);
     bool flag = true; //set a bool variable as true.
- 
-    for(int i = 3;i<sqrtn;i+=2) {
-        
-          if(a % i == 0)
-	  {
-	    flag = false;
-	  }
-       }
-     
-          return flag;
 
+    for(int i = 2;i<a;i++) {
+
+          if(a % i == 0)
+	      {
+	         flag = false;
+	      }
+
+       }
+
+          return flag;
     }
-	
+
   
 
 void testPrime(){
@@ -98,6 +90,7 @@ void testPrime(){
 
 //This is a basic tester for "defix"
 
+<<<<<<< HEAD
 #include <string>
 
 std :: string defix(std :: string s) {
@@ -119,6 +112,36 @@ std :: string defix(std :: string s) {
      return newString;
 
 
+=======
+
+#include <string>
+
+std :: string defix(std :: string s){
+
+	  int pos = s.find("-");  //If there is no dash in the string.
+
+	  if(pos == -1){
+
+		  return s;
+	  }
+	  
+	    else
+
+	  {
+		  s = s.substr(pos+1);
+		  return s;
+
+	  }
+
+
+	  unsigned found = s.find_last_of("-");
+
+	  std :: string newString = s.substr(found);
+
+
+	  return newString;
+ }
+>>>>>>> 918c2e249de463f24ecd27a772ed2551baf7124b
 
 
 void testDefix(){
@@ -154,6 +177,41 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 
 //This is a basic tester for "sumSlice"
+
+
+int sumSlice(int* a, int s, int l){
+
+	  int sum = 0;
+
+	  //If starting index is less than 0.
+      if(s < 0)
+      {
+
+    	return 0;
+
+      }
+
+      //if l is less or equal than 0.
+      if(l <= 0)
+      {
+
+    	return 0;
+
+      }
+
+      for(int i= s ;i < s + l;i++)
+      {
+    	  sum = sum + a[i];
+
+      }
+
+         return sum;
+}
+
+
+
+
+
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
 		      {1, 2, 3, 4},
@@ -203,6 +261,69 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+
+
+void square(int n){
+	
+	//special case when n equals 1.
+
+	if(n == 1){
+
+		std :: cout << "+";
+	}
+
+	else{
+
+
+	std :: cout << "+";
+
+	for(int i = 0;i<n-2;i++)
+
+	{
+
+       std :: cout << "-";
+	}
+
+	std :: cout << "+";
+	std :: cout << "\n";
+
+
+
+	for(int i = 0;i<n-2 ;i++){
+
+		std :: cout << "|";
+
+
+		for(int j = 0;j<n-2;j++)
+
+		{
+
+
+			std :: cout << "o";
+
+		}
+		std :: cout << "|";
+
+		std :: cout << "\n";
+	    }
+
+
+	std :: cout << "+";
+
+		for(int i = 0;i<n-2;i++)
+
+		{
+
+	       std :: cout << "-";
+		}
+
+		std :: cout << "+";
+	}
+}
+
+
+
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -215,6 +336,43 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+
+
+int* listPrimes(int n)
+
+    {
+
+	int* ret = new int[n]; //allocate memory.
+
+   	int num = 0;  //The number to test if it is prime.
+
+	int count = 0; //The counter to count if it reaches the size of the array.
+
+    while(count < n) 
+
+    {
+    	if(prime(num) == true)
+
+    	{
+    		ret[count] = num;
+    		
+    		//Increase the counter.
+    		count++;
+    		//Increase the number.
+    		num++;
+    	}
+
+    	else
+    	{
+    		//If it is not prime,only increase the number.
+    		num++;
+
+    	}
+    }
+
+     return ret;
+  }
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
