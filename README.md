@@ -38,17 +38,17 @@ Documentation
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
 1. prime - I think prime is working as it should be, especially because the logic of the code makes sense.
-2. defix - Works correctly, especially seeing as important test cases passed the tester method.
-3. sumSlice - works, now that I fixed my errors in the for loop parameters.
+2. defix - The defix() works correctly, especially seeing as important test cases passed the tester method.
+3. sumSlice - sumSlice() works, now that I fixed my errors in the for loop parameters.
 4. square - Tested square(0) - square(5) and received expected results.
-5. listPrimes - Should work as long as my prime() works.
+5. listPrimes - This method should work as long as my prime() works.
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
-The .h files (header files) are the links between the .cpp files that would prevent the compiler from complaining if it tried to compile the entire program at once.
+The .h files (header files) are the links between the .cpp files that would prevent the compiler from complaining about missing code if it tried to compile the entire program at once.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
@@ -76,4 +76,4 @@ We need `delete` in C++ because Java does not give the programmer access to mani
 
 #### 7. What is one question about C++ that you would like me to explain in class?
 
-I would probably still like to go over pointers in class, specifically how to use them.
+I would like to see the namespace concept explained again (what it means, why it's used, etc.)
