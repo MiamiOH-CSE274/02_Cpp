@@ -57,8 +57,10 @@ The job of the "compiler" is to translates a computer language (source code) whi
 
 The linker is a program that makes executable files. Overall, the linkers job is to fix references to undefined symbols by finding the objects symbol and replacing the undefined smybol with the symbol's real address. The linker takes an input of object code and outputs an executable program which is labeled with .exe.
 #### 3. What is a "pointer"?
+A pointer is a memory type that can hold the address of something such as an (int, char, double etc). In other words they point to another variable's memory location so that you can use them throughout your program. 
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+To find out what memory address that int x has you can use the "address of operator (&)." For example, "&x", will give you the memory address of x in hexidecimal typically. 
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
