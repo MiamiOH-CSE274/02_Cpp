@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <string>
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
@@ -62,6 +62,16 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string Chars){
+	std::string str2("-");
+	std::size_t found = str.find(str2);
+	if(found == std::string::npos){
+		return Chars;
+	}
+	else{
+		return Chars.substr(found + 1);
+	}		
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
