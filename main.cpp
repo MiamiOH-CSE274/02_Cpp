@@ -183,31 +183,33 @@ void square(int n){
 	if (n == 1)
 		std::cout << "+" << std::endl;
 	if (n > 1){
-		for (int i = 0; i < n; i++){
-			std::cout << "+";
-			if (n > 1){
-				for (int j = 1; j < n - 1; j++){
-					std::cout << "-";
-				}
-				std::cout << "+";
-				if (n > 2){
-					for (int h = 1; h < n - 1; h++){
-						std::cout << "|";
-						for (int k = 1; k < n-1; k++){
-							std::cout << "o";
-						}
-						std::cout << "|";
-					}
-				}
-				std::cout << "+";
-				for (int j = 1; j < n - 1; j++){
-					std::cout << "-";
-				}
-				std::cout << "+";
+		std::cout << "+";
+		if (n > 2){
+			for (int j = 1; j < n - 1; j++){
+				std::cout << "-";
 			}
 		}
+	std::cout << "+" << std::endl;
+	if (n > 2){
+		for (int h = 1; h < n - 1; h++){
+			std::cout << "|";
+			for (int k = 1; k < n-1; k++){
+				std::cout << "o";
+			}
+			std::cout << "|" << std::endl;
+		}
+	}
+	std::cout << "+";
+	if (n > 2) {
+		for (int j = 1; j < n - 1; j++){
+			std::cout << "-";
+		}
+	}
+	std::cout << "+" << std::endl;
 	}
 }
+// Tested in Eclipse
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -264,6 +266,8 @@ int main(){
 
   return 0;
 }
+
+
 
 
 
