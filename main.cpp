@@ -204,18 +204,18 @@ void testSquare() {
 
 //TODO: Declare and implement listPrimes here
 int* listPrimes(int n) {
-	int* res;
-	res = new int[n];
+	int* result;
+	result = new int[n];
 	int c = 0;
-	while (c != n){
-		if (prime(c) == false){			
-			res[c] = c;
+	int primeN = 0;
+	while (c < n){
+		if (prime(primeN) == true){
+			result[c] = primeN;
 			c++;
 		}
-		else
-			c++;
+		primeN++;
 	}
-	return res;
+	return result;
 }
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
