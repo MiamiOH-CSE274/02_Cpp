@@ -41,7 +41,7 @@ void testPrime(){
   for(int i=0; i<9;i++){
     if(prime(nums[i]) != results[i]){
       std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
       return;
     }
   }
