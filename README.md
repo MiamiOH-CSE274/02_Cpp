@@ -68,4 +68,6 @@ The variable p should be type int*, a pointer that stores the address of an int.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+Java was nice enough to handle memory management for us.  It had "garbage collecting" to remove unnecessary things that could no longer be accessed anyway.  C++ does not do this, so the programmer must do it him- or herself to prevent memory leaks.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
