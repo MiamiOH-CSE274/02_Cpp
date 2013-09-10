@@ -1,5 +1,8 @@
+
 #include <iostream>
 using std::string;
+using std::endl;
+using std::cout;
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -28,15 +31,16 @@ above, this logical disjointment could lead to future misinterpretations of othe
 bool prime(int x){
 	if(x<2)
 		return false;
-	if(x=2)
+	if(x==2) //always triple check your operators in arguments... damn double vs. single equals... Why does single equals even compile here???!!!
 		return true;
-	int limit = x/2;  //I am not entirely sure how the control argument within a for loop works. If I substituted in x/2, does the program calculate this for each iteration of the loop or not? I could not find this information readily available online.
+	int limit = sqrt(x);  //I am not entirely sure how the control argument within a for loop works. The square root limit can be proven through some nasty induction. there is no need to test beyond this value.
 	for(int i=2; i<=limit; i++){  //noting the inherrent inaccuracy of integer division, using the <= operator negates any possible missing values
-		if(x%i == 0)
+		if(x % i == 0)
 			return false;
 	}
 	return true;  //method should only arrive here if all tested values fail to produce x%i == 0.
 }
+
 
 
 //This is a basic tester for the "prime" function
@@ -46,7 +50,7 @@ void testPrime(){
   for(int i=0; i<9;i++){
     if(prime(nums[i]) != results[i]){
       std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
       return;
     }
   }
@@ -76,7 +80,7 @@ and string::length to fulfill the necessary argument types for string::substr, a
 function which clips the returned substring if the length argument exceeds the number of available characters.
 */
 string defix(string s){
-	return str.substr(s.find("-")+1, str.length()); // This one-line implementation is deceptively correct. 
+	return s.substr(s.find("-")+1, s.length()); // This one-line implementation is deceptively correct. 
 
 }
 
@@ -86,8 +90,8 @@ void testDefix(){
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+    if(outputs[i].compare(defix(inputs[i])) != 0){
+      std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
       return;
     }
   }
@@ -117,7 +121,7 @@ believe that is rooted mainly in the variable name "len." For our purposes,
 */
 int sumSlice(int nums[], int s, int len){
 	int sum=0;
-	for(int i=s; i<(s+len), i++)
+	for(int i=s; i<(s+len); i++)
 		sum+=nums[i];
 	return sum;
 }
@@ -177,7 +181,10 @@ sure a better solution exists given I broke the 10-line rule, and I'll be happy
 to examine it.
 */
 void square(int n){
-	string lines[n];
+	if(n<1)
+		return;
+
+	string *lines = new string[n];
 	string TB ("+"), inner ("|");//An initial or base-case version of the top/bottom string and a base case of the inner strings.
 
 	if(n>1){
@@ -197,7 +204,9 @@ void square(int n){
 	}//end if n>1
 
 	for(int i=0; i<n; i++)
-		cout << lines[i] << endl;
+		cout << lines[i].c_str() << endl;
+
+	delete[] lines;
 //In C++, should I put a return statement here, or is that extraneous? 
 }
 
@@ -218,18 +227,18 @@ want the address given the tester method, but man, confusing...
 
 */
 int* listPrimes(int n){
-	primes = new int[n];
+	int *primes = new int[n];
 	int currentNum=2; //this is the variable which will be incremented and sent to the "prime" method to check. Using definitions from said method, there is no reason to start with a number less than 0.
 	int *my_pointer = primes;
 	for(int i=0; i<n; i++){//Yeah yeah, going against advice. I like for loops...
-		while(prime(currentNum) =! true)
+		while(prime(currentNum) != true)
 			currentNum += 1;
 
 		primes[i] = currentNum;
 		currentNum += 1; //This prevents an infinite loop of the same prime entering the array.
 	}//end for
 
-	return my_pointer
+	return my_pointer;
 }
 
 void testListPrimes(){
