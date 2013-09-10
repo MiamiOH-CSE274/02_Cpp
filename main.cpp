@@ -110,6 +110,20 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+//Unable to debug due to VS10 not being able to compile.
+
+int sumSlice(int array[], int s, int len)
+{
+	if(s!=0||len!=0)
+		return 0;
+	int total = 0;
+	for(int i=s; s<len; i++)
+	{
+		total+=array[i];
+	}
+	return total;
+}
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
