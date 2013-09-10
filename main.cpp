@@ -220,7 +220,7 @@ void testSquare(){
 	  square(nums[i]);
   }
 }
-/*
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -233,6 +233,22 @@ void testSquare(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n) {
+	int* primeNum = new int [n]; // Allocate memory for array
+	int number = 2; // Start at number 2 since 0 and 1 cant be prime. 
+	int count = 0; // Counter for number of prime numbers in the array
+	while (count < n) {
+			if (prime(number) == true) {
+				primeNum[count] = number; // Add that number to the next empty position in the array
+				count++;
+				number++;
+		}
+			else 
+				number++; 
+	}
+	return primeNum;
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -253,14 +269,12 @@ void testListPrimes(){
 }
 
 
-*/
-
 int main(){
   testPrime();
   testDefix();
   testSumSlice();
   testSquare();
-  //testListPrimes();
+  testListPrimes();
 
   return 0;
 }
