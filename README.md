@@ -54,7 +54,7 @@ Considering that the compiler reads .cpp files separately, if there were no .h f
 #### 3. What is a "pointer"?
 A pointer is a variable type that "points" to the allocated memory location of an address.
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
-
+Through use of the address of operator &.  You simply place it in front of the x like &x to find the memory address of x.
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
