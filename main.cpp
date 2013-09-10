@@ -1,4 +1,5 @@
 #include <iostream>
+using std::string;
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -16,7 +17,26 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+
+/* For this method I realized the hint given was in fact incorrect. There is no need to test
+the modulus operator beyond (n/2) -1 because if %2 fails, then there is no reason a number (n/2)
+or above should succeed. The mathematical proof of this is difficult, but it can be demonstrated
+and should be intuitive. Also, according to my MTH 231 textbook from the Spring 2013 Semester, 
+negative numbers can be considered prime. While I will work within the given constraints 
+above, this logical disjointment could lead to future misinterpretations of other projects.
+*/
+bool prime(int x){
+	if(x<2)
+		return false;
+	if(x=2)
+		return true;
+	int limit = x/2;  //I am not entirely sure how the control argument within a for loop works. If I substituted in x/2, does the program calculate this for each iteration of the loop or not? I could not find this information readily available online.
+	for(int i=2; i<=limit; i++){  //noting the inherrent inaccuracy of integer division, using the <= operator negates any possible missing values
+		if(x%i == 0)
+			return false;
+	}
+	return true;  //method should only arrive here if all tested values fail to produce x%i == 0.
+}
 
 
 //This is a basic tester for the "prime" function
@@ -50,7 +70,15 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+/*For this method I chose a simple 1-line implementation of basic std::string functions to return strings
+without the first prefix (denoted as "abcd-") by way of exploiting the int return types of string::find
+and string::length to fulfill the necessary argument types for string::substr, as well as substr's built-in
+function which clips the returned substring if the length argument exceeds the number of available characters.
+*/
+string defix(string s){
+	return str.substr(s.find("-")+1, str.length()); // This one-line implementation is deceptively correct. 
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -83,7 +111,16 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+/*The description for this problem was slightly confusing at first, but I 
+believe that is rooted mainly in the variable name "len." For our purposes,
+"count" would be more appropriate given its actual purpose in the arguments.
+*/
+int sumSlice(int nums[], int s, int len){
+	int sum=0;
+	for(int i=s; i<(s+len), i++)
+		sum+=nums[i];
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -133,7 +170,36 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+/*To start, I hate problems like this. They are my achilles heel. I went through
+five total solutions before I arrived at the one below, which I believe is the
+most efficient of my solutions in terms of both space and running time. I'm 99%
+sure a better solution exists given I broke the 10-line rule, and I'll be happy
+to examine it.
+*/
+void square(int n){
+	string lines[n];
+	string TB ("+"), inner ("|");//An initial or base-case version of the top/bottom string and a base case of the inner strings.
+
+	if(n>1){
+		for(int i=0; i<n-2; i++){//Note: only adds symbols when n>2. 
+			TB += "-";
+			inner += "o";
+		}//end concatenation loop
+
+		TB += "+"; //These cap each string with the proper final symbol.
+		inner += "|";
+
+		for(int i=1; i<n-1; i++){//Incrementally adds the properly formatted inner lines to the "lines" array. If n=2, no inner lines are added, as desired.
+			lines[i] = inner;
+		}//end array building loop.
+
+		lines[n-1] = TB; //This line caps the end of the array with the complete Top/Bottom String.
+	}//end if n>1
+
+	for(int i=0; i<n; i++)
+		cout << lines[i] << endl;
+//In C++, should I put a return statement here, or is that extraneous? 
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -146,7 +212,25 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+/*Okay, the instructions for this method were entirely confusing. You want the return type to be an address of an int, but then
+your example return is an array. I'm sure I'll get reamed for this, but I'm out of time due to piled up homework. I do see you 
+want the address given the tester method, but man, confusing...
+
+*/
+int* listPrimes(int n){
+	primes = new int[n];
+	int currentNum=2; //this is the variable which will be incremented and sent to the "prime" method to check. Using definitions from said method, there is no reason to start with a number less than 0.
+	int *my_pointer = primes;
+	for(int i=0; i<n; i++){//Yeah yeah, going against advice. I like for loops...
+		while(prime(currentNum) =! true)
+			currentNum += 1;
+
+		primes[i] = currentNum;
+		currentNum += 1; //This prevents an infinite loop of the same prime entering the array.
+	}//end for
+
+	return my_pointer
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};

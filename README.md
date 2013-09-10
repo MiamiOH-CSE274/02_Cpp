@@ -37,25 +37,60 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - I believe the method will work, if I can get the project to run (stupid project interactions...).
+2. defix - I believe the method will work, if I can get the project to run (stupid project interactions...).
+3. sumSlice - I believe the method will work, if I can get the project to run (stupid project interactions...).
+4. square - I believe the method will work, if I can get the project to run (stupid project interactions...).
+5. listPrimes - I'm not sure only because I can't get the project to run, if I can get the project to run (stupid project interactions...) and even though it looks right, I've never used the addresses before.
+
+All these methods I rewrote in java to be sure, and they will work, but I can't get the code to compile due to a << operator not being recognized (and it's in Brinkman's portion of the code).
+Beyond that I'm not sure 
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+	
+The simplest explanation for the need of header files is this: C++ needs a way to link together any .cpp files which make references/calls to other.cpp files. Since
+the compiler itself lacks the infrastructure to view the entire project all at once (as in Java) it uses a linker at compile time which fills in any holes at 
+pre-processing. The linker uses the header files to "tell" each .cpp file that it can compile because all dependent objects/variables/methods are properly defined and
+compiled.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
+The preprocessor takes source code and outputs source code which has been modified to fill in "using 'xyz'" statements with proper variable references. Its main function
+is a "code cleanup" tool, which functions much like a refined "find and replace all" function.
+
+The compiler accepts source code and converts it to object/assembly code to be run on the machine. It checks for syntactically correct arguments as well as proper
+interactions within the methods (inside and outside a particular class). Its purpose is to tell the programmer if he/she has constructed a proper program, and then if
+so, it converts that program into runnable code.
+
+The linker is used to fill in the referential holes left behind in the main stages of preprocessing and compiling. Since each class/.cpp file is compiled separately,
+they don't actually "know" that their symbiotic independent elements exist. The programmer can put in a reference to one .cpp file method, which will allow his current
+.cpp file to compile, but without the linker, at runtime he would not have the .cpp files interacting with one another, and a runtim error would occur. The linker uses
+the header files and other information to properly string together arguments between .cpp files. If a file is missing, the linking stage will send an error to the IDE
+telling the user so. The purpose of the linker is to do what smarter language IDEs do automatically in their macroscopic environments at all times, but to do it once at
+compile time.
+
 #### 3. What is a "pointer"?
+
+A pointer is a variable which stores the memory address of another variable. Pointers are dynamic in form (i.e., one can generate a memory address for any other variable 
+regardless of type.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
+You use the "&" operator, i.e. "&x" and print it to the screen or otherwise store it for later use in the program using the "*" operator to cast the storage variable 
+to an "int*".
+
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+
+int* p = &x; Would be a proper form of sample code for this purpose, where x is any int.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+Where Java has Garbage Collection which runs dynamically at all execution times of the program which prevents memory loss/leakage, C++ leaves that task to the programmer. The 'delete' 
+and 'delete []' functions both clear up currently occupied memory locations, but in subtly different ways. 
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Why does C++ not have multi-parent inheritance as C# does? What is the advantage/purpose for languages like C++ and Java to not allow multi-parent inheritance?
