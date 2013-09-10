@@ -18,6 +18,19 @@
 
 //TODO: Declare and implement "prime" function here
 
+//Unable to debug due to VS10 not being able to compile.
+bool prime(int n)
+{
+	if(n<2)
+		return false;
+
+	for(int i=2, i<n, i++)
+	{
+		if(n%2==0)
+			return false;
+	}
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -52,6 +65,18 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+//Unable to debug due to VS10 not being able to compile.
+string defix(string str)
+{
+	if(str.find("-")!>=0)
+	{
+		return str.append(str.find("-"), str.end());
+	}
+	else
+		return s;
+}
+
+
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -84,6 +109,20 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+
+//Unable to debug due to VS10 not being able to compile.
+
+int sumSlice(int array[], int s, int len)
+{
+	if(s!=0||len!=0)
+		return 0;
+	int total = 0;
+	for(int i=s; s<len; i++)
+	{
+		total+=array[i];
+	}
+	return total;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -134,6 +173,47 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+
+//Unable to debug due to VS10 not being able to compile.
+void square(int asize)
+{
+	if(int a<=0)
+		return;
+	string arrays[asize][asize];
+	else{
+			if(a==1)
+				std::cout << "+";
+			else if(a==2)
+				std::cout << "++\n++";
+			else{
+				std::cout << "+";
+					int extras = asize-2;
+				for(int i=0, i<extras, i++)
+				{
+					std::cout << "-";
+				}
+				std::cout<< "+";
+
+				std::cout<< "|";
+				for(int i=0, i<extras, i++)
+				{
+					std::cout << "o";
+				}
+				std::cout<< "|";
+
+				std::cout << "+";
+					int extras = asize-2;
+				for(int i=0, i<extras, i++)
+				{
+					std::cout << "-";
+				}
+				std::cout<< "+";
+
+			}
+				
+		}
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
