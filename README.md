@@ -48,7 +48,7 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
-.h files, or header files, help to keep track of all of hte .cpp files used in one specific program.  They link all of the necessary external .cpp files used by a program to the program, ensuring that the compiler will know that they exist and not throw unnecessary errors.
+.h files, or header files, help to keep track of all of the .cpp files used in one specific program.  They link all of the necessary external .cpp files used by a program to the program, ensuring that the compiler will know that they exist and not throw unnecessary errors.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
@@ -65,6 +65,8 @@ A pointer is a type of variable (although not necessarily a 'true' variable) tha
 Simply using the & operand to return the variable 'x' memory address would work. Just put the '&' right before the variable name.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+
+the variable 'p' should be declared as a pointer variable, or  type int*.  This would allow that variable to hold the memory address of an int variable rather than hold actual data.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
