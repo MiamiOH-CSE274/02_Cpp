@@ -252,7 +252,7 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
-  square(5);
+  square(7);
 
   std::cin.get();
   return 0;
