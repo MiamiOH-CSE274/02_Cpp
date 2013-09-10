@@ -47,14 +47,21 @@ Questions
 -This creates the need for header files so that the compiler knows how the files relate.  Otherwise, there are loose ends in the code of one file, and the compiler doesn't know where data will be coming from when the program is run.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
--The preprocessor
+-The preprocessor reads instructions (directives) on how to read the source code and how to modify the compiler options.
+-The compiler translates source code into machine code, and creates object files to be used when running the program.
+-The linker resolves references in the code and replaces them with the actual address of the data/code that needs to be accessed for the program to run.
 
 #### 3. What is a "pointer"?
+-A pointer is a variable that can hold an address, the location of the first piece of storage for a variable.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+-To find the address for int x, you would use the command "&x".
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-
+-To store the address of an int (lets say x), you would declare like so…
+int* p_i = &x;
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
+-Delete can be used to free up memory for a program to use, and used to deallocate memory use to prevent leaks from happening when a program runs.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+-I would like to go over some syntax of basic operations that are different from Java.  I found that my biggest problem in the assignment was using Git (I'll need to get a grasp on that), and looking up the API and syntax for operations that I thought would be the same.
