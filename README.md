@@ -40,7 +40,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 1. prime - yes
 2. defix - yes
 3. sumSlice - no
-4. square - no
+4. square - yes
 5. listPrimes - yes
 
 Questions
