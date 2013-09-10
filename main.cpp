@@ -1,5 +1,5 @@
 using namespace std
-#include "StdAfx.h
+#include "StdAfx.h"
 #include <iostream>
 #include <string>
 
@@ -22,7 +22,8 @@ using namespace std
 //TODO: Declare and implement "prime" function here
 bool prime(int number){
 	int i;
-
+	if(number <= 1)
+		return false;
 	for (i=2; i<number; i++)
 	{
 		if (number % i == 0)
@@ -41,11 +42,11 @@ void testPrime(){
   for(int i=0; i<9;i++){
     if(prime(nums[i]) != results[i]){
       std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
       return;
     }
   }
-
+  
   std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
@@ -68,15 +69,9 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
-string defix(string input)
+std::string defix(std::string input)
 {
-	int temp = 0;
-	for(int i=0;i<input.length();i++){
-		if(input.substr(i) == "-")
-			temp = i + 1;
-	}
-
-	return input.substr(temp, input.length);
+	return input.substr((input.find("-"))+1);
 }
 
 
@@ -86,8 +81,8 @@ void testDefix(){
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+    if(outputs[i].compare(defix(inputs[i])) != 0){
+      std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
       return;
     }
   }
@@ -180,17 +175,22 @@ void square(int dimension){
 	if(dimension == 2)
 		std::cout << "++\n++";
 	if(dimension>2){
-		std::cout << "+"
-			for(int i=dimension; i<dimension-2; i++){
+		std::cout << "+";
+			for(int i=0; i<dimension-2; i++){
 				std::cout << "-";
 			}
 		std::cout << "+" << std::endl;
+
+		for(int j=0; j<dimension-2; j++){
 		std::cout << "|";
-			for(int j=dimension; j<dimension-2; j++){
+			for(int j=0; j<dimension-2; j++){
 			std::cout << "o";
 			}
-		std::cout << "+" << std::endl;
-			for(int i=dimension; i<dimension-2; i++){
+		std::cout << "|" << std::endl;
+		}
+
+		std::cout << "+";
+			for(int i=0; i<dimension-2; i++){
 				std::cout << "-";
 			}
 		std::cout << "+";
@@ -211,40 +211,38 @@ void square(int dimension){
 
 //TODO: Declare and implement listPrimes here
 
-int[] listPrimes(int n){
-	int[] arr = new int[n];
+int* listPrimes(int n){
+	int* arr = new int[n];
+	int temp = 2;
+	int place = 0;
 
-	while(arr[n] == 0){
-		for (int i=2; i<n; i++) 
-			for (int j=2; j<i; j++)
-			{
-				if (i % j == 0) 
-                break;
-			 else if (i == j+1)
-                arr[n] = i;
-				n++;
-			}
+	while(place < n){
+		if(prime(temp) == true)
+		{
+			arr[place] = temp;
+			place++;
+		}
+		temp++;
 	}
-
 	return arr;
 }
 
 void testListPrimes(){
-  int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
-  for(int i=1;i<10;i++){
-    int* ret = listPrimes(i);
-    for(int j=1;j<i;j++){
-      if(ret[j] != some_primes[j]){
-	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] <<
-	  " but got " << ret[j] << std::endl;
-	delete[] ret;
-	return;
-      }
+    int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+    for(int i=1;i<10;i++){
+        int* ret = listPrimes(i);
+        for(int j=1;j<i;j++){
+            if(ret[j] != some_primes[j]){
+                std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] <<
+                " but got " << ret[j] << std::endl;
+                delete[] ret;
+                return;
+            }
+        }
+        delete[] ret;
     }
-    delete[] ret;
-  }
-
-  std::cout << "testListPrimes: SUCCESS" << std::endl;
+    
+    std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
 int main(){
@@ -252,6 +250,8 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
+  square(7);
 
+  std::cin.get();
   return 0;
 }

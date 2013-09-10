@@ -37,13 +37,13 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - Done(No)
-2. defix - Done(No)
-3. sumSlice - Done(No)
-4. square - Done(No)
-5. listPrimes - Done(No)
+1. prime - It works!
+2. defix - It works!
+3. sumSlice - It works!
+4. square - It works!
+5. listPrimes - It works!
 
-ps- I have completed writing all the programs but none of it works, It would not compile. I believe the logic for these methods is correct because I have tested some of them in Java to make sure. I translated that over to cpp but I run into may syntax errors, some that I was able to fix by googling but some I am not able to.
+
 
 Questions
 =======
