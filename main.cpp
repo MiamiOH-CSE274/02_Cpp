@@ -204,6 +204,8 @@ void square(int n){
 
 	for(int i=0; i<n; i++)
 		cout << lines[i].c_str() << endl;
+
+	delete[] lines;
 //In C++, should I put a return statement here, or is that extraneous? 
 }
 
