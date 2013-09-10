@@ -48,9 +48,17 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+	If we didn't have the .h files the program would have no idea where the methods or data members that it needed where at. The .h files explain the name of each class, each kind of data type, and which methods each class has.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
+	The preprocessor takes the original source code and adds all the headers, and predefined directives. It takes in source code and outputs tokenized source code.
+	The compiler then takes the tokenized source code and compiles it into machine code.
+	The Linker will take the machine code, add any static libraries to it, and then package it as an .exe file to be ran.
+
 #### 3. What is a "pointer"?
+
+	A pointer is simply a reference to something else. They come in handy for instances where we can't pass something as an argument, but we need to work with that piece of information. We can create a pointer to it, and then pass that pointer to where ever we need to. I like to think of it like this: when you drive up to a place that has valet, you don't give him your car; you give him your car key. The key acts as a pointer in this instance because the key itself is useless, but it does lead you to the car.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 	
