@@ -45,8 +45,6 @@ void testPrime(){
   std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
-/*
-
 
 //2. Create a function, name "defix", which takes in a string and
 //   returns a string. If the string starts with a pre-fix attached
@@ -65,7 +63,18 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string input) {
 
+	int position = input.find_first_of("-");
+	
+	if (position == -1) { // Test against -1 because if no matches are found
+		// position will return -1 so just return the original string. 
+		return input;
+	} else {	
+		std::string output = input.substr(position+1); // new string to be returned if prefix is found.
+		return output;
+	}
+}
 //This is a basic tester for "defix"
 
 void testDefix(){
@@ -74,13 +83,15 @@ void testDefix(){
 
   for(int i=0;i<5;i++){
     if(outputs[i].compare(defix(inputs[i])) != 0) {
-		std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]) << std::endl;
+		std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
       return;
     }
   }
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
+
+/*
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
@@ -186,7 +197,7 @@ void testListPrimes(){
 
 int main(){
   testPrime();
- // testDefix();
+  testDefix();
  //testSumSlice();
  //testListPrimes();
 
