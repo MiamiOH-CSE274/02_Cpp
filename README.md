@@ -37,25 +37,30 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Working
+2. defix - working
+3. sumSlice - working
+4. square - I think it is working
+5. listPrimes - working
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-
+        The header declares "what" a class (or whatever is being implemented) will do.This reduces dependencies so that code that uses the header doesn't necessarily need to know all the details
+        of the implementation and any other classes/headers needed only for that. This will reduce compilation times and also the amount of recompilation needed when something in the implementation changes.
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
-
+        A processor is the central unit in a computer the that interprets instructions and carries out the data processing.Its purpose is to pretty much do the thinking for the computer. Its input is instructions and its output is commands to complete those instructions.
+        A compiler is a program or software that changes source code to Object code.
+        Its purpose is to make the code execuatble on the computer. Its input is source code and its output is object code.
+        The Linker takes all of the object files after compilation and connects them all into one file. Its purpose is to put all of the files together so they are runable. Its inputs are .o files. its outputs are one big .o file.
 #### 3. What is a "pointer"?
-
+        Pointer is a variable that stores a memory address. 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
-
+        Put the & sign before it.
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-
+        int*
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-
+        Java doesn't need a delete command because it has garbage collection where C++ does not
 #### 7. What is one question about C++ that you would like me to explain in class?
+        Why does Miami teach Java to new students and not C++

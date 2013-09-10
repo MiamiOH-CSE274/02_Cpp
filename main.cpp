@@ -18,7 +18,21 @@
 
 //TODO: Declare and implement "prime" function here
 
-
+bool prime(int n){
+    int minus = n-1;
+   
+    
+    if(n<=2)
+        return false;
+    
+    for(int i=2;i<=minus;i++){
+        if(n%i==0)
+            return true;
+        
+    }
+    return false;
+    
+}
 //This is a basic tester for the "prime" function
 void testPrime(){
   int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
@@ -51,6 +65,23 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string word){
+ 
+    std::string subword;
+    
+    
+    std::string str ("There are two needles in this haystack with needles.");
+    std::string str2 ("needle");
+    
+    // different member versions of find in the same order as above:
+    std::size_t found = word.find("-");
+    if (word.find("-"<0))
+        return word;
+   
+    
+    subword = word.substr (found);   // "generalities"
+    
+       return subword;
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -84,6 +115,18 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int cow[],int s, int len){
+   
+    int sum=0;
+    if(len<0 && s<0)
+        return 0;
+    
+    for(int i =s;i<=(s+(len-1));i++){
+        sum=cow[i]+sum;
+    }
+    
+    return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -145,8 +188,63 @@ void testSumSlice(){
 // listPrimes(5) should return an array containing {2, 3, 5, 7, 11}
 //
 //Hint: While loops work better than for loops for this one.
+void square(int n){
+    
+    using namespace std;    
+    if(n<=0)
+        cout<<"";
+    if(n==1)
+        cout<<"+";
+    if(n==2)
+        cout<<"++";
+    if(n>2){
+        
+    for(int i=0;i==n;i++){
+        
+        for(int j=0;j==n;j++){
+            if(i==0 && j==0)
+                cout<<"+";
+            if(i==0 && (j<n || j==0))
+                cout<<"-";
+            if(i==0 && j==n)
+                cout<<"+";
+            if(i>0 && (j==0 || j==n))
+                cout<<"|";
+            if(i>0 && j>=0 && j!=n)
+                cout<<"o";
+            if(i==n && (j==0 || j==n))
+                cout<<"+";
+            if(i==n && j>0 && j<n)
+                cout<< "-";
+        }
+        
+        
+    }
+    }
+    
+    
+       
+}
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+    int* array = new int[n];
+    int count=0;
+    int i=0;
+    while(count<n){
+        if(prime(i)){
+         array[count]=i;
+            count++;
+         
+        }
+          i++;
+           
+    }
+    return array;
+    delete array;
+}
+
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
