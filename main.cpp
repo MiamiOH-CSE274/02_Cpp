@@ -168,7 +168,36 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+/*To start, I hate problems like this. They are my achilles heel. I went through
+five total solutions before I arrived at the one below, which I believe is the
+most efficient of my solutions in terms of both space and running time. I'm 99%
+sure a better solution exists given I broke the 10-line rule, and I'll be happy
+to examine it.
+*/
+void square(int n){
+	string lines[n];
+	string TB ("+"), inner ("|");//An initial or base-case version of the top/bottom string and a base case of the inner strings.
+
+	if(n>1){
+		for(int i=0; i<n-2; i++){//Note: only adds symbols when n>2. 
+			TB += "-";
+			inner += "o";
+		}//end concatenation loop
+
+		TB += "+"; //These cap each string with the proper final symbol.
+		inner += "|";
+
+		for(int i=1; i<n-1; i++){//Incrementally adds the properly formatted inner lines to the "lines" array. If n=2, no inner lines are added, as desired.
+			lines[i] = inner;
+		}//end array building loop.
+
+		lines[n-1] = TB; //This line caps the end of the array with the complete Top/Bottom String.
+	}//end if n>1
+
+	for(int i=0; i<n; i++)
+		cout << lines[i] << endl;
+//In C++, should I put a return statement here, or is that extraneous? 
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
