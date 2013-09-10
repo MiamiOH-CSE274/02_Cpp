@@ -68,6 +68,8 @@ Simply using the & operand to return the variable 'x' memory address would work.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+The 'delete' command in C++ is used mainly to free up memory space and ensure that the program can run as effieciently as possible without any memory leaks or other problems occurring.  Java does not need this command because it has things like a garbage collector taht take caring of deleting unnecessary data for users, while in C++ (a low-level programming language) users are much more responsible for overseeing memory maintenance themselves.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
 
 Really the thing that I want explained the most in class (or at least somewhere in the homework descriptions) is how to efficiently use the new programs we have to download and use for this class (such as github and Visual C++).  I felt like it's just expected that we should instantly know how to use these things, and I end up spending a majority of my time figuring out how to work those programs correctly rather than actually doing the homework and learning the actual material. It's not a big thing to go over, but it would save me a lot of time and be greatly appreciated.
