@@ -47,8 +47,19 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-
+ 
+Essentially, you are including your declarations for the methods within the .h (header) file. This not only improves build times, but also avoids marking everything as "inline", as well as linking code without have the source for each definition.
+ 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+ 
+Preprocessor: Input file-> Preprocessor -> Preprocessor Output File
+Preprocessors will, in very basic terms, find processor statements (such as #define and #include) and replace them with the code from the given area.
+ 
+Compiler: Preprocessor Output File -> Compiler -> Object File
+The compiler will take the preprocessor's output file, then generates machine code. This code will contain sybols, such as printf, but the actual code for printf will not be in the code.
+ 
+Linker: Object File -> Linker -> Exe File
+The linker will take the object code and bind the missing function code to the symbols within its ability to.
 
 #### 3. What is a "pointer"?
 
