@@ -37,25 +37,36 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Working. 
+2. defix - Working.
+3. sumSlice - Working.
+4. square - Working.
+5. listPrimes - Working.
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+We need .h files because we have declarations and definitions in C++ like other languages however, they work a little different in C++. Typically the declarations will go into the .h file so that the declarations can be used by the rest of the program and not just one .cpp file. The actual implementation (definitions) go into the .cpp file that is using the declarations. 
+
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+The purpose of the preprocessor is to perform intermediate operations before the compiler can turn the source code into machine code. It takes in the input of source code and outputs preprocessor directives which direct the the preprocessor on how it should process the source code. Also it outputs compiler directives which tells the compiler how it should modify internal compiler options. Overall, these two directives try to make writing source code easier and more understandable. 
 
+The job of the "compiler" is to translates a computer language (source code) which is the input and transform that into machine language which outputs an object file which contains the transformed source files that can now be executed. 
+
+The linker is a program that makes executable files. Overall, the linkers job is to fix references to undefined symbols by finding the objects symbol and replacing the undefined smybol with the symbol's real address. The linker takes an input of object code and outputs an executable program which is labeled with .exe.
 #### 3. What is a "pointer"?
+A pointer is a memory type that can hold the address of something such as an (int, char, double etc). In other words they point to another variable's memory location so that you can use them throughout your program. 
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+To find out what memory address that int x has you can use the "address of operator (&)." For example, "&x", will give you the memory address of x in hexidecimal typically. 
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+If you want the variable p to store the address of an int then you should declare it to be type int. For example, int* p would declare p as type int in which it could store the address of an int. 
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
+We need delete in C++ because we need to free up the address in memory to which pointers are pointing after we are done using them so that no memory leaks occur. In Java there is an automatic garbage collection which helps to cleanup the memory after we are done using it which means we don't really need to use delete. 
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+Can you clarify what the dereference operator does?

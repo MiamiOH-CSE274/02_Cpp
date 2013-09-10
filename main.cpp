@@ -17,7 +17,18 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
+bool prime(int num) {
+	bool prime = true;
+	if (num < 2)
+		return false;
+		for (int i = 2; i < num-1; i++) {
+			if (num%i == 0) {
+				prime = false;
+			}
+		}
+		return prime; 
 
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -26,13 +37,14 @@ void testPrime(){
   for(int i=0; i<9;i++){
     if(prime(nums[i]) != results[i]){
       std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
       return;
     }
   }
   
   std::cout << "testPrime: SUCCESS" << std::endl;
 }
+
 
 //2. Create a function, name "defix", which takes in a string and
 //   returns a string. If the string starts with a pre-fix attached
@@ -51,21 +63,35 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string input) {
 
+	int position = input.find_first_of("-");
+	
+	if (position == -1) { // Test against -1 because if no matches are found
+		// position will return -1 so just return the original string. 
+		return input;
+	} else {	
+		std::string output = input.substr(position+1); // new string to be returned if prefix is found.
+		return output;
+	}
+}
 //This is a basic tester for "defix"
+
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+    if(outputs[i].compare(defix(inputs[i])) != 0) {
+		std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
       return;
     }
   }
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
+
+
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
@@ -84,6 +110,16 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int array [], int s, int len) {
+	if (s >= 0 && len >= 0) {
+		int sum = 0;
+		for (int i = s; i < s+len; i++) {
+			sum = sum + array[i];
+		}
+		return sum;
+	}
+	return 0;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -134,6 +170,56 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n) {
+	if (n > 0) {
+		if (n == 1) {
+			std::cout << "+" << std::endl;
+			std::cout << "" << std::endl;
+	}
+		if (n == 2) {
+			for (int i = 0; i < n-1; i++) {
+				for (int j = 0; j < n-1; j++) {
+					std::cout << "++" << std::endl;
+				}
+				std::cout << "++";
+			}
+			std::cout << "" << std::endl;
+			std::cout << "" << std::endl;
+		}
+
+		if (n > 2) {
+			std::cout << "+";
+			for (int i = 0; i < n-2; i++) {
+				std::cout << "-";
+			}
+			std::cout << "+" << std::endl;
+
+			for (int k = 0; k < n-2; k++) {
+				std::cout << "|";
+				for (int j = 0; j < n-2; j++) {
+					std::cout << "o";
+				}
+				std:: cout << "|" << std::endl;
+			}
+
+			std::cout << "+";
+			for (int i = 0; i < n-2; i++) {
+				std::cout << "-";
+			}
+			std::cout << "+" << std::endl;
+		}
+			std::cout << "" << std::endl;
+			std::cout << "" << std::endl;
+	}
+}
+// Tests the square method. 
+void testSquare(){
+  int arrayLen = 8;
+  int nums[] = {0, 1, 2, 3, 4, 5, 6, 7};
+  for (int i = 0; i < arrayLen; i++) {
+	  square(nums[i]);
+  }
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -147,6 +233,22 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n) {
+	int* primeNum = new int [n]; // Allocate memory for array
+	int number = 2; // Start at number 2 since 0 and 1 cant be prime. 
+	int count = 0; // Counter for number of prime numbers in the array
+	while (count < n) {
+			if (prime(number) == true) {
+				primeNum[count] = number; // Add that number to the next empty position in the array
+				count++;
+				number++;
+		}
+			else 
+				number++; 
+	}
+	return primeNum;
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -166,10 +268,12 @@ void testListPrimes(){
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
+
 int main(){
   testPrime();
   testDefix();
   testSumSlice();
+  testSquare();
   testListPrimes();
 
   return 0;
