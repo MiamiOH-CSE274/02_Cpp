@@ -37,9 +37,9 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
+1. prime - This is working.
+2. defix - This is working.
+3. sumSlice - This is working.
 4. square - TODO
 5. listPrimes - TODO
 
