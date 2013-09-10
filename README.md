@@ -37,10 +37,10 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
+1. prime - Working
+2. defix - Working
+3. sumSlice - Working
+4. square - Working
 5. listPrimes - TODO
 
 Questions
