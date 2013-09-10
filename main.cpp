@@ -106,9 +106,10 @@ int sumSlice(int ar[], int s, int len) {
     if (s < 0 || len < 0)
         return 0;
     int sum = 0;
-    while (s < s+len-1) {
-        sum+= ar[s];
-        s++;
+    int count = s;
+    while (count <= s+(len-1)) {
+        sum += ar[count];
+        count++;
     }
     return sum;
 }
@@ -166,11 +167,14 @@ void testSumSlice(){
 void square(int n) {
     if (n<=0)
         return;
-    if (n == 1)
+    if (n == 1) {
         std::cout << "+" << std::endl;
+        return;
+    }
     if (n == 2) {
         std::cout << "++" << std::endl;
         std::cout << "++" << std::endl;
+        return;
     }
     int center = n-2;
     std::string topBot ("+");
@@ -187,8 +191,6 @@ void square(int n) {
     for (int i = 0; i < center; i++)
         std::cout << middle << std::endl;
     std::cout << topBot << std::endl;
-    
-    
     
 }
 
@@ -213,6 +215,7 @@ int* listPrimes(int n) {
     while (primeCount < n) {
         if (prime(opt) == true)
             p_i[primeCount] = opt;
+        opt++;
     }
     return p_i;
 }
@@ -243,3 +246,4 @@ int main(){
 
   return 0;
 }
+

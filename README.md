@@ -1,4 +1,4 @@
-02_Cpp Add readme to test
+02_Cpp
 ======
 
 Intro to C++, learning to do things you can already do in Java
@@ -34,18 +34,20 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - The prime function appears to be working
+2. defix - Defix appears to be working
+3. sumSlice - sumslice appears to be working
+4. square - Square passed all the tests I ran it through
+5. listPrimes - I cannot figure out why listPrimes is not working.  I'm not getting any feedback from testListPrimes when I run the program, but the code I wrote looks like it should work.
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+-This creates the need for header files so that the compiler knows how the files relate.  Otherwise, there are loose ends in the code of one file, and the compiler doesn't know where data will be coming from when the program is run.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+-The preprocessor
 
 #### 3. What is a "pointer"?
 
