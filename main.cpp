@@ -105,15 +105,15 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 int sumSlice(int a[], int s, int len){
+	int sum = 0;
 	if (s >= 0 && len >= 0) {
-		int sum = 0;
-		for (int i = s; i < s + len - 1; i++){
+		for (int i = s; i < len-1; i++){
 			sum = sum + a[i];
 		}
 		return sum;
 	}
 	else
-		return 0;
+		return sum;
 }
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -168,14 +168,14 @@ void square(int n){
 	if (n > 0){
 		for (int i = 0; i < n; i++){
 			for (int j = 0; j < n; j++){
-				if (i == 0 || i == n){
-					if (j == 0 || j == n)
+				if (i == 0 || i == n-1){
+					if (j == 0 || j == n-1)
 						std::cout << "+";
 					else
 						std::cout << "-";
 				}
 				else{
-					if (j == 0 || j == n)
+					if (j == 0 || j == n-1)
 						std::cout << "|";
 					else
 						std::cout << "o";
