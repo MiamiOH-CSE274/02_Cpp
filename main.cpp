@@ -17,7 +17,9 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime(int n) {
+	
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -147,7 +149,9 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+*int listPrimes(int n) {
 
+}
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
