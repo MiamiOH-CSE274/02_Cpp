@@ -213,38 +213,36 @@ void square(int dimension){
 
 int* listPrimes(int n){
 	int* arr = new int[n];
-	int temp = 0;
-	int correct = 0;
+	int temp = 2;
+	int place = 0;
 
-	while(temp < n){
-		std::cout << arr[correct] << std::endl;
+	while(place < n){
 		if(prime(temp) == true)
 		{
-			arr[correct] = temp;
-			correct++;
+			arr[place] = temp;
+			place++;
 		}
 		temp++;
 	}
-
 	return arr;
 }
 
 void testListPrimes(){
-  int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
-  for(int i=1;i<10;i++){
-    int* ret = listPrimes(i);
-    for(int j=1;j<i;j++){
-      if(ret[j] != some_primes[j]){
-	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] << 
-	  " but got " << ret[j] << std::endl;
-	delete[] ret;
-	return;
-      }
+    int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+    for(int i=1;i<10;i++){
+        int* ret = listPrimes(i);
+        for(int j=1;j<i;j++){
+            if(ret[j] != some_primes[j]){
+                std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] <<
+                " but got " << ret[j] << std::endl;
+                delete[] ret;
+                return;
+            }
+        }
+        delete[] ret;
     }
-    delete[] ret;
-  }
-  
-  std::cout << "testListPrimes: SUCCESS" << std::endl;
+    
+    std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
 int main(){

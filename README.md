@@ -41,7 +41,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 2. defix - It works!
 3. sumSlice - It works!
 4. square - It works!
-5. listPrimes - Done(No) does not return properly.
+5. listPrimes - It works!
 
 
 
