@@ -183,7 +183,7 @@ void square(int size)
 			else if((j == 0) || (j == size -1))
 				std::cout<<"|";
 			else
-				std::cout<<"o";
+				std::cout<<"O";
 		}
 		std::cout<<std::endl;
 	}
