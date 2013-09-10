@@ -16,8 +16,19 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+bool prime (int number){
 
+	if (number < 2)
+		return false;
+	else{
+		for (int index = 2; index < number-1; index++){
+			if (number % index == 0)
+				return false;
+		}
+	}
+	return true;
+
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -50,7 +61,13 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+std::string defix (std::string word){
+
+	int hyphenLocation = 0;
+	hyphenLocation = word.find_first_of("-");
+	return word.substr (hyphenLocation);
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -83,7 +100,16 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+int sumSlice (int numberArray[], int s, int len){
+
+	int totalSum = 0;
+	if (s < 0 || len < 0)
+		return 0;
+	for (int index = s; index < (s + len - 1); index++)
+		totalSum+=numberArray[index];
+	return totalSum;
+
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -133,7 +159,36 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+void square (int n){
+
+	if (n < 1)
+		return;
+	std::string corners = "=";
+	std::string rowBorder = "-";
+	std::string columnBorder = "|";
+	std::string middle = "o";
+
+	for (int rowCount = 0; rowCount < n; rowCount++){
+		for (int columnCount = 0; columnCount < n; columnCount++){
+			if (columnCount == 0 && (rowCount == 0 || rowCount == n-1)
+				std::cout << corner;
+			else if (columnCount == n-1 && (rowCount == 0 || rowCount == n-1){
+				std::cout << corner;
+				std::cout << "\n";
+			}
+			else if (columnCount == 0 || columnCount == n-1){
+				std::cout << columnBorder;
+				if (columnCount == n-1)
+					std::cout << "\n";
+			}
+			else if ((columnCount > 0 && columnCount < n-1) && (rowCount == 0 || rowCount == n-1))
+				std::cout << rowBorder;
+			else
+				std::cout << middle;
+		}
+	}
+
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -146,7 +201,22 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+int* listPrimes (int n){
+
+	int* primeNumbers = new int[n];
+	int numberBeingChecked = 2;
+	int primeCount = 0;
+
+	while (primeCount < n){
+		if (prime (numberBeingChecked)){
+			primeNumbers[primeCount] = numberBeingChecked;
+			primeCount++;
+		}
+		numberBeingChecked++;
+	}
+	return primeNumbers;
+
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
