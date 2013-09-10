@@ -74,9 +74,15 @@ int << *example << endl;
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+A char.
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+Java's garbage collector generally does a good job of catching anything that is no longer in use, and will delete things as need be. In C++, generally if you lose a pointer to some object, you form a memory leak, so if you want to delete something, you better be sure to use `delete`.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Why does Visual Studio hate anything with a pulse?
 
 Outside sources for each question:
 1: http://stackoverflow.com/questions/1305947/why-does-c-need-a-separate-header-file
