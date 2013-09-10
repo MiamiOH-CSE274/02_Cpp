@@ -47,11 +47,12 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+Considering that the compiler reads .cpp files separately, if there were no .h files there would be no way of connecting the declarations from separate .cpp files.  The book describes it as the .cpp file is what includes definitions, whereas the .h file includes declarations.  The difference being that .h files are provided through the use of #include to build a skeleton of a class, while the .cpp contains the actual implementation.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
-
+A pointer is a variable type that "points" to the allocated memory location of an address.
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
