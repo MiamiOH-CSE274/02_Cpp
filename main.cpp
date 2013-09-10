@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -18,16 +19,17 @@
 
 //TODO: Declare and implement "prime" function here
 bool prime(int n) {
-	if (n == 1)
+	if (n < 2)
 		return false;
-	else if (i == 2)
+	else if (n == 2)
 		return true;
-	else
+	else {
 		for (int i = 2; i < n; i++){
 			if (n%i == 0)
 				return false;
 		}
 		return true;
+	}
 }
 
 //This is a basic tester for the "prime" function
@@ -108,6 +110,7 @@ int sumSlice(int a[], int s, int len){
 		for (int i = s; i < s + len - 1; i++){
 			sum = sum + a[i];
 		}
+		return sum;
 	}
 	else
 		return 0;
@@ -174,14 +177,13 @@ void square(int n){
 				else{
 					if (j == 0 || j == n)
 						std::cout << "|";
+					else
+						std::cout << "o";
 				}
-
 			}
 			std::cout << std::endl;
 		}
 	}
-	else
-		break;
 }
 
 void testSquare() {
@@ -208,6 +210,7 @@ int* listPrimes(int n) {
 		result[n - n] = prime(n - (n - 1));
 		n--;
 	}
+	return result;
 }
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
