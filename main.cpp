@@ -33,7 +33,7 @@ bool prime(int x){
 	int limit = x/2;  //I am not entirely sure how the control argument within a for loop works. If I substituted in x/2, does the program calculate this for each iteration of the loop or not? I could not find this information readily available online.
 	for(int i=2; i<=limit; i++){  //noting the inherrent inaccuracy of integer division, using the <= operator negates any possible missing values
 		if(x%i == 0)
-			return false
+			return false;
 	}
 	return true;  //method should only arrive here if all tested values fail to produce x%i == 0.
 }
