@@ -37,11 +37,14 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - I believe the method will work, if I can get the project to run (stupid project interactions...).
+2. defix - I believe the method will work, if I can get the project to run (stupid project interactions...).
+3. sumSlice - I believe the method will work, if I can get the project to run (stupid project interactions...).
+4. square - I believe the method will work, if I can get the project to run (stupid project interactions...).
+5. listPrimes - I'm not sure only because I can't get the project to run, if I can get the project to run (stupid project interactions...) and even though it looks right, I've never used the addresses before.
+
+All these methods I rewrote in java to be sure, and they will work, but I can't get the code to compile due to a << operator not being recognized (and it's in Brinkman's portion of the code).
+Beyond that I'm not sure 
 
 Questions
 =======
