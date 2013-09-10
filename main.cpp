@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
@@ -210,6 +209,7 @@ void square(int n){
 }
 // Tested in Eclipse
 
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -228,15 +228,15 @@ int* listPrimes(int n) {
 	int num = 2;
 	int* primes = new int[n];
 	
-	while (cnt < n+1) {
+	while (cnt < n) {
 		if (prime(num) == true) {
 			primes[cnt] = num;
 			cnt++;
 		}
+		num++;
 	}
 	return primes;
 }
-
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -256,7 +256,6 @@ void testListPrimes(){
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
-
 int main(){
   testPrime();
   testDefix();
@@ -266,6 +265,8 @@ int main(){
 
   return 0;
 }
+
+
 
 
 
