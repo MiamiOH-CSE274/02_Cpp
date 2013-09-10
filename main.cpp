@@ -91,7 +91,7 @@ void testDefix(){
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
 
-/*
+
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
@@ -110,6 +110,16 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int array [], int s, int len) {
+	if (s >= 0 && len >= 0) {
+		int sum = 0;
+		for (int i = s; i < s+len; i++) {
+			sum = sum + array[i];
+		}
+		return sum;
+	}
+	return 0;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -131,6 +141,8 @@ void testSumSlice(){
   std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
+
+/*
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
 //   The function should use the std::cout object to print a square to the
@@ -198,7 +210,7 @@ void testListPrimes(){
 int main(){
   testPrime();
   testDefix();
- //testSumSlice();
+  testSumSlice();
  //testListPrimes();
 
   return 0;
