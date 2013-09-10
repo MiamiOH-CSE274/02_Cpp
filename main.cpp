@@ -18,6 +18,19 @@
 
 //TODO: Declare and implement "prime" function here
 
+//Unable to debug due to VS10 not being able to compile.
+bool prime(int n)
+{
+	if(n<2)
+		return false;
+
+	for(int i=2, i<n, i++)
+	{
+		if(n%2==0)
+			return false;
+	}
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -51,6 +64,18 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+
+//Unable to debug due to VS10 not being able to compile.
+string defix(string str)
+{
+	if(str.find("-")!>=0)
+	{
+		return str.append(str.find("-"), str.end());
+	}
+	else
+		return s;
+}
+
 
 //This is a basic tester for "defix"
 void testDefix(){
