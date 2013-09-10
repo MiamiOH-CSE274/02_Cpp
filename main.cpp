@@ -1,4 +1,5 @@
 #include <iostream>
+using std::string;
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -22,7 +23,8 @@ the modulus operator beyond (n/2) -1 because if %2 fails, then there is no reaso
 or above should succeed. The mathematical proof of this is difficult, but it can be demonstrated
 and should be intuitive. Also, according to my MTH 231 textbook from the Spring 2013 Semester, 
 negative numbers can be considered prime. While I will work within the given constraints 
-above, this logical disjointment could lead to future misinterpretations of other projects.*/
+above, this logical disjointment could lead to future misinterpretations of other projects.
+*/
 bool prime(int x){
 	if(x<2)
 		return false;
@@ -66,7 +68,15 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+/*For this method I chose a simple 1-line implementation of basic std::string functions to return strings
+without the first prefix (denoted as "abcd-") by way of exploiting the int return types of string::find
+and string::length to fulfill the necessary argument types for string::substr, as well as substr's built-in
+function which clips the returned substring if the length argument exceeds the number of available characters.
+*/
+string defix(string s){
+	return str.substr(s.find("-")+1, str.length()); // This one-line implementation is deceptively correct. 
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
