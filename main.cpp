@@ -141,8 +141,6 @@ void testSumSlice(){
   std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
-
-/*
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
 //   The function should use the std::cout object to print a square to the
@@ -172,7 +170,57 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n) {
+	if (n > 0) {
+		if (n == 1) {
+			std::cout << "+" << std::endl;
+			std::cout << "" << std::endl;
+	}
+		if (n == 2) {
+			for (int i = 0; i < n-1; i++) {
+				for (int j = 0; j < n-1; j++) {
+					std::cout << "++" << std::endl;
+				}
+				std::cout << "++";
+			}
+			std::cout << "" << std::endl;
+			std::cout << "" << std::endl;
+		}
 
+		if (n > 2) {
+			std::cout << "+";
+			for (int i = 0; i < n-2; i++) {
+				std::cout << "-";
+			}
+			std::cout << "+" << std::endl;
+
+			for (int k = 0; k < n-2; k++) {
+				std::cout << "|";
+				for (int j = 0; j < n-2; j++) {
+					std::cout << "o";
+				}
+				std:: cout << "|" << std::endl;
+			}
+
+			std::cout << "+";
+			for (int i = 0; i < n-2; i++) {
+				std::cout << "-";
+			}
+			std::cout << "+" << std::endl;
+		}
+			std::cout << "" << std::endl;
+			std::cout << "" << std::endl;
+	}
+}
+// Tests the square method. 
+void testSquare(){
+  int arrayLen = 8;
+  int nums[] = {0, 1, 2, 3, 4, 5, 6, 7};
+  for (int i = 0; i < arrayLen; i++) {
+	  square(nums[i]);
+  }
+}
+/*
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -211,7 +259,8 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
- //testListPrimes();
+  testSquare();
+  //testListPrimes();
 
   return 0;
 }
