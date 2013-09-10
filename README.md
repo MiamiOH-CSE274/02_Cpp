@@ -48,6 +48,8 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+Since something must be declared before being used in C++, if two files in a project both require a function or variable, it must be declared in both of them separately.  This isn't a problem at that level (two files), but if there are dozens of files that all need the same functions or variables, it becomes problematic.  They can't reference each other for the answer, so instead a .h is created that declares the function for all of them.  They then #include the .h file and all have their own declaration without having to write or copy-paste it many times.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
