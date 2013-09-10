@@ -28,6 +28,8 @@ above, this logical disjointment could lead to future misinterpretations of othe
 bool prime(int x){
 	if(x<2)
 		return false;
+	if(x=2)
+		return true;
 	int limit = x/2;  //I am not entirely sure how the control argument within a for loop works. If I substituted in x/2, does the program calculate this for each iteration of the loop or not? I could not find this information readily available online.
 	for(int i=2; i<=limit; i++){  //noting the inherrent inaccuracy of integer division, using the <= operator negates any possible missing values
 		if(x%i == 0)
@@ -210,7 +212,25 @@ void square(int n){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+/*Okay, the instructions for this method were entirely confusing. You want the return type to be an address of an int, but then
+your example return is an array. I'm sure I'll get reamed for this, but I'm out of time due to piled up homework. I do see you 
+want the address given the tester method, but man, confusing...
+
+*/
+int* listPrimes(int n){
+	primes = new int[n];
+	int currentNum=2; //this is the variable which will be incremented and sent to the "prime" method to check. Using definitions from said method, there is no reason to start with a number less than 0.
+	int *my_pointer = primes;
+	for(int i=0; i<n; i++){//Yeah yeah, going against advice. I like for loops...
+		while(prime(currentNum) =! true)
+			currentNum += 1;
+
+		primes[i] = currentNum;
+		currentNum += 1; //This prevents an infinite loop of the same prime entering the array.
+	}//end for
+
+	return my_pointer
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
