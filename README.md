@@ -71,3 +71,5 @@ The variable p should be type int*, a pointer that stores the address of an int.
 Java was nice enough to handle memory management for us.  It had "garbage collecting" to remove unnecessary things that could no longer be accessed anyway.  C++ does not do this, so the programmer must do it him- or herself to prevent memory leaks.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Why do we use "<<" when doing console output?  What does that mean?
