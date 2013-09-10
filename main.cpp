@@ -161,7 +161,22 @@ void testSumSlice(){
 //Note/warning: I did not write an automated tester for this one. Please
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
+void square(int x){
+	for(int i=0; i<=x; i++){
+		for(int j=0;j<=x;j++){
+			if((j==0||j==x)&&(i==0||i==x))
+				std::cout<<"+";
+			else if(i==0||i==x)
+				std::cout<<"-";
+			else if(i>0&&(j==0||j==x))
+				std::cout<<"|";
+			else if(i>0&&j>0)
+				std::cout<<"o";
 
+		}
+		std::cout<<"\n";
+	}
+}
 //TODO: Declare and implement "square" function here
 
 //5. Create a function called listPrimes which takes an int, n, as input.
@@ -217,6 +232,7 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
+	square(4);
   std::cin.get();
 
   return 0;
