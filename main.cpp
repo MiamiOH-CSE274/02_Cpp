@@ -19,7 +19,6 @@
 
 //TODO: Declare and implement "prime" function here
 bool prime(int n){
-	
 	if (n < 2){
 		return false;
 	}
@@ -31,10 +30,7 @@ bool prime(int n){
 		}
 		return true;
 	}
-
 }
-
-
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -91,7 +87,6 @@ void testDefix(){
       return;
     }
   }
-
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
@@ -265,17 +260,3 @@ int main(){
 
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
