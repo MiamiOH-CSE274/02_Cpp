@@ -102,7 +102,9 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(*int a[], int s, int len){
 
+}
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
@@ -152,7 +154,13 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n){
+	if (n > 0){
 
+	}
+	else
+		break;
+}
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -165,8 +173,13 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
-*int listPrimes(int n) {
-
+int* listPrimes(int n) {
+	int* result;
+	result = new int[n];
+	while (n != 0){
+		result[n - n] = prime(n - (n - 1));
+		n--;
+	}
 }
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
