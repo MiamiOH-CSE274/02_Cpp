@@ -58,6 +58,8 @@ Linker:
 
 #### 3. What is a "pointer"?
 
+A pointer is a type of variable (although not necessarily a 'true' variable) that simply contains that memory address of another variable that contains actual, viable data.
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
 Simply using the & operand to return the variable 'x' memory address would work. Just put the '&' right before the variable name.
