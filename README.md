@@ -58,5 +58,6 @@ Through use of the address of operator &.  You simply place it in front of the x
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-
+We need delete because unlike Java C++ will not de-allocate things that we allocate automatically in programs.  Meaning a lot of "junk" can still be present if we have declared 'new' instances and have not deleted them.  This can substantially slow down our programs if we do not de-allocate memory we have allocated through the use of the delete command.
 #### 7. What is one question about C++ that you would like me to explain in class?
+Differences between using 'new' command and 'delete' command on 'arrays' verses standard variables such as int, char, etc.
