@@ -52,9 +52,9 @@ Questions
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
-Preprocessor: 
-Compiler: 
-Linker: 
+Preprocessor: The preprocessor does all of its work before the code is sent to the compiler to be translated.  It prepares the code for the compiler by checking for various errors that would cause the compiler to crash.
+Compiler: The compiler is basically a programmer-to-computer translator, as it takes the code that people have written and can understand and converts it into a language that the computer can interpret and use to execute the desired functions and commands.
+Linker: The linker takes the code after the compiler is done with it and connects it to all of the needed external resources.  This includes any necessary libraries and any other programs or pieces of code that the main program call on or references.
 
 #### 3. What is a "pointer"?
 
