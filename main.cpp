@@ -102,8 +102,15 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
-int sumSlice(*int a[], int s, int len){
-
+int sumSlice(int a[], int s, int len){
+	if (s >= 0 && len >= 0) {
+		int sum = 0;
+		for (int i = s; i < s + len - 1; i++){
+			sum = sum + a[i];
+		}
+	}
+	else
+		return 0;
 }
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
