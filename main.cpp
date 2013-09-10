@@ -165,7 +165,7 @@ void square(int n) {
 		std::cout << "++" << std::endl
 			      << "++" << std::endl;
 	} else {
-		std::cout << "Unable to display this figure.  See source code." << endl;
+		std::cout << "Unable to display this figure.  See source code." << std::endl;
 		// Below is my attempted solution for printing squares larger than 2.
 		// It appears I am using strings incorrectly, but I cannot discern the
 		// issue.  Feedback would be appreciated.  :)
@@ -198,7 +198,20 @@ void square(int n) {
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+int* listPrimes(int n) {
+	int* array = new int[n];
+	int i = 0;
+	int j = 2;
+	while (i < n) {
+		while (prime(j)) {
+			array[i] = j;
+			j++;
+			i++;
+		}
+		j++;
+	}
+	return array;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
