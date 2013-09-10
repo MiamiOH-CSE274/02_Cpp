@@ -63,10 +63,24 @@ The linker will take the object code and bind the missing function code to the s
 
 #### 3. What is a "pointer"?
 
+A pointer is a data type whose value refers to another value stored elsewhere in the memory using its address.
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+If you wanted to output it, it'd be something like:
+
+int example = new int[10];
+int << *example << endl;
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Outside sources for each question:
+1: http://stackoverflow.com/questions/1305947/why-does-c-need-a-separate-header-file
+2: http://comsci.liu.edu/~murali/c/PreprocessCompileLink.htm
+3: http://en.wikipedia.org/wiki/Pointer_(computer_programming)
+4: http://stackoverflow.com/questions/6787290/getting-the-address-of-a-pointer
+
