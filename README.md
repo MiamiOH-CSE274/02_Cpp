@@ -47,10 +47,11 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-This leads to the nessacity of .h files because it holds commonly used statements that otherwise would be re compiled in ever file.
+This leads to the necessity of .h files because it holds commonly used statements that otherwise would be re compiled in ever file.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
-
+the preprocessor works to include the header files and other things, the compiler turns the cpp files into machine readable code
+and the linker mixes all of it together, filling in blanks the compiler skipped over
 #### 3. What is a "pointer"?
 a reference address to a portion of ram
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
@@ -60,3 +61,4 @@ int*
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 We need it in C++ because C++ doesn't clear out the variable when it is done with. so that memory can have non zero results.
 #### 7. What is one question about C++ that you would like me to explain in class?
+more over the roles of pre processor compiler and linker.
