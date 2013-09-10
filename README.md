@@ -38,7 +38,7 @@ Documentation
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
 1. prime - It works!
-2. defix - Done(No)
+2. defix - It works!
 3. sumSlice - It works!
 4. square - It works!
 5. listPrimes - Done(No) does not return properly.

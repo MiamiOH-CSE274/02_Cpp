@@ -22,11 +22,8 @@ using namespace std
 //TODO: Declare and implement "prime" function here
 bool prime(int number){
 	int i;
-
-	if(number < 0)
+	if(number <= 1)
 		return false;
-	
-
 	for (i=2; i<number; i++)
 	{
 		if (number % i == 0)
@@ -74,13 +71,7 @@ void testPrime(){
 
 std::string defix(std::string input)
 {
-	int temp = 0;
-	for(size_t k=0; k<input.length() ;k++){
-		if(input.substr(k) == "-")
-			temp = k + 1;
-	}
-
-	return input.substr(temp, input.length());
+	return input.substr((input.find("-"))+1);
 }
 
 
@@ -185,16 +176,21 @@ void square(int dimension){
 		std::cout << "++\n++";
 	if(dimension>2){
 		std::cout << "+";
-			for(int i=dimension; i<dimension-2; i++){
+			for(int i=0; i<dimension-2; i++){
 				std::cout << "-";
 			}
 		std::cout << "+" << std::endl;
+
+		for(int j=0; j<dimension-2; j++){
 		std::cout << "|";
-			for(int j=dimension; j<dimension-2; j++){
+			for(int j=0; j<dimension-2; j++){
 			std::cout << "o";
 			}
-		std::cout << "+" << std::endl;
-			for(int i=dimension; i<dimension-2; i++){
+		std::cout << "|" << std::endl;
+		}
+
+		std::cout << "+";
+			for(int i=0; i<dimension-2; i++){
 				std::cout << "-";
 			}
 		std::cout << "+";
@@ -217,19 +213,19 @@ void square(int dimension){
 
 int* listPrimes(int n){
 	int* arr = new int[n];
-	//delete [] arr;
-	while(arr[n] == 0){
-		for (int i=2; i<n; i++) 
-			for (int j=2; j<i; j++)
-			{
-				if (i % j == 0) 
-                break;
-			 else if (i == j+1)
-                arr[n] = i;
-				n++;
-			}
+	int temp = 0;
+	int correct = 0;
+
+	while(temp < n){
+		std::cout << arr[correct] << std::endl;
+		if(prime(temp) == true)
+		{
+			arr[correct] = temp;
+			correct++;
+		}
+		temp++;
 	}
-	
+
 	return arr;
 }
 
@@ -253,9 +249,10 @@ void testListPrimes(){
 
 int main(){
   testPrime();
-  //testDefix();
-  //testSumSlice();
-  //testListPrimes();
+  testDefix();
+  testSumSlice();
+  testListPrimes();
+  square(5);
 
   std::cin.get();
   return 0;
