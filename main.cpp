@@ -174,6 +174,47 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+//Unable to debug due to VS10 not being able to compile.
+void square(int asize)
+{
+	if(int a<=0)
+		return;
+	string arrays[asize][asize];
+	else{
+			if(a==1)
+				std::cout << "+";
+			else if(a==2)
+				std::cout << "++\n++";
+			else{
+				std::cout << "+";
+					int extras = asize-2;
+				for(int i=0, i<extras, i++)
+				{
+					std::cout << "-";
+				}
+				std::cout<< "+";
+
+				std::cout<< "|";
+				for(int i=0, i<extras, i++)
+				{
+					std::cout << "o";
+				}
+				std::cout<< "|";
+
+				std::cout << "+";
+					int extras = asize-2;
+				for(int i=0, i<extras, i++)
+				{
+					std::cout << "-";
+				}
+				std::cout<< "+";
+
+			}
+				
+		}
+	}
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
