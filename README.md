@@ -1,3 +1,6 @@
+Author
+==========
+"Kojs, Michelle", kojsmn
 02_Cpp
 ======
 
@@ -34,25 +37,34 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - This is working!
+2. defix - This is working!
+3. sumSlice - This is working!
+4. square - I tested this in Eclipse and it complies in Visual Studio so I think it is working!
+5. listPrimes - This is working!
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+.h files are implemented to help organize the declarations needed in .cpp files. This way all the declarations can be declared in the .h file and the .cpp file only needs to look at the .h file. Otherwise, one might forget or mess up a declaration which will mess up the program.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+The preprocessor is a separator program and performs operations on the source code before the compiler compiles the code. The preprocessor takes source code as an input. The preprocessor produces outputs that are like the input but without white space. The preprocessing directive lines in the output are replaced with blank lines. The purpose of a preprocessor is to allow the change of the input data without affecting the main program.
+The compiler serves as a translator between the source code and the computer's native machine language. The compiler takes preprocessor source code as an input. The compiler produces the translated source code in the computer's native machine language (object code). The purpose of a compiler is to allow a program to be converted into computer language so that it can run.
+The linker allows object files to be connected to libraries so that a program can run. The linker takes object files as inputs. The linker produces executable code. The purpose of a linker is to combine object files with libraries so that a program can be run.
 
 #### 3. What is a "pointer"?
+A pointer is data type that points to another variable's memory location.  A pointer does not create a variable.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+To find out what memory address that variable is stored at write the line &x. 
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+To have a variable p that can store the address of an int, p should be declared at int* p.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
+The 'delete' command is good for freeing memory.  This ensures that a leak will not occur and allows the program to run more effectively.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+One question I would like you to explain in class is about dynamic memory allocation and when we use new and delete.
