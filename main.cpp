@@ -17,7 +17,18 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
+bool prime(int num) {
+	bool prime = true;
+	if (num < 2)
+		return false;
+		for (int i = 2; i < num-1; i++) {
+			if (num%i == 0) {
+				prime = false;
+			}
+		}
+		return prime; 
 
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -26,13 +37,16 @@ void testPrime(){
   for(int i=0; i<9;i++){
     if(prime(nums[i]) != results[i]){
       std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
       return;
     }
   }
   
   std::cout << "testPrime: SUCCESS" << std::endl;
 }
+
+/*
+
 
 //2. Create a function, name "defix", which takes in a string and
 //   returns a string. If the string starts with a pre-fix attached
@@ -53,13 +67,14 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 
 //This is a basic tester for "defix"
+
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+    if(outputs[i].compare(defix(inputs[i])) != 0) {
+		std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]) << std::endl;
       return;
     }
   }
@@ -166,11 +181,14 @@ void testListPrimes(){
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
+
+*/
+
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+ // testDefix();
+ //testSumSlice();
+ //testListPrimes();
 
   return 0;
 }
