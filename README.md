@@ -56,6 +56,8 @@ The preprocessor takes source code and performs some preliminary processing on i
 
 #### 3. What is a "pointer"?
 
+A pointer is a variable that holds the address of something.  Each type has its own pointer type, denoted by adding an asterisk to the end of the type name (ex: int*, char*).  A pointer can be dereferenced with the * operator to access the original value.
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
