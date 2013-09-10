@@ -18,7 +18,16 @@
 
 //TODO: Declare and implement "prime" function here
 bool prime(int n) {
-	
+	if (n == 1)
+		return false;
+	else if (i == 2)
+		return true;
+	else
+		for (int i = 2; i < n; i++){
+			if (n%i == 0)
+				return false;
+		}
+		return true;
 }
 
 //This is a basic tester for the "prime" function
@@ -53,7 +62,14 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
-
+std::string defix(std::string s){
+	std::size_t found = s.find("-");
+	if (found != std::string::npos){
+		return s.substr(found + 1);
+	}
+	else
+		return s;
+}
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
