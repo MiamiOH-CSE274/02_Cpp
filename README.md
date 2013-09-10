@@ -37,14 +37,12 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - I believe the method will work, if I can get the project to run (stupid project interactions...).
-2. defix - I believe the method will work, if I can get the project to run (stupid project interactions...).
-3. sumSlice - I believe the method will work, if I can get the project to run (stupid project interactions...).
-4. square - I believe the method will work, if I can get the project to run (stupid project interactions...).
-5. listPrimes - I'm not sure only because I can't get the project to run, if I can get the project to run (stupid project interactions...) and even though it looks right, I've never used the addresses before.
-
-All these methods I rewrote in java to be sure, and they will work, but I can't get the code to compile due to a << operator not being recognized (and it's in Brinkman's portion of the code).
-Beyond that I'm not sure 
+1. prime - According to the tester and my own independent work, this method functions perfectly.
+2. defix - According to the tester and my own independent work, this method functions perfectly.
+3. sumSlice - According to the tester and my own independent work, this method functions perfectly.
+4. square - According to the tester and my own independent work, this method functions perfectly.
+5. listPrimes - This works according to the tester, although I will admit I still have a mental disconnect as to why this works. Abstracting an array pointer and using it elsewhere to call individual
+                elements is certainly not the easiest reasoning to hash out.
 
 Questions
 =======
