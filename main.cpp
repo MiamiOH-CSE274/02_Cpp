@@ -26,7 +26,7 @@ void testPrime(){
   for(int i=0; i<9;i++){
     if(prime(nums[i]) != results[i]){
       std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res << std::endl;
+      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
       return;
     }
   }
@@ -58,8 +58,8 @@ void testDefix(){
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
   for(int i=0;i<5;i++){
-    if(outputs[i] != defix(inputs[i])){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i] << " but got " << defix(inputs[i]) << std::endl;
+    if(outputs[i].compare(defix(inputs[i])) != 0){
+      std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
       return;
     }
   }
