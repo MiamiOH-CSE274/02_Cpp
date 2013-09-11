@@ -16,7 +16,42 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+
+
+
+
+//TODO:
+ #include "Homework2.h"
+
+
+bool Homework2::prime(int a){
+
+    if (a==2){
+
+        return true;
+
+    }
+
+    if (a<2) {
+
+        return false;
+
+    }
+
+    for (int i=2; i<a; i++) {
+
+        if (a%i==0){
+
+            return false;
+
+        }
+
+    }
+
+    return true;
+
+}
+
 
 
 //This is a basic tester for the "prime" function
@@ -52,6 +87,36 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+string Homework2::defix(string str) {
+    string newString="";
+    int firstDash=0;
+    bool hasDash = false;
+    for (int i=0; i<str.length(); i++) {
+        if (str.at(i)=='-') {
+            hasDash = true;
+            firstDash=i;
+            break;
+        }
+        
+    }
+    if (hasDash == false)
+        return str;
+    for (int j = firstDash+1; j<str.length(); j++){
+        newString += str.at(j);
+    
+    }
+    return newString;
+    
+}
+
+
+
+
+
+
+
+
+
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -83,7 +148,26 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+//TODO: 
+int Homework2::sumSlice(int* arr, int s, int l) {
+    int sum=0;
+    if (s<=0){
+        return 0;
+    }
+    if (l<0){
+        return 0;
+    }
+    if (s==l) {
+        return arr[s];
+    }
+    for (int i=s; i<=l; i++){
+        sum+=arr[i];
+    }
+    return sum;
+}
+
+
+
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -133,7 +217,45 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+//TODO:
+
+ void Homework2::square(int n){
+    if (n<=0) {
+        return;
+    }
+    if (n==1) {
+        std::cout <<"*";
+        return;
+    }
+    
+    if (n==2) {
+        std::cout << "**" << endl << "**";
+        return;
+    }
+    cout << "*";
+    for (int i=0; i<(n-2); i++) {
+        cout << "-";
+    }
+    //finishes first row.
+    cout <<"*" <<endl;
+        
+    for (int j = 0; j<(n-2); j++){
+        cout << "/";
+        for (int k = 0; k<(n-2); k++) {
+            cout << "o";
+        }
+        cout<< "/" << endl;
+    }
+    cout << "*";
+    for (int i=0; i<(n-2); i++) {
+        cout << "-";
+    }
+    //finishes last row.
+    cout <<"*" <<endl;
+    
+    
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -146,7 +268,27 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+//TODO: 
+
+int* Homework2::listPrimes(int n){
+    int* arr = new int[n];
+    int i=0;
+    int arrayPosition=0;
+    while (!(arrayPosition==n)) {
+        if (prime(i)){
+            //add i to array.
+            arr[arrayPosition] = i;
+            arrayPosition++;
+            i++;
+        }
+        if (prime(i)==false) {
+            i++;
+        }
+    }
+    return arr;
+    delete arr;
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -174,3 +316,4 @@ int main(){
 
   return 0;
 }
+
