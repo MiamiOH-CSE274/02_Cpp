@@ -18,6 +18,16 @@
 
 //TODO: Declare and implement "prime" function here
 
+bool prime(int n) {
+    if (n<2)
+        return false;
+    for (int i=2; i<=n-1; i++) {
+        if (n%i == 0)
+            return false;
+    }
+    return true;
+}
+
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -52,6 +62,14 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+std::string defix(std::string s) {
+    std::size_t position = s.find('-');
+    if (position == std::string::npos)
+        return s;
+    return s.substr(position + 1);
+        
+}
+
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -84,6 +102,17 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int ar[], int s, int len) {
+    if (s < 0 || len < 0)
+        return 0;
+    int sum = 0;
+    int count = s;
+    while (count <= s+(len-1)) {
+        sum += ar[count];
+        count++;
+    }
+    return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -135,6 +164,36 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+void square(int n) {
+    if (n<=0)
+        return;
+    if (n == 1) {
+        std::cout << "+" << std::endl;
+        return;
+    }
+    if (n == 2) {
+        std::cout << "++" << std::endl;
+        std::cout << "++" << std::endl;
+        return;
+    }
+    int center = n-2;
+    std::string topBot ("+");
+    for (int i = 0; i < center; i++)
+        topBot += "-";
+    topBot += "+";
+    
+    std::string middle ("|");
+    for (int i = 0; i < center; i++)
+        middle += "o";
+    middle += "|";
+    
+    std::cout << topBot << std::endl;
+    for (int i = 0; i < center; i++)
+        std::cout << middle << std::endl;
+    std::cout << topBot << std::endl;
+    
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -147,6 +206,19 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+
+int* listPrimes(int n) {
+    
+    int* p_i = new int[n];
+    int primeCount = 0;
+    int opt = 2;
+    while (primeCount < n) {
+        if (prime(opt) == true)
+            p_i[primeCount] = opt;
+        opt++;
+    }
+    return p_i;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -174,3 +246,4 @@ int main(){
 
   return 0;
 }
+
