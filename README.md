@@ -22,11 +22,10 @@ Homework
 ========
 
 1. Fork this repo
-2. Use `git checkout` to check out your branch of the project (which is your unique id)
 3. Fill in the blanks in the main.cpp with code that produces the correct result. Read the comments to find out what they ought to do.
 4. Be sure to `git commit` and `git push` often
 5. Update this file with your documentation and the answers to questions.
-6. When you are ready to turn in your homework, submit a pull request from your branch in your repo, to your branch in MY repo.
+6. When you are ready to turn in your homework, submit a pull request from your repo to mine.
 7. Be sure to check the pull requests for my repo on github to make sure it worked, and that your work has been submitted.
 
 Documentation
