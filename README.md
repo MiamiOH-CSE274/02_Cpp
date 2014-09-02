@@ -35,18 +35,23 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - yes
+2. defix - yes
+3. sumSlice - yes
+4. square - yes
+5. listPrimes - yes
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+if we are going to use a function or class accross different .cpp files, we need a way for each .cpp file to know that those functions and classes exist, so
+we declare them in a .h file so that every .cpp file that includes it knows that it exists.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+the preprocessor replaces any preprocessor command (#include, #pragma, #define etc.) with actual c++ code, or it determines what code needs to be compiled with things like #if
 
 #### 3. What is a "pointer"?
 
