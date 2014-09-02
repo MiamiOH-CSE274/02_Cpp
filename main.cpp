@@ -1,27 +1,29 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * prime(n), defix, sumSlice, and square methods written by Sam Bowdler
+ * 2 September 2014
+ * Tester methods written by Dr. Bo Brinkman
  */
 
 #include <iostream>
 
-//1. Create a function, named "prime", which tests an
-// integer, n, to see if it is prime. It should return a bool. 
-// 
-// You don't have to do
-// anything tricky. Just try modding (%) it by every number
-// between 2 and n-1. If it never gives 0, then it is prime.
-// Special case: Only numbers 2 or greater can be prime.
-// Example inputs:
-// prime(1) --> false
-// prime(-7) --> false
-// prime(2) --> true
-// prime(4) --> false
-//
-//Hints: This exercise uses for loops, if statements,
-// and the % operator.
-
-//TODO: Declare and implement "prime" function here
-
+/** This boolean method prime(int n) tests to see if n is prime.
+  *
+  * First, the method checks to see if n is even. If so, it is not prime and the method returns false.
+  *
+  * Next, a for loop iterates int i from 3 to one less than half of n by two to see if n is divisible by any number.
+  * The reason for this range is that we already know it's not even, so any even number is not included (hence
+  * starting with 3 and stepping by two), and once we get to (n/2)-1, we know n is not easily divisible by n/2 as it
+  * is odd, and dividing n by any more than n/2 would yield a quotient of between 1 and 2.
+  * So now that we know it's not even and not wholly divisible by any number, it must be prime and we return true.
+**/
+bool prime(int n){
+	if (n % 2 == 0)
+		return false;
+	for (int i = 3; i < (n / 2); i+= 2)
+		if (n % i == 0)
+			return false;
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
