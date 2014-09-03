@@ -3,6 +3,7 @@
  */
 
 #include <iostream>
+#include <algorithm>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -63,6 +64,10 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string defixed){
+	return defixed.substr(defixed.find_first_of("-") + 1, std::string::npos);
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
