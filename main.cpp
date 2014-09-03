@@ -1,5 +1,5 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * I used the information on cplusplus.com as a reference while completing this assignment.
  */
 
 #include <iostream>
@@ -20,8 +20,16 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+//The prime function quits and returns falso if the integer is divisible by any number 2 through i-1
+bool prime(int i){
+	for (int x = 2; x < (i - 2); x++){
+		if (i % x == 0)
+			return false;
+	}
 
+	return true;
+
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -88,6 +96,8 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+
+
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
