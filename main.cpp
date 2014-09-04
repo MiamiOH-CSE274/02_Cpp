@@ -4,6 +4,7 @@
 
 #include <iostream>
 
+
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
@@ -21,6 +22,19 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
+bool prime(int n){
+	bool ret = true;
+	
+	if (n <= 1)
+		return false;
+
+	for (int i = 2; i <= n - 1; i++){
+		if (n % i == 0)
+			ret = false;
+	}
+
+	return ret;
+}
 
 
 //This is a basic tester for the "prime" function
@@ -55,6 +69,13 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string str){
+	if (str.find("-") != -1){
+		int i = str.find_first_of("-");
+		return str.substr(i + 1, str.length());
+	}
+	return str;
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -70,6 +91,7 @@ void testDefix(){
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
+/*
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
@@ -169,12 +191,12 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-
+*/
 int main(){
   testPrime();
   testDefix();
-  testSumSlice();
-  testListPrimes();
+  //testSumSlice();
+  //testListPrimes();
 
   return 0;
 }
