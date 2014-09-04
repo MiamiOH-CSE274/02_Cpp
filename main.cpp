@@ -27,19 +27,19 @@ bool prime(int n){
 
 //This is a basic tester for the "prime" function
 void testPrime(){
-  int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
-  bool results[] = {false, false, false, false, true, true, false, true, false};
-  for(int i=0; i<9;i++){
-    if(prime(nums[i]) != results[i]){
-      std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
-      return;
-    }
-  }
-  
-  std::cout << "testPrime: SUCCESS" << std::endl;
-}
+	int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
+	bool results[] = {false, false, false, false, true, true, false, true, false};
+	for(int i=0; i<9;i++){
+		if(prime(nums[i]) != results[i]){
+			std::string res = prime(nums[i]) ? "true" : "false";
+			std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
+			return;
+		}
+	}
 
+	std::cout << "testPrime: SUCCESS" << std::endl;
+}
+/**
 //2. Create a function, name "defix", which takes in a string and
 //   returns a string. If the string starts with a pre-fix attached
 //   by a dash, strip off the prefix and the dash. Otherwise, return
@@ -180,3 +180,4 @@ int main(){
 
   return 0;
 }
+**/
