@@ -46,9 +46,13 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+The header file lets your C++ know that the .cpp files are together and not to get confused if something is implemented that is not declared within that .cpp file.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
+
+A pointer is the position in question whether that be as part of an array or a string and will cause an error if the pointer is beyond the length of the object in question.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
