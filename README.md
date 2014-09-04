@@ -50,9 +50,13 @@ The header file lets your C++ know that the .cpp files are together and not to g
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
+The preprocessor replaces inclusions of header files with the declarations that they include. The preprocessor takes inputs of #include and produces and output of code to the .cpp file. The purpose is to allow header files to be used to store declarations and save space in .cpp files.
+The linker brings the different files included in a program together to create one object for the compiler to check. The linker takes inputs of .cpp files and outputs a single file to be passed and run. the purpose is to make the compiler run faster by only having to check over one file and to build the program from its components.
+The compiler checks for errors once through from top to bottom in the program. The compiler takes input of .cpp files and outputs error codes or the .cpp file to be run. The purpose is to prevent the system from crashing if errors are present in the code.
+
 #### 3. What is a "pointer"?
 
-A pointer is the position in question whether that be as part of an array or a string and will cause an error if the pointer is beyond the length of the object in question.
+A pointer is the position in memory where an object is stored, in C++, that would be as in a line of cells in the memory. I used the reference section of cplusplus.com to answer this question.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
