@@ -6,20 +6,25 @@
 
 #include <iostream>
 
-/** This boolean method prime(int n) tests to see if n is prime.
+/** This boolean method prime(int a) tests to see if a is prime.
   *
-  * First, the method checks to see if n is even. If so, it is not prime and the method returns false.
+  * First, the method checks if n is 2 or 5, returning true if so. This is to avoid confusion in the loop.
   *
-  * Next, a for loop iterates int i from 3 to one less than half of n by two to see if n is divisible by any number.
+  * Next, the method checks to see if n is even, negative, or 1. If so, it is not prime and the method returns false.
+  *
+  * Finally, a for loop iterates int i from 2 to one less than half of n by two to see if n is divisible by any number.
   * The reason for this range is that we already know it's not even, so any even number is not included (hence
-  * starting with 3 and stepping by two), and once we get to (n/2)-1, we know n is not easily divisible by n/2 as it
-  * is odd, and dividing n by any more than n/2 would yield a quotient of between 1 and 2.
-  * So now that we know it's not even and not wholly divisible by any number, it must be prime and we return true.
+  * starting with 3 and stepping by two), and once we get to n/2, we know n is not divisible by n/2 as it is odd, and
+  * dividing n by any value more than n/2 would yield a quotient of between 1 and 2.
+  *
+  * So now that we know it's not 0 or 1, not even, and not wholly divisible by any number, it must be prime so we return true.
 **/
 bool prime(int n){
-	if (n % 2 == 0)
+	if (n == 2 || n == 5)
+		return true;
+	if (n % 2 == 0 || n < 2 || n == 1)
 		return false;
-	for (int i = 3; i < (n / 2); i+= 2)
+	for (int i = 3; i < (n / 2); i += 2)
 		if (n % i == 0)
 			return false;
 	return true;
@@ -27,9 +32,9 @@ bool prime(int n){
 
 //This is a basic tester for the "prime" function
 void testPrime(){
-	int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
+	int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6};
 	bool results[] = {false, false, false, false, true, true, false, true, false};
-	for(int i=0; i<9;i++){
+	for(int i = 0; i < 9; i++){
 		if(prime(nums[i]) != results[i]){
 			std::string res = prime(nums[i]) ? "true" : "false";
 			std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
@@ -39,7 +44,8 @@ void testPrime(){
 
 	std::cout << "testPrime: SUCCESS" << std::endl;
 }
-/**
+
+
 //2. Create a function, name "defix", which takes in a string and
 //   returns a string. If the string starts with a pre-fix attached
 //   by a dash, strip off the prefix and the dash. Otherwise, return
@@ -57,6 +63,9 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string txt) {
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -72,7 +81,7 @@ void testDefix(){
 
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
-
+/**
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
 //   starting index, and the 3rd is an int "len" that represents the length. 
@@ -110,7 +119,7 @@ void testSumSlice(){
   }
   std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
-
+**//**
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
 //   The function should use the std::cout object to print a square to the
@@ -140,7 +149,7 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
-
+**//**
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -171,13 +180,12 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-
+**/
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+  //testDefix();
+  //testSumSlice();
+  //testListPrimes();
 
   return 0;
 }
-**/
