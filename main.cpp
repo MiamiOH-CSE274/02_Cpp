@@ -82,7 +82,7 @@ std::string defix(std::string x){
 	
 	std::size_t found = x.find_first_of('-');
 	if(found != std::string::npos){
-		defixed = x.substr(found);
+		defixed = x.substr(found + 1);
 	}
 	else
 		defixed = x;
@@ -129,7 +129,7 @@ int sumSlice(int x[], int s, int len){
 	if(len < 0 || s < 0)
 		sum = 0;
 	else{
-		for(int i = s; i < s + len - 1; i++){
+		for(int i = s; i <= s + len - 1; i++){
 			sum += x[i];
 		}
 	}
@@ -227,7 +227,21 @@ void square(int x){
 // listPrimes(5) should return an array containing {2, 3, 5, 7, 11}
 //
 //Hint: While loops work better than for loops for this one.
-
+int* listPrimes(int n){
+	int * numArray = new int[n];
+	
+	int x = 2;
+	int y = 0;
+	while(y < n){
+		while(prime(x)==false){
+			x++;
+		}
+		numArray[y] = x;
+		x++;
+		y++;
+	}
+	return numArray;
+}
 //TODO: Declare and implement listPrimes here
 
 void testListPrimes(){
