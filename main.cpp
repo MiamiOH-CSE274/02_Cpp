@@ -20,7 +20,18 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+public class boolean prime(int x){
+	boolean a = false;
+	int b = 0;
+	for (int i = 0; i < x; i++){
+		if (x%i == 0) 
+		{
+			b++;
+		} if (b == 0){
+			a == true;
+		}
+		return a;
+}
 
 
 //This is a basic tester for the "prime" function
@@ -54,7 +65,15 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+public class string defix(string a){
+	if (str.find("-") = std::npos){
+		return a;
+	}
+	else {
+		a == str.sbstr(str.find("-"), a.length-1)
+
+	return a;
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -87,7 +106,13 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+public class int sumSlice(array[] a, int s, int len){
+	int sum = 0;
+	for (int i = s; i < len; i++;){
+		sum += a[i];
+	}
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -137,7 +162,32 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+public class void square(int a){
+	if (a < 1) {
+		std::cout << "+" << std::endl;
+	}
+	else {
+		std::cout << "+";
+		for (int i = 1; i < a - 1; i++;){
+			std::cout << "-";
+		}
+		std::cout << "+" << std::endl;
+
+		for (int k = 1; i < a - 1; i++;){
+			std::cout << "|";
+			for (int j = 1; i < a - 1; i++;){
+				std::cout << "o";
+			}
+			std::cout << "|" << std::endl:
+		}
+
+		std::cout << "+";
+		for (int i = 1; i < a - 1; i++;){
+			std::cout << "-";
+		}
+		std::cout << "+" << std::endl;
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -150,7 +200,15 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+public class array listPrimes(int n){
+	new array[] a = array(n);
+	while (a.length() != n){
+		if (prime(n) == true){
+		a.add(n);
+		n -= ;
+	}
+	return a;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
