@@ -3,7 +3,7 @@
  */
 
 #include <iostream>
-
+#include <string>
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
@@ -22,6 +22,27 @@
 
 //TODO: Declare and implement "prime" function here
 
+bool prime(int x){
+	bool isPrime = false;
+	
+	if(x < 2)
+		isPrime = false;
+	else if(x == 2)
+		isPrime = true;
+
+	else if(x >= 2){
+		for(int i = 2; i <= x - 1; i++){
+			int y = x % i;
+			if(y == 0){
+				isPrime = false;
+				break;
+			}
+			else 
+				isPrime = true;
+		}
+	}
+	return isPrime;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -56,6 +77,19 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+std::string defix(std::string x){
+	std::string defixed;
+	
+	std::size_t found = x.find_first_of('-');
+	if(found != std::string::npos){
+		defixed = x.substr(found);
+	}
+	else
+		defixed = x;
+	
+	return defixed;
+}
+
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -88,6 +122,20 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+
+int sumSlice(int x[], int s, int len){
+	int sum = 0;
+	
+	if(len < 0 || s < 0)
+		sum = 0;
+	else{
+		for(int i = s; i < s + len - 1; i++){
+			sum += x[i];
+		}
+	}
+
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -138,6 +186,36 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+
+void square(int x){
+	if(x > 2){
+			for(int i = 0; i < x; i++){
+				for(int j = 0; j < x; j++){
+					if((j == 0 && i == 0) || (j == 0 && i == x-1))             //top right and bottom right corners
+						std::cout << "+";
+					else if((j == x-1 && i == x-1) || (j == x-1 && i == 0))    //top left and bottom left corners
+						std::cout << "+" << std::endl;
+					else if(i == 0 || i == x-1)                                //top and bottom borders
+						std::cout << "-";
+					else if(j == 0){
+						std::cout << "|";
+					}
+					else if(j == x - 1)
+						std::cout << "|" << std::endl;
+					else
+						std::cout << "o";
+					
+				}
+			}
+		}
+		else{
+			for(int i = 0; i < x; i++){
+				for(int j = 0; j < x; j++)
+					std::cout << "+";
+				std::cout << std::endl;
+			}
+		}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
