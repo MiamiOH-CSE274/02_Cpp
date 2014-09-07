@@ -1,5 +1,9 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Code under TODO statements authored by Chris Dieter, with
+ * help of the hints provided by Dr. Brinkman and examples provided
+ * by the C++ api page (about substring and found functions of the
+ * String class).
+ * C++ examples: http://www.cplusplus.com/reference/string/string/
  */
 
 #include <iostream>
