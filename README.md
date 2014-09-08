@@ -58,3 +58,4 @@ Questions
 			The delete command is needed in c++ because it allows you to deallocate memory that was previously allocated. This is not needed in Java because Java does not give the ability to allocate memory to the programmer and therefore would not need the ability to delete memory allocations either.
 #### 7. What is one question about C++ that you would like me to explain in class?
 			How well does c++ work for networking programs? In CSE 283 (Networking) we use java to write our simple networking applications but would c++ be just as viable of a language to use?
+			Second Question (higher priority) - Can you explain what is occurring when you write code such as "prime(nums[i]) ? "true" : "false";" I'm confused about what the question mark is doing and how true or false is chosen.
