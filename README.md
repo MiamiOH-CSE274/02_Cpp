@@ -35,25 +35,45 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Yes
+2. defix - Yes
+3. sumSlice - Yes
+4. square - Yes
+5. listPrimes - Yes
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+In Cpp there's a distinction between defining and declaring functions. A function must be declared before it can be used. A program that contains many functions would be cluttered by declarations, and so there are .h files that contain the 'interface' for these functions.
+
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+The preprocessor looks for statements that begin with '#'. These signal to the preprocessor that it needs to do something. The compiler translates the code we type into machine code. The linker takes all of our compiled .obj files and links them together to create an executable. 
+
 
 #### 3. What is a "pointer"?
 
+A pointer is a type of variable. It's value is the address of a different variable. 
+
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+To find the address that a variable is stored at you use the '&' operator. 
+
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+To declare a variable in this way you would do: int* p;
+
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+Depending on what language you're using, garbage collection is handled differently. In Java it is done automatically. However, in C++, it is a manual process. This means that when you use dynamic memory in C++ you have to delete it so it's not accidentally referenced or sits there wasting space. 
+
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Java doesn't have multi-inheritance and as such you use interfaces. In C++ you can use multiple inheritance. How does it work in C++. Are there any inherent downfalls to using it? Also, is there any difference between int* p and int *p?
