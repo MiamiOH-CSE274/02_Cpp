@@ -20,7 +20,7 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+// The prime function - returns true if a number if prime, false otherwise
 bool prime(int num){
 	if (num < 2){
 		return false;
@@ -65,7 +65,15 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
-
+std::string defix(std::string word){
+	if (int dashLocation = word.find("-", 0) != std::string::npos){
+		return word.substr(0, dashLocation + 1);
+	}
+	else{
+		return word;
+	}
+	
+}
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
