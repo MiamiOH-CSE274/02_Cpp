@@ -1,8 +1,16 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ Kyle Busdieker
+ Prof. Brinkman
+ CSE 274
+ September 8, 2014
+
+ This code is partially Prof. Brinkman's and partially my own.
  */
 
 #include <iostream>
+#include <string>
+#include <new>
+
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -22,6 +30,21 @@
 
 //TODO: Declare and implement "prime" function here
 
+bool prime(int n){
+	bool prime = true;
+	
+	if(n < 2){
+		prime = false;
+	}
+
+	for(int i = 2; i <(n-1); i++){
+		int temp = n%i;
+		if(temp == 0)
+			prime = false;
+	}
+
+	return prime;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -56,6 +79,15 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+std::string defix(std::string txt){
+	int dashPos = txt.find("-");
+	std::string strReturn = txt;
+	if(dashPos != -1){
+		txt.erase(0, dashPos+1);  
+	}
+
+	return strReturn;
+}
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -89,6 +121,26 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice(int numArray[], int s, int len){
+	int numToReturn = 0;
+	bool sInArray = false;
+	if (s < 0 || len <= 0)
+		return numToReturn;
+	int startingPos;
+	for(int i = 0; i < sizeof(numArray)-1; i++){
+		if(s == numArray[i]){
+			startingPos = i;
+			sInArray = true;
+			break;
+		}
+	}
+	if(sInArray == false)
+		return numToReturn;
+	for(int j = startingPos; j < len; j++)
+		numToReturn += numArray[j+1];
+
+	return numToReturn;
+}
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
@@ -139,6 +191,21 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+void square(int n){
+	if(n <= 0){
+		std::cout << "Parameter must be 1 or greater" << std::endl;
+		return; //ends the function I think (that's what I want to happen)
+	}
+	//found this code for initializing an array without hardcoding the parameters on stackoverflow.com/user:Joachim Pileborg
+	std::string** myArray = new std::string* [n];
+	for(int i = 0; i < n; i++)
+		myArray[i] = new std::string[n];
+	myArray[0][0] = {"+"}; //this doesn't work for some reason... error: "expects an expression"
+
+
+	delete[] myArray;
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -152,6 +219,20 @@ void testSumSlice(){
 
 //TODO: Declare and implement listPrimes here
 
+int* listPrimes(int n){
+	int* myArray = new int[n];
+	int number = 0;
+	while(int i = 0 < n){
+		while(!prime(number)){
+			number++;	
+		}
+		myArray[i] = number;
+		i++;
+	}
+
+	return myArray;
+	delete[] myArray;
+}
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
