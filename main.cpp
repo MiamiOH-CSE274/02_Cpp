@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+#include <new>
 
 
 //1. Create a function, named "prime", which tests an
@@ -189,6 +190,13 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+void square(int n){
+	if(n <= 0)
+		std::cout << "Parameter must be 1 or greater" << std::endl;
+
+
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -202,6 +210,19 @@ void testSumSlice(){
 
 //TODO: Declare and implement listPrimes here
 
+int* listPrimes(int n){
+	int* myArray = new int[n];
+	int number = 0;
+	while(int i = 0 < n){
+		while(!prime(number)){
+			number++;	
+		}
+		myArray[i] = number;
+		i++;
+	}
+
+	return myArray;
+}
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
