@@ -66,7 +66,8 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 std::string defix(std::string word){
-	if (int dashLocation = word.find("-", 0) != std::string::npos){
+	int dashLocation = word.find("-", 0);
+	if (dashLocation != std::string::npos){
 		return word.substr(0, dashLocation + 1);
 	}
 	else{
@@ -106,7 +107,17 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int ints[], int s, int len){
+	if (s < 0 || len < 0){
+		return 0;
+	}
 
+	int sum;
+	for (int i = s; i <= s + len - 1; i++){
+		sum = sum + ints[i];
+	}
+	return sum;
+}
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
