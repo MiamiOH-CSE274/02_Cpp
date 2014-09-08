@@ -59,4 +59,5 @@ Questions
 #### 7. What is one question about C++ that you would like me to explain in class?
 			How well does c++ work for networking programs? In CSE 283 (Networking) we use java to write our simple networking applications but would c++ be just as viable of a language to use?
 			Second Question (higher priority) - Can you explain what is occurring when you write code such as "prime(nums[i]) ? "true" : "false";" I'm confused about what the question mark is doing and how true or false is chosen.
-			Third Question... Does Visual Studio have a way to debug you program like Eclipse does?
+			Third Question... Does Visual Studio have a way to debug you program like Eclipse does and how do you use it?
+			
