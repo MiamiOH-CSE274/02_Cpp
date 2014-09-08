@@ -35,11 +35,11 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Working! (according to your testing function)
+2. defix - Not working and I'm unsure what is causing the problem
+3. sumSlice - Working! (according to your testing function)
+4. square - Not working. Once I figured out how to initialize an array with a variable I was unable to define the elements in that array.
+5. listPrimes - I believe this works however when running the code the testing function that you wrote for it never displayed so I cannot confirm that it does work. (only prime, defix, and sumSlice testing functions displayed)
 
 Questions
 =======
