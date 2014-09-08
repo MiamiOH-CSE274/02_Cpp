@@ -122,7 +122,6 @@ int sumSlice(int array[], int s, int len){
         for(int i = s; i <= s+len-1; i++){
             sum += array[i];
         }
-            
     }
     return sum;
 }
@@ -179,9 +178,26 @@ void testSumSlice(){
 
 void square(int n){
     if(n <= 0){
-        
+        return;
     }
     else{
+        for(int i = 0; i < n; i++){
+            for(int x = 0; x < n; x++){
+                if((i == 0 || i == n-1) && (x == 0 || x == n-1)){
+                    std::cout << "+";
+                }
+                else if (i == 0 || i == n-1){
+                    std::cout << "-";
+                }
+                else if (x == 0 || x == n-1){
+                    std::cout << "|";
+                }
+                else{
+                    std::cout << "o";
+                }
+            }
+            std::cout << std::endl;
+        }
         
     }
 }
@@ -199,8 +215,8 @@ void square(int n){
 
 //TODO: Declare and implement listPrimes here
 
-int listPrimes(int n){
-    return 0;
+int* listPrimes(int n){
+
 }
 
 void testListPrimes(){
@@ -224,15 +240,13 @@ void testListPrimes(){
 
 
 
-
 int main(){
   
   testPrime();
   testDefix();
   testSumSlice();
-  
-
-
+  square(5);
+  testListPrimes();
   
 
   return 0;
