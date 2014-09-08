@@ -35,11 +35,11 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - I believe it works, should return a true or false correctly for all cases.
+2. defix - I believe that this removes the prefix correctly for all cases.
+3. sumSlice - I believe this works for all cases.
+4. square - This should work for all test cases if not all cases.
+5. listPrimes - This method does not work because I could not find the correct return type to use in the method declaration to support an integer array.
 
 Questions
 =======
