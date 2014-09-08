@@ -21,16 +21,17 @@
 // and the % operator.
 
 // The prime function - returns true if a number if prime, false otherwise
-bool prime(int num){
-	if (num < 2){
+bool prime(int n){
+	if (n < 2){
 		return false;
 	}
 
-	for (int i = 0; i < num; i++){
-		if (num % i == 0){
+	for (int i = 0; i < n; i++){
+		if (n % i == 0){
 			return false;
 		}
 	}
+	return true;
 }
 
 //This is a basic tester for the "prime" function
@@ -107,14 +108,14 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
-int sumSlice(int ints[], int s, int len){
+int sumSlice(int nums[], int s, int len){
 	if (s < 0 || len < 0){
 		return 0;
 	}
 
-	int sum;
+	int sum = 0;
 	for (int i = s; i <= s + len - 1; i++){
-		sum = sum + ints[i];
+		sum = sum + nums[i];
 	}
 	return sum;
 }
@@ -167,6 +168,11 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n){
+	if (n <= 0){
+		return;
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -180,6 +186,9 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+	return 0;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -203,7 +212,7 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
-  testListPrimes();
+  //testListPrimes();
 
   return 0;
 }
