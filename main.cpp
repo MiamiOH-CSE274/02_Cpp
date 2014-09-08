@@ -1,5 +1,5 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Information about pointers and how they work was gathered from multiple posts on stackoverflow.
  */
 
 #include <iostream>
