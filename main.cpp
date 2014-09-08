@@ -1,5 +1,11 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * I worked on my own for this assignment.  I used www.cplusplus.com
+ * as a reference and looked at some of their example code to understand
+ * how to declare arrays and use functions in the standard template library.
+ *
+ * Caroline Danzi
+ * Assignment 2
+ * September 9, 2014
  */
 
 #include <iostream>
