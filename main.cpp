@@ -43,7 +43,7 @@ bool prime(int n){
 	}
 
 	return prime;
-};
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -86,7 +86,7 @@ std::string defix(std::string txt){
 	}
 
 	return strReturn;
-};
+}
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -120,6 +120,25 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice(int numArray[], int s, int len){
+	int numToReturn = 0;
+	bool sInArray = false;
+	if (s < 0 || len <= 0)
+		return numToReturn;
+	int startingPos;
+	for(int i = 0; i < sizeof(numArray)-1; i++){
+		if(s == numArray[i])
+			startingPos = i;
+			sInArray = true;
+			break;
+	}
+	if(sInArray == false)
+		return numToReturn;
+	for(int j = startingPos; j < len; j++)
+		numToReturn += numArray[j];
+
+	return numToReturn;
+}
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
