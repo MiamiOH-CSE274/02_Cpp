@@ -5,8 +5,8 @@
 #include <iostream>
 
 //1. Create a function, named "prime", which tests an
-// integer, n, to see if it is prime. It should return a bool. 
-// 
+// integer, n, to see if it is prime. It should return a bool.
+//
 // You don't have to do
 // anything tricky. Just try modding (%) it by every number
 // between 2 and n-1. If it never gives 0, then it is prime.
@@ -41,17 +41,17 @@ bool prime(int n){
 
 //This is a basic tester for the "prime" function
 void testPrime(){
-  int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
-  bool results[] = {false, false, false, false, true, true, false, true, false};
-  for(int i=0; i<9;i++){
-    if(prime(nums[i]) != results[i]){
-      std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
-      return;
+    int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
+    bool results[] = {false, false, false, false, true, true, false, true, false};
+    for(int i=0; i<9;i++){
+        if(prime(nums[i]) != results[i]){
+            std::string res = prime(nums[i]) ? "true" : "false";
+            std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
+            return;
+        }
     }
-  }
-  
-  std::cout << "testPrime: SUCCESS" << std::endl;
+    
+    std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
 //2. Create a function, name "defix", which takes in a string and
@@ -216,7 +216,21 @@ void square(int n){
 //TODO: Declare and implement listPrimes here
 
 int* listPrimes(int n){
-
+    
+    int* array = new int[n];
+    int arrayIndex = 0;
+    int num = 2;
+    
+    while(arrayIndex < n){
+        
+        if(prime(num)){
+            array[arrayIndex] = num;
+            arrayIndex++;
+        }
+        num++;
+    }
+    return array;
+    delete[] array;
 }
 
 void testListPrimes(){
@@ -240,14 +254,15 @@ void testListPrimes(){
 
 
 
-int main(){
-  
-  testPrime();
-  testDefix();
-  testSumSlice();
-  square(5);
-  testListPrimes();
-  
 
-  return 0;
+int main(){
+    
+    testPrime();
+    testDefix();
+    testSumSlice();
+    square(5);
+    testListPrimes();
+    
+    
+    return 0;
 }
