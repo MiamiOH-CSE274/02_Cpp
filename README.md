@@ -45,12 +45,15 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+	The need for .h files stems from the concept of separating declarations and defintions of objects, functions, variables, etc... Because the compiler does not compile everything side by side (as in java), in C++, everything must be declared before a programmer uses it. The .h file is a quick and easy
+	way to put all the decalarations in one file, so that when the #includes "a .h file" line comes to play, the .h file is copied into the .cpp file and the compiler can see all the declarations of the object.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+	If you have a variable x, you can find the memory address by assigning a variable starting with an ampersands character to the original variable. Ex., x = &y.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
