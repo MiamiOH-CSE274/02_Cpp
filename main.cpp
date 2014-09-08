@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <array>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -21,9 +22,9 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//The prime function quits and returns falso if the integer is divisible by any number 2 through i-1
+//The prime function quits and returns false if the integer is divisible by any number 2 through i-1
 bool prime(int i){
-	for (int x = 2; x < (i - 2); x++){
+	for (int x = 2; x < i; x++){
 		if (i % x == 0)
 			return false;
 	}
@@ -164,12 +165,27 @@ void square(int dim){
 	if (dim == 1){
 		std::cout << "+" << std::endl;
 	}
-	for (int i = dim; i >= 0; i--){
+	else {
+		std::cout << "+";
+		for (int i = dim; i >= 2; i--){
+			std::cout << "-";
+		}
+		std::cout << "+" << std::endl;
 
+		for (int i = dim; i >= 2; i--){
+			std::cout << "|";
+			for (int i = dim; i >= 2; i--){
+				std::cout << "o";
+			}
+			std::cout << "|" << std::endl;
+		}
 
-
+		std::cout << "+";
+		for (int i = dim; i >= 2; i--){
+			std::cout << "-";
+		}
+		std::cout << "+" << std::endl;
 	}
-
 
 
 
@@ -187,10 +203,18 @@ void square(int dim){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
-int* listPrimes(int x){
+int* listPrimes(int i){
+	std::array<int, i> ret;
+	ret.fill(2);
+	for (int y = 3; y < i*i; y++){
+		for (int x = 2; x < y; x++){
+			if (y % x == 0)
+				break;
+		}
+		ret.fill(y);
+	}
 	
-
-
+	return ret;
 }
 
 void testListPrimes(){
