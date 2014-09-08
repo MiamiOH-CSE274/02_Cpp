@@ -8,6 +8,8 @@
  */
 
 #include <iostream>
+#include <string>
+
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -29,7 +31,7 @@
 
 bool prime(int n){
 	bool prime = true;
-
+	
 	if(n < 2){
 		prime = false;
 	}
@@ -76,6 +78,15 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+std::string defix(std::string txt){
+	std::size_t dashPos = txt.find('-');
+	std::string strReturn = txt;
+	if(dashPos != std::string::npos){
+		txt.erase(0, dashPos);  //this might need to be altered to include the '-'
+	}
+
+	return strReturn;
+};
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
