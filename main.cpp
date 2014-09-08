@@ -1,5 +1,10 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ Kyle Busdieker
+ Prof. Brinkman
+ CSE 274
+ September 8, 2014
+
+ This code is partially Prof. Brinkman's and partially my own.
  */
 
 #include <iostream>
@@ -22,6 +27,21 @@
 
 //TODO: Declare and implement "prime" function here
 
+bool prime(int n){
+	bool prime = true;
+
+	if(n < 2){
+		prime = false;
+	}
+
+	for(int i = 2; i <(n-1); i++){
+		int temp = n%i;
+		if(temp == 0)
+			prime = false;
+	}
+
+	return prime;
+};
 
 //This is a basic tester for the "prime" function
 void testPrime(){
