@@ -35,11 +35,11 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - My implementation of this program seems to be working based on two resources. First, the tester class in provided in the main.cpp file outputs a success message to the console window, and second, I translated the code to java and ran it through eclipse, where it also worked well.
+2. defix - My first trial of defix did not work, due to an off by one error when using the substr function. After fixing that, the tester class computed a success message, so I think this one runs smoothly and correctly.
+3. sumSlice - This function was the only one I wrote that got a success message on the first try, so I did not have any problems with debugging it. I think my submission of this one is correct. 
+4. square - This is another program that I cross-checked with a java program. The only reason I used java to check the program was speed, as using eclipse is much easier to spot errors for me.
+5. listPrimes - I think that listPrimes is working correctly (as the tester program gives a success message), although I still do not fully understand the concept of putting in a pointer variable vs. a regular variable (I know the difference, though I would not know which to use on a case by case basis). I will ask a similar question for the last question of this homework.
 
 Questions
 =======
