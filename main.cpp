@@ -80,10 +80,10 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 
 std::string defix(std::string txt){
-	std::size_t dashPos = txt.find('-');
+	int dashPos = txt.find("-");
 	std::string strReturn = txt;
-	if(dashPos != std::string::npos){
-		txt.erase(0, dashPos);  //this might need to be altered to include the '-'
+	if(dashPos != -1){
+		txt.erase(0, dashPos+1);  
 	}
 
 	return strReturn;
@@ -128,15 +128,16 @@ int sumSlice(int numArray[], int s, int len){
 		return numToReturn;
 	int startingPos;
 	for(int i = 0; i < sizeof(numArray)-1; i++){
-		if(s == numArray[i])
+		if(s == numArray[i]){
 			startingPos = i;
 			sInArray = true;
 			break;
+		}
 	}
 	if(sInArray == false)
 		return numToReturn;
 	for(int j = startingPos; j < len; j++)
-		numToReturn += numArray[j];
+		numToReturn += numArray[j+1];
 
 	return numToReturn;
 }
@@ -191,10 +192,18 @@ void testSumSlice(){
 //TODO: Declare and implement "square" function here
 
 void square(int n){
-	if(n <= 0)
+	if(n <= 0){
 		std::cout << "Parameter must be 1 or greater" << std::endl;
+		return; //ends the function I think (that's what I want to happen)
+	}
+	//found this code for initializing an array without hardcoding the parameters on stackoverflow.com/user:Joachim Pileborg
+	std::string** myArray = new std::string* [n];
+	for(int i = 0; i < n; i++)
+		myArray[i] = new std::string[n];
+	myArray[0][0] = {"+"}; //this doesn't work for some reason... error: "expects an expression"
 
 
+	delete[] myArray;
 }
 
 //5. Create a function called listPrimes which takes an int, n, as input.
@@ -222,6 +231,7 @@ int* listPrimes(int n){
 	}
 
 	return myArray;
+	delete[] myArray;
 }
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
