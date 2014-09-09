@@ -35,25 +35,35 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Working
+2. defix - Working
+3. sumSlice - Working
+4. square - Working
+5. listPrimes - Working
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+.h files allow the individual .cpp files to include the information that is within the .h files by using #include “fileName.h”. This allows files to work together instead of being read individual by the C++ compiler.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
 
+A “pointer” is an object whose value refers directly to another value stored elsewhere in memory using its address. 
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+You can use the code std::cout << &x << std::endl; to find out where the variable is stored at in the computer’s memory. 
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+‘p’ should be a pointer and declared like this: int* p.
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
+
+Java clears its own memory after the use of an object or anything declared with the ‘new’ command while in C++ the programmer has to manually clear memory. The ‘delete’ command allows the programming to properly do this. 
 
 #### 7. What is one question about C++ that you would like me to explain in class?
