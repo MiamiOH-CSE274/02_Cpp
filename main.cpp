@@ -110,25 +110,36 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int nums[], int s, int len)
+{
+	int lengthFinal = s + len;
+	int total = 0;
+	for (s, s < lengthFinal, s++)
+	{
+		total += nums[s];
+	}
+	return total;
 
+
+}
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
-  int arrays[5][4] = { {1, 2, 3, 4},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1}};
-  int s[] = {1, 1, 0, 1, 1};
-  int len[] = {1, 3, 4, 0, 3};
-  int outputs[] = {2, 9, 0, 0, -1};
+	int arrays[5][4] = { { 1, 2, 3, 4 },
+	{ 1, 2, 3, 4 },
+	{ 1, -1, 1, -1 },
+	{ 1, 2, 3, 4 },
+	{ 1, -1, 1, -1 } };
+	int s[] = { 1, 1, 0, 1, 1 };
+	int len[] = { 1, 3, 4, 0, 3 };
+	int outputs[] = { 2, 9, 0, 0, -1 };
 
-  for(int i=0; i<5; i++){
-    if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
-      std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
-      return;
-    }
-  }
-  std::cout << "testSumSlice: SUCCESS" << std::endl;
+	for (int i = 0; i < 5; i++){
+		if (sumSlice(arrays[i], s[i], len[i]) != outputs[i]){
+			std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i], s[i], len[i]) << std::endl;
+			return;
+		}
+	}
+	std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
 //4. Create a function called "square" which takes an int, n, as input,
@@ -160,6 +171,43 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n)
+{
+	if (n < 0)
+	{
+
+		if (n = 1)
+			std::cout << "x";
+		else if (n = 2)
+		{
+			std::cout << "xx"<< std::endl;
+			std::cout << "xx";
+		}
+		else
+		{
+			for(int i = 0, i < n, i++)
+			{
+				for (int j = 0, j < n, j++)
+				{
+					if (i = j)
+					{
+						if i = n.length
+							std::cout"x" << std::endl;
+						else
+							std::cout"x";
+					}
+					else if (i = 0 || i = n.length - 1)
+						std::cout"-";
+					else if (j = 0 || j = n.length - 1)
+						std::cout"|";
+					else
+						std::cout"o";		
+				}
+			}
+		}
+	}
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
