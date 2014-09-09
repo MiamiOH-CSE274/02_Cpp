@@ -1,6 +1,6 @@
 /**
- *	Originality: All code in this program is original, with small amounts of collaboration with Sam Bowdler, and using Stack Overflow to 
- *	learn proper syntax on declaring, initializing, and using arrays in c++.
+ *	Originality: All code in this program is original, with small amounts of collaboration with Sam Bowdler,
+ *	and using Stack Overflow to	learn proper syntax on declaring, initializing, and using arrays in c++.
  *	-Kyle Richardson
  */
 
