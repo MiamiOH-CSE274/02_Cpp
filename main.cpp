@@ -1,5 +1,5 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Got ideas about garbage collection from http://stackoverflow.com/questions/5842737/garbage-collection-in-c-c-versus-java
  */
 
 #include <iostream>
