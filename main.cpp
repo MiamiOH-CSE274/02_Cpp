@@ -186,9 +186,9 @@ void square(int n){
 	// Create the line that serves as the top and bottom row
 	std::string plusLine = "+";
 	for (int i = 0; i < n - 2; i++){
-		plusLine = plusLine + "-";
+		plusLine = plusLine.append("-");
 	}
-	plusLine = plusLine + "+";
+	plusLine = plusLine.append("+");
 	
 	// Print the top line
 	std::cout << plusLine << std::endl;
