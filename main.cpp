@@ -1,5 +1,7 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ *	Originality: All code in this program is original, with small amounts of collaboration with Sam Bowdler, and using Stack Overflow to 
+ *	learn proper syntax on declaring, initializing, and using arrays in c++.
+ *	-Kyle Richardson
  */
 
 #include <iostream>
@@ -136,7 +138,7 @@ void testSumSlice(){
 
 int* listPrimes(int n) {
 	int* primeArray = new int[n];
-	int i = 0,j = 0;
+	int i = 2,j = 0;
 	while(j < n) {
 		if (prime(i)) {
 			primeArray[j] = i;
