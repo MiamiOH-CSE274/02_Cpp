@@ -2,6 +2,7 @@
  * I worked on my own for this assignment.  I used www.cplusplus.com
  * as a reference and looked at some of their example code to understand
  * how to declare arrays and use functions in the standard template library.
+ * I also looked at StackOverflow for help with strings but did not use any code.
  *
  * Caroline Danzi
  * Assignment 2
@@ -9,6 +10,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -74,8 +76,11 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 std::string defix(std::string word){
 	int dashLocation = word.find("-", 0);
+	// npos is a constant in the string class that is returned
+	// when the find function does not locate the character
+	// of interest.  npos equals -1
 	if (dashLocation != std::string::npos){
-		return word.substr(0, dashLocation + 1);
+		return word.substr(dashLocation + 1, word.length() - 1);
 	}
 	else{
 		return word;
@@ -181,14 +186,15 @@ void square(int n){
 
 	if (n == 1){
 		std::cout << "+" << std::endl;
+		return;
 	}
 
 	// Create the line that serves as the top and bottom row
 	std::string plusLine = "+";
 	for (int i = 0; i < n - 2; i++){
-		plusLine = plusLine.append("-");
+		plusLine = plusLine + "-";
 	}
-	plusLine = plusLine.append("+");
+	plusLine = plusLine + "+";
 	
 	// Print the top line
 	std::cout << plusLine << std::endl;
