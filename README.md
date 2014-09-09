@@ -54,10 +54,10 @@ The preprocessor accepts changes to the source code and alters the way it will b
 A pointer is a stored memory address that "points" to another memory location on the computer. A null pointer is a special type of pointer that doesn't point to anything. A pointer can be assigned by adding a *
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
-To find the memory address of a variable you place an & before the variable then assign that to something. To get the memory address of int x, we could do address = &x
+To find the memory address of a variable you place an & before the variable then assign that to something. To get the memory address of int x, we could do addressOfX = &x
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-For p to be able to store an int, you would use a pointer so it would look like int* p
+For p to be able to store an int, you would use a pointer. It would look like int* p
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 Java automatically collects garbage after big operations to free up memory, c/c++ on the other hand does not. Delete can be used to free up memory if a big loop stores a lot of objects.
