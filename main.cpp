@@ -103,7 +103,14 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int numList[], int s, int len){
+	int sum = 0;
 
+	for (int x = s; x < s + len; x++){
+		sum += numList[x];
+	}
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -154,6 +161,31 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n){
+	for (int x = 0; x < n; x++){
+		for (int y = 0; y < n; y++){
+			if ((x == 0 && y == 0) || (x==n-1 && y==0)) {
+				std::cout << "+";
+			}
+			else if ((x == 0 && y == n - 1) || (x == n - 1 && y == n - 1)){
+				std::cout << "+" << std::endl;
+			}
+			else if ((x == 0) || (x == n - 1)){
+				std::cout << "-";
+			}
+			else if (y == 0){
+				std::cout << "|";
+			}
+			else if (y == n - 1){
+				std::cout << "|" << std::endl;
+			}
+			else{
+				std::cout << "o";
+			}
+		}
+	}
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -167,6 +199,20 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+	int * primes = new int[n];
+	int counter = 0;
+	int numToCheck=0;
+
+	while (counter<n){
+		if (prime(numToCheck)){
+			counter++;
+			primes
+		}
+		numToCheck++;
+		
+	}
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -189,7 +235,8 @@ void testListPrimes(){
 int main(){
   testPrime();
   testDefix();
-  //testSumSlice();
+  testSumSlice();
+  square(6);
   //testListPrimes();
 
   return 0;
