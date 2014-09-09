@@ -102,8 +102,15 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
-
+int sumSlice(int r[], int s, int len) {
+	if (s < 0 || len < 0)
+		return 0;
+	int sum = 0;
+	for (int i = s; i < s + len ; i++) {
+		sum += r[i];
+	}
+	return sum;
+}
 //This is a basic tester for "sumSlice"
 
 void testSumSlice(){
@@ -167,7 +174,7 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
-
+/*
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
@@ -184,12 +191,12 @@ void testListPrimes(){
   }
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
-}
+}*/
 
 int main(){
   //testPrime();
-  testDefix();
-  //testSumSlice();
+  //testDefix();
+  testSumSlice();
   //testListPrimes();
   system("pause");
   
