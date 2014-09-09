@@ -35,25 +35,26 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Should work fine.
+2. defix - Should work fine.
+3. sumSlice - Should work fine.
+4. square - probably doesnt work, the logic seems fine to me however my syntax seems to be off.
+5. listPrimes - probably also doesnt work, the code doesnt like my creation of that int array in the slightest.
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-
+This leads to the need for .h files because the .h files tell the compiler what sort of programs are in the solution even if they arent defined yet.
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
-
+the preprocessor takes the first look at the code and determines which lines effect what part of the compiling system. The compiler then takes the resulting source code
+and runs the program. the linker links all associated files into one executable file to be run at another point without the need of an IDE.
 #### 3. What is a "pointer"?
-
+A pointer is something that indicates the location in memory of a particular object or pointer.
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
-
+int *x;
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-
+int
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-
+delete is good for freeing up memory from trash files. it is needed in c++ and not java because java has a built in "trash collector" that cleans up a program as it runs.
 #### 7. What is one question about C++ that you would like me to explain in class?
