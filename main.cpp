@@ -66,7 +66,10 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string s) {
+	return s.substr(s.find_first_of('-') + 1);
 
+}
 //This is a basic tester for "defix"
 
 void testDefix(){
@@ -102,6 +105,7 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 
 //This is a basic tester for "sumSlice"
+
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
 		      {1, 2, 3, 4},
@@ -183,10 +187,11 @@ void testListPrimes(){
 }
 
 int main(){
-  testPrime();
-  //testDefix();
+  //testPrime();
+  testDefix();
   //testSumSlice();
   //testListPrimes();
+  system("pause");
   
    return 0;
 }
