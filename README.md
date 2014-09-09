@@ -35,20 +35,23 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Working
+2. defix - Working
+3. sumSlice - Working
+4. square - Working
+5. listPrimes - Working
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+Without .h or header files, one must declare each method and class used above main. This leads to a huge wall of text that must be put in each .cpp file. With header files, one can simply declare each method in a separate file then tell the preprocessor to look in that file for each methods declaration. This makes files much easier to read, improves compilation speed, and increases organization.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+The preprocessor accepts changes to the source code and alters the way it will be compiled. The preprocessor accepts any directive that starts with #. The compiler translates source code into object files that contain machine code. The linker accepts object files created by the compiler and translates them into an executable file. 
 
 #### 3. What is a "pointer"?
+A pointer is a stored memory address that "points" to another memory location on the computer. A null pointer is a special type of pointer that doesn't point to anything. A pointer can be assigned by adding a *
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
