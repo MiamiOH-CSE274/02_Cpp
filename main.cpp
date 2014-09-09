@@ -21,6 +21,18 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
+bool prime(int n){
+	if (n < 2)
+		return false;
+	else{
+		for (int x = 2; x < n; x++){
+			if (n%x == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+}
 
 
 //This is a basic tester for the "prime" function
@@ -55,6 +67,9 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string s){
+	return s.substr(s.find('-')+1);
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -88,6 +103,7 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -173,8 +189,8 @@ void testListPrimes(){
 int main(){
   testPrime();
   testDefix();
-  testSumSlice();
-  testListPrimes();
+  //testSumSlice();
+  //testListPrimes();
 
   return 0;
 }
