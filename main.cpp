@@ -191,7 +191,7 @@ void square(int n){
 	plusLine = plusLine.append("+");
 	
 	// Print the top line
-	std::cout << plusLine << std::endl;
+	//std::cout << plusLine << std::endl;
 
 	// Print the middle lines of the square
 	for (int i = 0; i < n - 2; i++){
@@ -203,7 +203,7 @@ void square(int n){
 	}
 
 	// Print the bottom line
-	std::cout << plusLine << std::endl;
+	//std::cout << plusLine << std::endl;
 }
 
 //5. Create a function called listPrimes which takes an int, n, as input.
@@ -244,7 +244,7 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
-  //testListPrimes();
+  testListPrimes();
 
   return 0;
 }
