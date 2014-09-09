@@ -83,7 +83,7 @@ std::string defix(std::string txt){
 	int dashPos = txt.find("-");
 	std::string strReturn = txt;
 	if(dashPos != -1){
-		txt.erase(0, dashPos+1);  
+		strReturn = txt.substring(dashPos);  //hopefully removes the dash from the returned string, otherwise use dashPos +1
 	}
 
 	return strReturn;
@@ -196,6 +196,24 @@ void square(int n){
 		std::cout << "Parameter must be 1 or greater" << std::endl;
 		return; //ends the function I think (that's what I want to happen)
 	}
+	//new design for function square
+	//special cases
+	if(n == 1)
+		std::cout << "+" << std::endl;
+	else if(n == 2)
+		std::cout << "++" << "\n" << "++" << std::endl;
+	else{
+		std::vector<std::string> topRow;
+		topRow.assign(1, "+");
+		for(int i = 0; i < n-2; i++){
+			topRow.push_back("-");
+		}
+		topRow.push_back("+");
+	}
+	
+
+	//old design for function square
+
 	//found this code for initializing an array without hardcoding the parameters on stackoverflow.com/user:Joachim Pileborg
 	std::string** myArray = new std::string* [n];
 	for(int i = 0; i < n; i++)
