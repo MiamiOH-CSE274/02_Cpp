@@ -178,6 +178,32 @@ void square(int n){
 	if (n <= 0){
 		return;
 	}
+
+	if (n == 1){
+		std::cout << "+" << std::endl;
+	}
+
+	// Create the line that serves as the top and bottom row
+	std::string plusLine = "+";
+	for (int i = 0; i < n - 2; i++){
+		plusLine = plusLine + "-";
+	}
+	plusLine = plusLine + "+";
+	
+	// Print the top line
+	std::cout << plusLine << std::endl;
+
+	// Print the middle lines of the square
+	for (int i = 0; i < n - 2; i++){
+		std::cout << "|";
+		for (int x = 0; x < n - 2; x++){
+			std::cout << "o";
+		}
+		std::cout << "|" << std::endl;
+	}
+
+	// Print the bottom line
+	std::cout << plusLine << std::endl;
 }
 
 //5. Create a function called listPrimes which takes an int, n, as input.
