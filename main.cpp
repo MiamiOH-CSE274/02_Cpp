@@ -21,7 +21,21 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime(int n)
+{
+	if (n >= 2)
+	{
+		for (int count = 2, count < n, count++)
+		{
+			if (n%count = 0)
+				return false;
+			else
+				return true;
+		}
+	}
+	else
+		return false;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -55,6 +69,14 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string stuff)
+{
+	if (stuff.find_first_of('-', 0) > -1)
+		return stuff.erase(0, stuff.find_first_of('-', 0));
+	else
+		return stuff;
+}
+
 
 //This is a basic tester for "defix"
 void testDefix(){
