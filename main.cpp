@@ -23,11 +23,12 @@
 //TODO: Declare and implement "prime" function here
 bool prime(int n)
 {
+	int count;
 	if (n >= 2)
 	{
-		for (int count = 2, count < n, count++)
+		for (count = 2; count < n; count++)
 		{
-			if (n%count = 0)
+			if (n%count == 0)
 				return false;
 			else
 				return true;
@@ -114,7 +115,7 @@ int sumSlice(int nums[], int s, int len)
 {
 	int lengthFinal = s + len;
 	int total = 0;
-	for (s, s < lengthFinal, s++)
+	for (s; s < lengthFinal; s++)
 	{
 		total += nums[s];
 	}
@@ -185,23 +186,23 @@ void square(int n)
 		}
 		else
 		{
-			for(int i = 0, i < n, i++)
+			for (int i = 0; i < n; i++)
 			{
-				for (int j = 0, j < n, j++)
+				for (int j = 0; j < n; j++)
 				{
 					if (i = j)
 					{
-						if i = n.length
-							std::cout"x" << std::endl;
+						if (i = n)
+							std::cout<<"x" << std::endl;
 						else
-							std::cout"x";
+							std::cout<<"x";
 					}
-					else if (i = 0 || i = n.length - 1)
-						std::cout"-";
-					else if (j = 0 || j = n.length - 1)
-						std::cout"|";
+					else if (i==0 || i = n - 1)
+						std::cout<<"-";
+					else if (j = 0 || j = n - 1)
+						std::cout<<"|";
 					else
-						std::cout"o";		
+						std::cout<<"o";		
 				}
 			}
 		}
@@ -221,11 +222,33 @@ void square(int n)
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int listPrimes(int n)
+{
+	int primeNums[n];
+	int i = 1;
+	bool done = false;
+	while (done = false)
+	{
+		if (prime(i))
+		{
+			primeNums[] += i;
+			if primeNums[].length = n
+				done = true;
+			i++;
+		}
+		else
+			i++;
+
+
+	}
+
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
-    int* ret = listPrimes(i);
+    int ret = listPrimes(i);
     for(int j=1;j<i;j++){
       if(ret[j] != some_primes[j]){
 	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] << 
