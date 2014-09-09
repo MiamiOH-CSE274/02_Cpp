@@ -34,7 +34,7 @@ bool prime(int n){
 		return false;
 	}
 
-	for (int i = 0; i < n; i++){
+	for (int i = 2; i < n; i++){
 		if (n % i == 0){
 			return false;
 		}
