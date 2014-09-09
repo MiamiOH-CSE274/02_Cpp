@@ -21,7 +21,18 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime(int n) {
+	if (n < 2)
+	{
+		return false;
+	}
+	
+	for (int i = 2; i < n; i++) {
+		if ((n % i) == 0)
+			return false;
+	}
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -57,6 +68,7 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 
 //This is a basic tester for "defix"
+
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
   std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
@@ -172,9 +184,9 @@ void testListPrimes(){
 
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
-
-  return 0;
+  //testDefix();
+  //testSumSlice();
+  //testListPrimes();
+  
+   return 0;
 }
