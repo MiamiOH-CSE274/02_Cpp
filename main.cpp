@@ -1,5 +1,6 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ *By:Justin Reed
+ *initial file provided by Bo Brinkman for use in CSE 274 homework number 2 everything else created originally.
  */
 
 #include <iostream>
