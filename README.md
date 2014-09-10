@@ -46,9 +46,13 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
-.h files allow the individual .cpp files to include the information that is within the .h files by using #include “fileName.h”. This allows files to work together instead of being read individual by the C++ compiler.
+If we wish to use functions or classes across multiple .cpp files we put them in .h files so that any .cpp file that includes the .h file will be able to access those functions.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+Preprocessor - changes any preprocessor command such as #include into executable c++ code for the compiler. 
+Compiler - takes pre-processor’s output and produces and object file from it.
+linker - takes object files and produces either a library or an executable file.
 
 #### 3. What is a "pointer"?
 
@@ -56,7 +60,7 @@ A “pointer” is an object whose value refers directly to another value stored
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
-You can use the code std::cout << &x << std::endl; to find out where the variable is stored at in the computer’s memory. 
+You can use the code ‘&x’ to find out where the variable is stored at in the computer’s memory. 
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
@@ -67,3 +71,5 @@ You can use the code std::cout << &x << std::endl; to find out where the variabl
 Java clears its own memory after the use of an object or anything declared with the ‘new’ command while in C++ the programmer has to manually clear memory. The ‘delete’ command allows the programming to properly do this. 
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Can you further discuss how classes and the implementation of class methods of those classes work in c++? I know we discussed it in class briefly last Thursday, but it didn’t totally make sense to me. Thanks! 
