@@ -1,5 +1,7 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Written by Collin Ernst for Dr. Brinkman's CSE 274.
+ * All algorithms written are original, but are free to be used by anyone.
+ * Additional information to write this software is from http://www.cplusplus.com.
  */
 
 #include <iostream>
