@@ -46,14 +46,32 @@ Questions
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+The use of .h files provides declarations for functions and libraries that can be used in multiple locations.  Including a .h file allows the compiler to access this data without having to include a separate declaration in every .cpp file.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+The preprocessor performs operations that modify the source code, such as including a .h file, before the main function is compiled.  The preprocessor receives directives that make the source code easier to write and understand and makes changes to the source code before it is compiled.  
+
+The compiler acts as a translator between the C++ source code written by the programmer and the machine code understandable to the computer.  It receives C++ source code as its input and returns machine code to the processor.
+
+The linker acts as a way to combine all necessary files to run a program into a single executable file.  It works by finding placeholder names of other files within code and replacing the placeholders with refrences to the actual code.  The linker receives files from a project as input and returns executable files as output.   
 
 #### 3. What is a "pointer"?
 
+A pointer is a variable that stores a refrence to the memory address of another variable.  
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+To find the memory address, use &, the address of operator.  An example would be std::cout << &x << std::endl;
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+p should be declared as a pointer.  int* p.
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+The delete operator is necessary in C++ because a programmer can directly allocate space on RAM for a variable which is not possible to do in Java.  The purpose of using delete is to free memory after a variable has served its purpose to the program, and keep the program running efficently.  
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+I am still unsure about using the delete keyword, that is a topic I would like to see explained in class.
