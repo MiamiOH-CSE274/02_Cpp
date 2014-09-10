@@ -1,5 +1,5 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Chris Mabe 9/9/14 CSE 274 Homework 2!
  */
 
 #include <iostream>
