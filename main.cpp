@@ -204,14 +204,16 @@ void square(int dim){
 
 //TODO: Declare and implement listPrimes here
 int* listPrimes(int i){
-	std::array<int, i> ret;
-	ret.fill(2);
+	int count = 1;
+	int* ret = new int[i];
+	ret.add(2,0);
 	for (int y = 3; y < i*i; y++){
 		for (int x = 2; x < y; x++){
 			if (y % x == 0)
 				break;
 		}
-		ret.fill(y);
+		ret.add(y, count);
+		count++;
 	}
 	
 	return ret;
