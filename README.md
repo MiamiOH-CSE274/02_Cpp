@@ -39,7 +39,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 2. defix - I believe that this removes the prefix correctly for all cases.
 3. sumSlice - I believe this works for all cases.
 4. square - This should work for all test cases if not all cases.
-5. listPrimes - This method does not work because I could not find the correct return type to use in the method declaration to support an integer array.
+5. listPrimes - This method does not work.
 
 Questions
 =======
@@ -59,6 +59,8 @@ The compiler checks for errors once through from top to bottom in the program. T
 A pointer is the position in memory where an object is stored, in C++, that would be as in a line of cells in the memory. I used the reference section of cplusplus.com to answer this question.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+The "&" operator before a variable will get the location in memory of the variable and can be printed to show the operator its value.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
