@@ -22,11 +22,11 @@
 
 //TODO: Declare and implement "prime" function here
 bool prime(int n){
-	if (n < 2)
+	if (n < 2)	//Only numbers 2 or greater can be prime
 		return false;
 	else{
 		for (int x = 2; x < n; x++){
-			if (n%x == 0){
+			if (n%x == 0){	//if any number up to n-1 is a divisor
 				return false;
 			}
 		}
@@ -68,7 +68,7 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 std::string defix(std::string s){
-	return s.substr(s.find('-')+1);
+	return s.substr(s.find('-')+1);	
 }
 
 //This is a basic tester for "defix"
@@ -164,22 +164,22 @@ void testSumSlice(){
 void square(int n){
 	for (int x = 0; x < n; x++){
 		for (int y = 0; y < n; y++){
-			if ((x == 0 && y == 0) || (x==n-1 && y==0)) {
+			if ((x == 0 && y == 0) || (x==n-1 && y==0)) {	//top left or bottom left corner
 				std::cout << "+";
 			}
-			else if ((x == 0 && y == n - 1) || (x == n - 1 && y == n - 1)){
+			else if ((x == 0 && y == n - 1) || (x == n - 1 && y == n - 1)){	//top right or bottom right corner
 				std::cout << "+" << std::endl;
 			}
-			else if ((x == 0) || (x == n - 1)){
+			else if ((x == 0) || (x == n - 1)){	//top line or bottom line
 				std::cout << "-";
 			}
-			else if (y == 0){
+			else if (y == 0){	//left side	
 				std::cout << "|";
 			}
-			else if (y == n - 1){
+			else if (y == n - 1){	//right side
 				std::cout << "|" << std::endl;
 			}
-			else{
+			else{	//middle
 				std::cout << "o";
 			}
 		}
@@ -200,18 +200,18 @@ void square(int n){
 
 //TODO: Declare and implement listPrimes here
 int* listPrimes(int n){
-	int * primes = new int[n];
+	int* primes = new int[n];
 	int counter = 0;
 	int numToCheck=0;
 
-	while (counter<n){
+	while (counter<n){	//once n primes are added to the pointer
 		if (prime(numToCheck)){
+			primes[counter] = numToCheck;
 			counter++;
-			primes
 		}
-		numToCheck++;
-		
+		numToCheck++;	
 	}
+	return primes;
 }
 
 void testListPrimes(){
@@ -237,7 +237,7 @@ int main(){
   testDefix();
   testSumSlice();
   square(6);
-  //testListPrimes();
+  testListPrimes();
 
   return 0;
 }
