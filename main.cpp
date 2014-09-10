@@ -3,6 +3,8 @@
  * as a reference and looked at some of their example code to understand
  * how to declare arrays and use functions in the standard template library.
  * I also looked at StackOverflow for help with strings but did not use any code.
+ * Brandon Wilson tried to help me figure out how to stop the project from
+ * crashing (without looking at my code) but we could not figure it out. 
  *
  * Caroline Danzi
  * Assignment 2
@@ -192,12 +194,12 @@ void square(int n){
 	// Create the line that serves as the top and bottom row
 	std::string plusLine = "+";
 	for (int i = 0; i < n - 2; i++){
-		plusLine = plusLine + "-";
+		plusLine = plusLine + ("-");
 	}
-	plusLine = plusLine + "+";
+	plusLine = plusLine + ("+");
 	
 	// Print the top line
-	//std::cout << plusLine << std::endl;
+	std::cout << plusLine << std::endl;
 
 	// Print the middle lines of the square
 	for (int i = 0; i < n - 2; i++){
@@ -209,7 +211,7 @@ void square(int n){
 	}
 
 	// Print the bottom line
-	//std::cout << plusLine << std::endl;
+	std::cout << plusLine << std::endl;
 }
 
 //5. Create a function called listPrimes which takes an int, n, as input.
@@ -225,7 +227,8 @@ void square(int n){
 
 //TODO: Declare and implement listPrimes here
 int* listPrimes(int n){
-	return 0;
+	int* nums = new int[];
+	return nums;
 }
 
 void testListPrimes(){
@@ -250,6 +253,11 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
+  square(0);
+  square(1);
+  square(2);
+  square(3);
+  square(6);
   testListPrimes();
 
   return 0;
