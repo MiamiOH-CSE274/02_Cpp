@@ -1,5 +1,7 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ Used Stack Overflow and cplusplus for occasional information on 
+ how to construct/work with arrays. I also looked at cplusplus 
+ for information about how to work with strings in c++.
  */
 
 #include <iostream>
@@ -20,7 +22,6 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
 
 bool prime(int n){
     
@@ -70,7 +71,6 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
 
 std::string defix(std::string x){
     
@@ -111,7 +111,6 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
 
 int sumSlice(int array[], int s, int len){
     int sum = 0;
@@ -174,7 +173,6 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
 
 void square(int n){
     if(n <= 0){
@@ -213,7 +211,6 @@ void square(int n){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
 
 int* listPrimes(int n){
     
@@ -250,8 +247,6 @@ void testListPrimes(){
     
     std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-
-
 
 
 
