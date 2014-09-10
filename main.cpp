@@ -20,7 +20,16 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+prime boolean(int x){
+	int counter = 0;
+	while (counter < x){
+		if x % counter == 0;
+			return false;
+		else
+			counter++;
+	}
+	return true;
+}
 
 
 //This is a basic tester for the "prime" function
