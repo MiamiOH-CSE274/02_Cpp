@@ -47,14 +47,13 @@ Questions
 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
 	Every time you want to include something, it would have to be put at the top of the file since CPP has to have it above the method to be able to use 	it. We use .h files to "paste things" by putting them in there, and the pre-compiler takes all of it and moves it to the top of the code before the 	compiler sees it. It essentially makes your code easier to read and organize, as well as stops you from ctrl + c / ctrl + v over and over.
-
-#### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 	Pre-Processor - Takes all of the header files and all of the #include statements and includes them in the top of the .cpp files. Makes it so that 	the compiler can read them.
 
 	Compiler - Changes the code coming from the preprocessor into machine language that the computer can understand and interpret.
 
-	Linker - DO THIS STILL
+	Linker - The linker takes the object files and the library files and turns them into one module.
 
 3. What is a "pointer"?
 

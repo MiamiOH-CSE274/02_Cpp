@@ -3,6 +3,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -20,11 +21,12 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-prime boolean(int x){
-	int counter = 0;
+bool prime(int x){
+	int counter = 2;
 	while (counter < x){
-		if x % counter == 0;
+		if (x % counter == 0 || x < 2){
 			return false;
+		}
 		else
 			counter++;
 	}
@@ -63,7 +65,10 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+/**
+String defix(string s){
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -178,12 +183,13 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
+*/
 
 int main(){
   testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+  //testDefix();
+  //testSumSlice();
+  //testListPrimes();
 
   return 0;
 }
