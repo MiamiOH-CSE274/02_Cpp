@@ -30,7 +30,7 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-// The prime function - returns true if a number if prime, false otherwise
+// The prime function - returns true if a number is prime, false otherwise
 bool prime(int n){
 	if (n < 2){
 		return false;
@@ -227,7 +227,19 @@ void square(int n){
 
 //TODO: Declare and implement listPrimes here
 int* listPrimes(int n){
-	int* nums = new int[];
+	int* nums = new int[n];
+	int testNum = 2;
+
+	for (int i = 0; i < n; i++){
+		if (prime(testNum)){
+			nums[i] = testNum;
+			testNum++;
+		}
+		else{
+			testNum++;
+		}
+	}
+
 	return nums;
 }
 
