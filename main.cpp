@@ -7,6 +7,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool.
@@ -24,7 +25,7 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+//DONE: Declare and implement "prime" function here
 boolean prime(int n) {
 	for (int i = 2; i <= n - 1; i++) {
 		if (n%i == 0) return false;
@@ -63,6 +64,16 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+string defix(string str) {
+	/*for (int i = 0; i <= str.length; i++) {
+		if (str[i] == '-')
+	}*/
+	int index_of_hyphen = str.find('-');
+	if (index_of_hyphen != string::npos) {
+		return str.substr(index_of_hyphen+1, str.length - index_of_hypen+1);
+	}
+
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
