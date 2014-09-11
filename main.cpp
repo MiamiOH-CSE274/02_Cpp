@@ -1,5 +1,5 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Used Stack Overflow and cplusplus.com for basic syntax of writing in c++
  */
 
 #include <iostream>
@@ -20,7 +20,17 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+
+bool prime(int n) {
+	if (n < 2) {
+		return false;
+	}
+	for (int i = 2; i < n; i++) {
+		if (n % i == 0)
+			return false;
+	}
+	return true;
+}
 
 
 //This is a basic tester for the "prime" function
