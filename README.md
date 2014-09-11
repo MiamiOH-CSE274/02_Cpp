@@ -38,7 +38,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 1. prime - this function works tko my understanding, however, the tester produces an error saying that "2 returns true" which is correct
 2. defix - this function is a success
 3. sumSlice - this funtion works until I get to the array {1, -1, 1, -1}. len is four but my i starts a 0 and goes to 4 therefore it iterates through the entire array and adds an extra one. i am unsure how to combat this at the moment
-4. square - TODO
+4. square - this function definitely works well
 5. listPrimes - this function should work but has problems because my pime function is iffy
 
 Questions
