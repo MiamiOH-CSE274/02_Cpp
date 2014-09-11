@@ -1,5 +1,5 @@
 /**
-* TODO: IMPORTANT!! Write your originality/source statement here.
+* This file is completely my own with some syntax help from CPP.com and a little help from Dr. Brinkman.
 */
 
 #include <iostream>
@@ -246,4 +246,3 @@ int main(){
 	testListPrimes();
 	return 0;
 }
-
