@@ -167,7 +167,30 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+void square(int n) {
+	if (n <= 0)
+		return;
+	if (n == 1)
+		std::cout << "+" << std::endl;
+	if (n > 1) {
+		for (int i = 0; i < n; i++) {
+			if (i == 0 || i == n - 1) {
+				std::cout << "+";
+				for (int j = 0; j < n - 2; j++) {
+					std::cout << "-";
+				}
+				std::cout << "+" << std::endl;
+			}
+			else {
+				std::cout << "|";
+				for (int j = 0; j < n - 2; j++) {
+					std::cout << "o";
+				}
+				std::cout << "|" << std::endl;
+			}
+		}
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
