@@ -66,8 +66,8 @@ You should declare p as a pointer by typing "int *p"
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
-The 'delete' commad frees a pointer from storing the address of a variable. 
+The 'delete' command frees a pointer from storing the address of a variable. 
 
 #### 7. What is one question about C++ that you would like me to explain in class?
 
-What's the diffence between the size and the length of a string?
+int operations specifically <, > and <=, >= since I've seen issues with those for some reason
