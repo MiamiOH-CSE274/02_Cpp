@@ -35,17 +35,18 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Yes
+2. defix - Yes
+3. sumSlice - Yes
+4. square - Yes
+5. listPrimes - Yes
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-
+	Header files are necessary so that declarations of other methods and functions can be added to a .cpp file without having to declare each
+	function that is defined in a different .cpp file individually.
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
