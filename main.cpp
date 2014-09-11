@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 
+
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
 // 
@@ -38,6 +39,7 @@ bool prime(int x){
 			return a;
 		}
 	}
+	return true;
 }
 
 
@@ -218,8 +220,8 @@ int* listPrimes(int n){
 			whichIndex++;
 		}
 		x++;
-		return a;
 	}
+	return a;
 }
 
 void testListPrimes(){
