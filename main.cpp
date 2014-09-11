@@ -1,5 +1,8 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * 
+ Author: Sam Hausfeld
+ Original Code from : Bo Brinkman (CSE274C) ? 
+ I'm not really sure what a source/originality statement entails.
  */
 
 #include <iostream>
@@ -21,7 +24,11 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+boolean prime(int n) {
+	for (int i = 2; i <= n - 1; i++) {
+		if (n%i == 0) return false;
+	} return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
