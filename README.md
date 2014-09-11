@@ -15,7 +15,6 @@ Bitwise operators. https://en.wikibooks.org/wiki/C%2B%2B_Programming/Programming
 Arrays, and the subscript operator. https://en.wikibooks.org/wiki/C%2B%2B_Programming/Programming_Languages/C%2B%2B/Code/Statements/Variables/Operators#Subscript_operator_.5B_.5D (5p)
 Pointers. https://en.wikibooks.org/wiki/C%2B%2B_Programming/Programming_Languages/C%2B%2B/Code/Statements/Variables/Operators#address-of_operator_.26 and https://en.wikibooks.org/wiki/C%2B%2B_Programming/Programming_Languages/C%2B%2B/Code/Statements/Variables/Operators#Pointers.2C_Operator_.2A (9p) Skip the part about multi-dimensional arrays, and the part about pointers to functions.
 Dynamic memory allocation. https://en.wikibooks.org/wiki/C%2B%2B_Programming/Programming_Languages/C%2B%2B/Code/Statements/Variables/Operators#Dynamic_memory_allocation (4p)
-
 Homework
 Fork this repo
 Fill in the blanks in the main.cpp with code that produces the correct result. Read the comments to find out what they ought to do.
@@ -24,7 +23,6 @@ Update this file with your documentation and the answers to questions.
 When you are ready to turn in your homework, submit a pull request from your repo to mine.
 Be sure to check the pull requests for my repo on github to make sure it worked, and that your work has been submitted.
 Documentation
-
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
 prime - Yes, it's working. My loop is a bit odd, but it works efficiently, I guarantee it. The for-loop in this method starts at 3, stops at n/2, and steps by two. I explained why this is in a comment section above the method. The only problem I have with my own code is that I had to check 1, 2, and 5, which I wish I didn't have to do, but these checks are necessary for my... let's say unique for-loop.
@@ -32,9 +30,7 @@ defix - This method was simple, I completed it in two lines. It works fine.
 sumSlice - Yes, it works just as it is supposed to.
 square - I like this one, the little ASCII-type drawings are neat. Mine works.
 listPrimes - Working fine, sir
-
 Questions
-
 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 We can easily #include any header file and allude to it in our .cpp files. Header files are for storing little methods or declarations to save space in .cpp files, so we can just reference the relevant .h file when needed.
 
