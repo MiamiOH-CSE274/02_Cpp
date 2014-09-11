@@ -50,9 +50,11 @@ Questions
 
 #### 3. What is a "pointer"?
 
-#### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+#### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at? 
+You should use the address-of operator (&) to get the memory address for x represented in hexadecimal.  
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+The variable p should be declared as type int*, which holds the address of an int. Then p will point to an int in memory.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
