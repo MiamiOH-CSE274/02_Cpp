@@ -118,9 +118,27 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice(int intArray[], int s, int len) {
+
+	int total = 0;
+
+	if(s<0 || len<0) {
+		return 0;
+	} else {
+
+		for(int i=s; i<s+len; i++) {
+
+			total += intArray[i];
+
+		}
+
+	}
+
+	return total;
+}
+
 //This is a basic tester for "sumSlice"
 
-/**
 
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
@@ -141,7 +159,6 @@ void testSumSlice(){
   std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
-**/
 
 //4. Create a function called "square" which takes an int, n, as input,
 //   but returns no output (so return type will be "void")
@@ -211,7 +228,7 @@ void testListPrimes(){
 int main(){
   testPrime();
   testDefix();
-  //testSumSlice();
+  testSumSlice();
   //testListPrimes();
 
   return 0;
