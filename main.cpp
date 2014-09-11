@@ -32,10 +32,13 @@
 
 // The prime function - returns true if a number is prime, false otherwise
 bool prime(int n){
+	// Numbers less than two are not prime
 	if (n < 2){
 		return false;
 	}
-
+	// If a number mod another number gives zero,
+	// then it is divisible by that number and 
+	// is therefore not prime
 	for (int i = 2; i < n; i++){
 		if (n % i == 0){
 			return false;
@@ -75,12 +78,14 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
 std::string defix(std::string word){
+	// Find where the first dash is in the string
 	int dashLocation = word.find("-", 0);
-	// npos is a constant in the string class that is returned
+	// std::string::npos is a constant in the string class that is returned
 	// when the find function does not locate the character
-	// of interest.  npos equals -1
+	// of interest.  (std::string::npos equals -1)
+	// If there is a dash, only return the part of the string
+	// that comes after the dash.
 	if (dashLocation != std::string::npos){
 		return word.substr(dashLocation + 1, word.length() - 1);
 	}
@@ -120,7 +125,6 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
 int sumSlice(int nums[], int s, int len){
 	if (s < 0 || len < 0){
 		return 0;
@@ -132,6 +136,7 @@ int sumSlice(int nums[], int s, int len){
 	}
 	return sum;
 }
+
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
@@ -180,7 +185,6 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
 void square(int n){
 	if (n <= 0){
 		return;
@@ -225,7 +229,6 @@ void square(int n){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
 int* listPrimes(int n){
 	int* primes = new int[n];
 	int index = 0;
@@ -239,7 +242,7 @@ int* listPrimes(int n){
 		index++;
 		}
 		// Regardless of whether or not the number we tested
-		// was prime, increase it by one to test the next
+		// was prime, increase it by one to test the next integer
 		numToTest++;
 	}
 
@@ -268,11 +271,18 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
+
+  std::cout << "square size zero: " << std::endl;
   square(0);
+  std::cout << "square size one: " << std::endl;
   square(1);
+  std::cout << "square size two: " << std::endl;
   square(2);
+  std::cout << "square size three: " << std::endl;
   square(3);
+  std::cout << "square size six: " << std::endl;
   square(6);
+
   testListPrimes();
 
   return 0;
