@@ -64,7 +64,16 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+std::string defix(std::string s) {
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] == '-') {
+			s = s.substr(i + 1);
+			return s;
+		}
+	}
+
+	return s;
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
