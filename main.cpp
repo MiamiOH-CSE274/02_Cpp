@@ -59,20 +59,28 @@ std::string defix(std::string txt) {
 
 //This is a basic tester for "defix"
 void testDefix(){
-  std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
-  std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
+	std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
+	std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
 
-  for(int i=0;i<5;i++){
-    if(outputs[i].compare(defix(inputs[i])) != 0){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
-      return;
-    }
-  }
+	for(int i=0;i<5;i++){
+		if(outputs[i].compare(defix(inputs[i])) != 0){
+			std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
+			return;
+		}
+	}
 
-  std::cout << "testDefix: SUCCESS" << std::endl;
+	std::cout << "testDefix: SUCCESS" << std::endl;
 }
 
 
+/**
+  * This sumSlice method takes in an int array and two ints, named ray, s, and len, respectively.
+  *
+  * This method outputs the sum of len ints in ray starting at index s. So it starts at index s and adds all ints from
+  * ray[s] to ray[s+len-1] (inclusive).
+  *
+  * If s or len are 0, sumSlice returns 0. If not, return int sum, which is made to sum up all requested ints.
+**/
 int sumSlice(int ray[], int s, int len){
 	if (s == 0 || len == 0)
 		return 0;
@@ -85,10 +93,10 @@ int sumSlice(int ray[], int s, int len){
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
 	int arrays[5][4] = {{1,  2, 3,  4},
-						{1,  2, 3,  4},
-						{1, -1, 1, -1},
-						{1,  2, 3,  4},
-						{1, -1, 1, -1}};
+	{1,  2, 3,  4},
+	{1, -1, 1, -1},
+	{1,  2, 3,  4},
+	{1, -1, 1, -1}};
 	int s[] = {1, 1, 0, 1, 1};
 	int len[] = {1, 3, 4, 0, 3};
 	int outputs[] = {2, 9, 0, 0, -1};
@@ -102,6 +110,25 @@ void testSumSlice(){
 	std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
+
+/**
+  * The square method receives int n and draws a neat little picture with it.
+  *
+  * If n is 0 or negative, do nothing and return.
+  * If n is 1, print one '+'.
+  * If n is 2, print a two-by-two square of '+' signs.
+  *
+  * If n is 3 or greater, this method prints out a square consisting of '+', '-', 'o' and '|' in
+  * the following format: the first and last rows start and end with a '+', with n-2 '-' in between
+  * each '+'. Rows in between first and last begin and end with a '|', with n-2 'o' in between.
+  * Examples: square(1)   square(2)   square(3)   square(4)   square(5)    square(6)
+  *				 +			 ++			+-+			+--+		+---+		+----+
+  *							 ++			|o|			|oo|		|ooo|		|oooo|
+  *										+-+			|oo|		|ooo|		|oooo|
+  *													+--+		|ooo|		|oooo|
+  *																+---+		|oooo|
+  *																			+----+
+**/
 void square(int n){
 	if (n <= 0)
 		return;
@@ -134,6 +161,13 @@ void square(int n){
 	}
 }
 
+
+/**
+  * This method builds on prime() in a way, or at least it utilizes it. The listPrimes method takes
+  * in an int n, which determines how many prime numbers we will be returning in the list. A while
+  * loop gathers all prime numbers by calling prime() on each number starting at 2 to check if that
+  * number is prime. If it is, add it to the list. Once the array contains n prime numbers, return it.
+**/
 int* listPrimes(int n){
 	int* ray = new int[n];
 	int i = 2;
@@ -167,10 +201,10 @@ void testListPrimes(){
 }
 
 int main(){
-  testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+	testPrime();
+	testDefix();
+	testSumSlice();
+	testListPrimes();
 
-  return 0;
+	return 0;
 }
