@@ -203,7 +203,21 @@ void square(int n) {
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+int* listPrimes(int n) {
+	int* primes;
+	primes = new int [n];
+	int i = 0;
+	int j = 0;
+	while (i < n) {
+		if (prime(j)) {
+			primes[i] = j;
+			i++;
+		}
+		
+		j++;
+	}
+	return primes;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
