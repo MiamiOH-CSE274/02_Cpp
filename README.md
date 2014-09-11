@@ -49,7 +49,7 @@ Questions
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
-
+A pointer is a data type. It stores a memory address, usually of another variable. By pointing to an address in memory, pointers can pass that variable location to a function, which can then access and modify the data at that address.
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at? 
 You should use the address-of operator (&) to get the memory address for x represented in hexadecimal.  
 
