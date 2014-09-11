@@ -227,20 +227,23 @@ void square(int n){
 
 //TODO: Declare and implement listPrimes here
 int* listPrimes(int n){
-	int* nums = new int[n];
-	int testNum = 2;
+	int* primes = new int[n];
+	int index = 0;
+	int numToTest = 2;
 
-	for (int i = 0; i < n; i++){
-		if (prime(testNum)){
-			nums[i] = testNum;
-			testNum++;
+	while(index < n){
+		// If the number we are testing is prime,
+		// add it to the array.
+		if(prime(numToTest)){
+		primes[index] = numToTest;
+		index++;
 		}
-		else{
-			testNum++;
-		}
+		// Regardless of whether or not the number we tested
+		// was prime, increase it by one to test the next
+		numToTest++;
 	}
 
-	return nums;
+	return primes;
 }
 
 void testListPrimes(){

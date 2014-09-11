@@ -39,7 +39,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 2. defix - working
 3. sumSlice - working
 4. square - working
-5. listPrimes - TODO
+5. listPrimes - working
 
 Questions
 =======
