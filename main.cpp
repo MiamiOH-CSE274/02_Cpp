@@ -101,35 +101,36 @@ void testSumSlice(){
   std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
-//4. Create a function called "square" which takes an int, n, as input,
-//   but returns no output (so return type will be "void")
-//   The function should use the std::cout object to print a square to the
-//   screen that is n-by-n, with a border made of -, + and |, and the inside
-//   filled with o
-//   If n is <= 0, do nothing.
-//
-//Examples:
-// square(5) should print:
-// +---+
-// |ooo|
-// |ooo|
-// |ooo|
-// +---+
-// square(2) should print:
-// ++
-// ++
-// square(1) should print:
-// +
-// square(3) should print:
-// +-+
-// |o|
-// +-+
-//
-//Note/warning: I did not write an automated tester for this one. Please
-// test it however you can, to try to make sure it does the right thing for
-// all possible inputs.
 
-//TODO: Declare and implement "square" function here
+/*
+*	Prints a square out to the console of size n, with the corners consisting of
+*	"+", horizontal borders consisting of "-", and vertical borders consisting of "|".
+*	If value provided is less than one, function does nothing.
+*/
+
+
+
+void square(int n) {
+	if (n < 1)
+		return;
+	for (int i = 0; i < n; i ++){
+		for (int j = 0; j < n; j++){
+			if ((i == 0 && j == 0) || (i == 0 && j == n - 1) || (i == n - 1 && j == 0) || (i == n-1 && j == n-1)) {
+				std::cout << "+";
+			}
+			else if ((i == 0) || (i == n-1)) {
+				std::cout << "-";
+			}
+			else if (( j == 0) || (j == n-1))
+			std::cout << "|";
+			else  {
+				std::cout << "o";
+			}
+		}
+	std::cout << std::endl;
+	}
+
+}
 
 /*
 *	Function that takes a number n and tests every number up until n for primality, returning an array 
@@ -169,10 +170,11 @@ void testListPrimes(){
 }
 
 int main(){
-  testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+testPrime();
+testDefix();
+testSumSlice();
+testListPrimes();
+square(10);
   system("pause");
   
    return 0;
