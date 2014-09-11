@@ -1,15 +1,16 @@
 /**
- * I worked on my own for this assignment.  I used www.cplusplus.com
- * as a reference and looked at some of their example code to understand
- * how to declare arrays and use functions in the standard template library.
- * I also looked at StackOverflow for help with strings but did not use any code.
- * Brandon Wilson tried to help me figure out how to stop the project from
- * crashing (without looking at my code) but we could not figure it out. 
- *
- * Caroline Danzi
- * Assignment 2
- * September 9, 2014
- */
+* I worked mostly on my own for this assignment.  Brandon Wilson tried to help me 
+* figure out why I could build projects but not run them. We did not look at either of
+* our actual code, but instead wrote simple functions for basic testing.
+* I used www.cplusplus.com as a reference and looked at some of their example code 
+* to understand how to declare arrays, use functions in the standard template library,
+* and for general syntax with functions. I also looked at StackOverflow for help with
+* understanding how strings work in C++ but did not use any code.
+* 
+* Caroline Danzi
+* Assignment 2
+* September 9, 2014
+*/
 
 #include <iostream>
 #include <string>
