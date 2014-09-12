@@ -1,8 +1,19 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
- */
+* I worked mostly on my own for this assignment.  Brandon Wilson tried to help me 
+* figure out why I could build projects but not run them. We did not look at either of
+* our actual code, but instead wrote simple functions for basic testing.
+* I used www.cplusplus.com as a reference and looked at some of their example code 
+* to understand how to declare arrays, use functions in the standard template library,
+* and for general syntax with functions. I also looked at StackOverflow for help with
+* understanding how strings work in C++ but did not use any code.
+* 
+* Caroline Danzi
+* Assignment 2
+* September 9, 2014
+*/
 
 #include <iostream>
+#include <string>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -20,8 +31,22 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
-
+// The prime function - returns true if a number is prime, false otherwise
+bool prime(int n){
+	// Numbers less than two are not prime
+	if (n < 2){
+		return false;
+	}
+	// If a number mod another number gives zero,
+	// then it is divisible by that number and 
+	// is therefore not prime
+	for (int i = 2; i < n; i++){
+		if (n % i == 0){
+			return false;
+		}
+	}
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -54,8 +79,22 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
-
+std::string defix(std::string word){
+	// Find where the first dash is in the string
+	int dashLocation = word.find("-", 0);
+	// std::string::npos is a constant in the string class that is returned
+	// when the find function does not locate the character
+	// of interest.  (std::string::npos equals -1)
+	// If there is a dash, only return the part of the string
+	// that comes after the dash.
+	if (dashLocation != std::string::npos){
+		return word.substr(dashLocation + 1, word.length() - 1);
+	}
+	else{
+		return word;
+	}
+	
+}
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -87,7 +126,17 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+int sumSlice(int nums[], int s, int len){
+	if (s < 0 || len < 0){
+		return 0;
+	}
+
+	int sum = 0;
+	for (int i = s; i <= s + len - 1; i++){
+		sum = sum + nums[i];
+	}
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -137,7 +186,38 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+void square(int n){
+	if (n <= 0){
+		return;
+	}
+
+	if (n == 1){
+		std::cout << "+" << std::endl;
+		return;
+	}
+
+	// Create the line that serves as the top and bottom row
+	std::string plusLine = "+";
+	for (int i = 0; i < n - 2; i++){
+		plusLine = plusLine + ("-");
+	}
+	plusLine = plusLine + ("+");
+	
+	// Print the top line
+	std::cout << plusLine << std::endl;
+
+	// Print the middle lines of the square
+	for (int i = 0; i < n - 2; i++){
+		std::cout << "|";
+		for (int x = 0; x < n - 2; x++){
+			std::cout << "o";
+		}
+		std::cout << "|" << std::endl;
+	}
+
+	// Print the bottom line
+	std::cout << plusLine << std::endl;
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -150,7 +230,25 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+int* listPrimes(int n){
+	int* primes = new int[n];
+	int index = 0;
+	int numToTest = 2;
+
+	while(index < n){
+		// If the number we are testing is prime,
+		// add it to the array.
+		if(prime(numToTest)){
+		primes[index] = numToTest;
+		index++;
+		}
+		// Regardless of whether or not the number we tested
+		// was prime, increase it by one to test the next integer
+		numToTest++;
+	}
+
+	return primes;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -174,6 +272,18 @@ int main(){
   testPrime();
   testDefix();
   testSumSlice();
+
+  std::cout << "square size zero: " << std::endl;
+  square(0);
+  std::cout << "square size one: " << std::endl;
+  square(1);
+  std::cout << "square size two: " << std::endl;
+  square(2);
+  std::cout << "square size three: " << std::endl;
+  square(3);
+  std::cout << "square size six: " << std::endl;
+  square(6);
+
   testListPrimes();
 
   return 0;
