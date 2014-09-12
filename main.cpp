@@ -30,10 +30,9 @@ bool prime(int x){
 	}
 	if (x > 2) {
 		for (int i = 1; i < x; i++){
-			if (x%i == 0)
-			{
+			if (x%i == 0){
 				b++;
-			} if (b == 0){
+			} if (b != 0){
 				a = true;
 			}
 			return a;
@@ -211,7 +210,7 @@ void square(int a){
 //Hint: While loops work better than for loops for this one.
 
 int* listPrimes(int n){
-	int* a = new int[n-1];
+	int* a = new int[n];
 	int x = 1;
 	int whichIndex = 0;
 	while (whichIndex != n){
