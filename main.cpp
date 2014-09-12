@@ -1,5 +1,6 @@
 /**
  * Used Stack Overflow and cplusplus.com for basic syntax of writing in c++
+ * Used the wikibook links to also get a better understanding of concepts
  */
 
 #include <iostream>
