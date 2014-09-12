@@ -65,3 +65,4 @@ int*
 Delete deallocates the memory in a specific position so that it can be used for somethng else. Once a piece of memory isn't needed anymore, then Java automatically deletes it, but C++ doesn't automatically do that. This means that C++ has to be told to delete something to free up the memory.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+Would graphics in C++ also be similar to java syntax or is it a lot easier or more complicated?
