@@ -49,13 +49,11 @@ Questions
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
 #### 3. What is a "pointer"?
-A pointer is a data type. It stores a memory address, usually of another variable. By pointing to an address in memory, pointers can pass that variable location to a function, which can then access and modify the data at that address.
+A pointer stores a memory address, usually of another variable. By pointing to an address in memory, pointers can pass that variable location to a function. The function can then access and modify the data at that memory address.
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at? 
-You should use the address-of operator (&) to get the memory address for x represented in hexadecimal.  
-
+You should use the address-of operator (&) to get the memory address for x, which is an integer represented in hexadecimal.  
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-The variable p should be declared as type int*, which holds the address of an int. Then p will point to an int in memory.
-
+The variable p should be declared as type int*, which holds the address of an int. Then p will point to the location in memory where the int is stored.
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-
+New and delete are used in dynamic memory allocation, where memory is allocated for use during the runtime of the program. The new command allocates a space in memory for a specific data type and returns a pointer. On the other hand, the delete command frees up the memory address to which a pointer is pointing. Unlike in Java, in C++ you can directly access memory space and change it. Thus it is important to use 'delete' to deallocate memory to prevent a memory leak.
 #### 7. What is one question about C++ that you would like me to explain in class?
