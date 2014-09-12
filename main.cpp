@@ -1,13 +1,15 @@
 
 /**
- *
- Author: Sam Hausfeld
- Original Code from : Bo Brinkman (CSE274C) ?
- I'm not really sure what a source/originality statement entails.
- */
+*
+Author: Sam Hausfeld
+Original Code from : Bo Brinkman (CSE274C) ?
+I'm not really sure what a source/originality statement entails.
+*/
 
 #include <iostream>
 #include <string>
+#include <array>
+
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool.
@@ -26,25 +28,26 @@
 // and the % operator.
 
 //DONE: Declare and implement "prime" function here
-boolean prime(int n) {
+bool prime(int n) {
+	if (n <= 1) return false;
 	for (int i = 2; i <= n - 1; i++) {
-		if (n%i == 0) return false;
+		if ((n%i == 0)) return false;
 	} return true;
 }
 
 //This is a basic tester for the "prime" function
 void testPrime(){
-  int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6 };
-  bool results[] = {false, false, false, false, true, true, false, true, false};
-  for(int i=0; i<9;i++){
-    if(prime(nums[i]) != results[i]){
-      std::string res = prime(nums[i]) ? "true" : "false";
-      std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
-      return;
-    }
-  }
+	int nums[] = { -5, -1, 0, 1, 2, 3, 4, 5, 6 };
+	bool results[] = { false, false, false, false, true, true, false, true, false };
+	for (int i = 0; i<9; i++){
+		if (prime(nums[i]) != results[i]){
+			std::string res = prime(nums[i]) ? "true" : "false";
+			std::cout << "testPrime: ERROR: On " << nums[i] << " you returned " << res.c_str() << std::endl;
+			return;
+		}
+	}
 
-  std::cout << "testPrime: SUCCESS" << std::endl;
+	std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
 //2. Create a function, name "defix", which takes in a string and
@@ -63,31 +66,24 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
-string defix(string str) {
-	/*for (int i = 0; i <= str.length; i++) {
-		if (str[i] == '-')
-	}*/
-	int index_of_hyphen = str.find('-');
-	if (index_of_hyphen != string::npos) {
-		return str.substr(index_of_hyphen+1, str.length - index_of_hypen+1);
-	}
-
+//DONE: declare and implement "defix" function here
+std::string defix(std::string str) {
+	return str.substr(str.find('-') + 1);
 }
 
 //This is a basic tester for "defix"
 void testDefix(){
-  std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
-  std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
+	std::string inputs[] = { "re-run", "pre--text", "-ooh", "moo", "no-no-no", "foo-" };
+	std::string outputs[] = { "run", "-text", "ooh", "moo", "no-no", "" };
 
-  for(int i=0;i<5;i++){
-    if(outputs[i].compare(defix(inputs[i])) != 0){
-      std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
-      return;
-    }
-  }
+	for (int i = 0; i<5; i++){
+		if (outputs[i].compare(defix(inputs[i])) != 0){
+			std::cout << "testDefix: ERROR: Expected " << outputs[i].c_str() << " but got " << defix(inputs[i]).c_str() << std::endl;
+			return;
+		}
+	}
 
-  std::cout << "testDefix: SUCCESS" << std::endl;
+	std::cout << "testDefix: SUCCESS" << std::endl;
 }
 
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
@@ -106,26 +102,34 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+//DONE: Declare and implement sumSlice here
+
+int sumSlice(int array[], int s, int len) {
+	int sum = 0;
+	for (int i = s; i <= s + len - 1; i++) {
+		sum += array[i];
+	}
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
-  int arrays[5][4] = { {1, 2, 3, 4},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1},
-		      {1, 2, 3, 4},
-		      {1, -1, 1, -1}};
-  int s[] = {1, 1, 0, 1, 1};
-  int len[] = {1, 3, 4, 0, 3};
-  int outputs[] = {2, 9, 0, 0, -1};
+	int arrays[5][4] = { { 1, 2, 3, 4 },
+	{ 1, 2, 3, 4 },
+	{ 1, -1, 1, -1 },
+	{ 1, 2, 3, 4 },
+	{ 1, -1, 1, -1 } };
+	int s[] = { 1, 1, 0, 1, 1 };
+	int len[] = { 1, 3, 4, 0, 3 };
+	int outputs[] = { 2, 9, 0, 0, -1 };
 
-  for(int i=0; i<5; i++){
-    if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
-      std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
-      return;
-    }
-  }
-  std::cout << "testSumSlice: SUCCESS" << std::endl;
+	for (int i = 0; i<5; i++){
+		if (sumSlice(arrays[i], s[i], len[i]) != outputs[i]){
+			std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i], s[i], len[i]) << std::endl;
+			return;
+		}
+	}
+	std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
 
 //4. Create a function called "square" which takes an int, n, as input,
@@ -157,6 +161,35 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+void square(int n) {
+	// Got some help from Chris Mabe on this one, explained the n-1 thing to find the corners of the square.
+	// Also how to end a println without skipping a line.
+	// Thanks Chris.
+	if (n <= 0) std::cout << "Don't try with me." << std::endl;
+	else {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+
+				// FOUR CORNERS
+				if ((i == 0 && j == 0) || (i == n - 1 && j == 0)) {
+					std::cout << "+";
+				}
+				else if ((i == 0 && j == n - 1) || (i == n - 1 && j == n - 1)) {
+					std::cout << "+" << std::endl;
+				}
+				// SIDES & MIDDLE
+				else if ((i == 0) || (i == n - 1)) std::cout << "-";
+				else if (j == 0) std::cout << "|";
+				else if (j == n - 1) std::cout << "|" << std::endl;
+				else std::cout << "o";
+
+			} // end j
+
+
+		} // end i
+	} // end else
+
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -170,31 +203,49 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes(int n) {
+	int* primeArray = new int[n];  // This is how I could make it work, but I'm confused as to what it means. Why do we precede with int*?
+	int slider = 0;
+	int primeFinder = 0;
+	while (slider <= n) {
+		if (prime(primeFinder)) {
+			primeArray[slider] = primeFinder;
+			slider++;
+		}
+		primeFinder++;
+	}
+	return primeArray;
+
+	// This solution still works but it gives me some sort of heap error? Weird!
+}
 
 void testListPrimes(){
-  int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
-  for(int i=1;i<10;i++){
-    int* ret = listPrimes(i);
-    for(int j=1;j<i;j++){
-      if(ret[j] != some_primes[j]){
-	std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] <<
-	  " but got " << ret[j] << std::endl;
-	delete[] ret;
-	return;
-      }
-    }
-    delete[] ret;
-  }
+	int some_primes[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+	for (int i = 1; i<10; i++){
+		int* ret = listPrimes(i);
+		for (int j = 1; j<i; j++){
+			if (ret[j] != some_primes[j]){
+				std::cout << "testListPrimes: ERROR: Expected " << some_primes[j] <<
+					" but got " << ret[j] << std::endl;
+				delete[] ret;
+				return;
+			}
+		}
+		delete[] ret;
+	}
 
-  std::cout << "testListPrimes: SUCCESS" << std::endl;
+	std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
 
 int main(){
-  testPrime();
-  testDefix();
-  testSumSlice();
-  testListPrimes();
+	testPrime();
+	testDefix();
+	square(3);
+	square(4);
+	square(15);
+	testSumSlice();
+	testListPrimes();
 
-  return 0;
+	return 0;
 }
 
