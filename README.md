@@ -35,16 +35,19 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - I think it's...probably working?
+2. defix - Yup! Pretty straightforward string re-arrangement.
+3. sumSlice - Lookin' good.
+4. square - Thanks to a lot of help from classmates, yes.  Was struggling for a while there.
+5. listPrimes - Well...yes.  It passes the tester, but it gives me an error.  But it still works! But it gives me an error?
+
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+
+
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
