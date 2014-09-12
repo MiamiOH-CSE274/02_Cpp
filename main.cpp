@@ -68,7 +68,7 @@ void testPrime(){
 //TODO: declare and implement "defix" function here
 std::string defix(std::string str){
 std::size_t nope = str.find('-');
-if (found = std::string::npos){
+if (nope = std::string::npos){
 return str;
 }
 else
