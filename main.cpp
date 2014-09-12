@@ -238,9 +238,9 @@ int* listPrimes(int n) {
 	int primeArraySize = n;
 	int* primeArray = new int[primeArraySize];
 	int i=0;
+	int testPrime = 2;
 	while(i != primeArraySize) {
 	
-		int testPrime = 2;
 		if(prime(testPrime)){
 			primeArray[i] = testPrime;
 			i++;
