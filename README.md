@@ -53,6 +53,7 @@ The compiler puts the program together using the output file from the preprocess
 The linker puts together all of the object files created by the compiler and makes the code executable. This is important to be able to successfully run the code.
 
 #### 3. What is a "pointer"?
+A pointer is a data type that stores the memory address of a variable without creating a variable of that type.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
