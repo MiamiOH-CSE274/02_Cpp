@@ -48,6 +48,9 @@ Questions
 .h files are used to provide the outline of a program and will show what the program will do. The .cpp files will show more of how the program will perform each action. This means that the .h files need to be referenced in the .cpp files so that the .h file can be the thing that connects each .cpp file.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+The preprocessor reads the inclusion statements at the top of the file and processes that information before the compilation starts. The input is all statements beginning with # at the beginning of the file. The purpose of this is to make sense of what the program needs to include to run the way it is supposed to.
+The compiler puts the program together using the output file from the preprocessor as input. It then generates an output called an object file that is the same as the input but does not include the statements that start with #. The purpose of this is to make sure that the code is readable to the computer.
+The linker puts together all of the object files created by the compiler and makes the code executable. This is important to be able to successfully run the code.
 
 #### 3. What is a "pointer"?
 
