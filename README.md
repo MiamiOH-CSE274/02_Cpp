@@ -59,6 +59,7 @@ A pointer is a data type that stores the memory address of a variable without cr
 std::cout << *x
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+int*
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
