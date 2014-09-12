@@ -47,7 +47,7 @@ Questions
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
-
+The preprocessor is a program, either separate or part of the compiler, that acts before the main compiler. It reads the source code but focuses on special instructions called directives, marked by the symbol #. For example, you use #include to put the contents of one file within another. Next, the compiler acts. Its puropose is to translate the program from the source code computer language into machine language. In other words, it takes the source files and tranforms them into object files. Finally, the linker turns the object files into executable files. The purpose of the linker is to fix references in one file to another by finding which file or object defines the unknown function used.
 #### 3. What is a "pointer"?
 A pointer stores a memory address, usually of another variable. By pointing to an address in memory, pointers can pass that variable location to a function. The function can then access and modify the data at that memory address.
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at? 
