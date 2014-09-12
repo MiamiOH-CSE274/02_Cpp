@@ -1,5 +1,6 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Used Stack Overflow and cplusplus.com for basic syntax of writing in c++
+ * Used the wikibook links to also get a better understanding of concepts
  */
 
 #include <iostream>
@@ -20,7 +21,17 @@
 //Hints: This exercise uses for loops, if statements,
 // and the % operator.
 
-//TODO: Declare and implement "prime" function here
+
+bool prime(int n) {
+	if (n < 2) {
+		return false;
+	}
+	for (int i = 2; i < n; i++) {
+		if (n % i == 0)
+			return false;
+	}
+	return true;
+}
 
 
 //This is a basic tester for the "prime" function
@@ -54,7 +65,16 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-//TODO: declare and implement "defix" function here
+std::string defix(std::string s) {
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] == '-') {
+			s = s.substr(i + 1);
+			return s;
+		}
+	}
+
+	return s;
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -87,7 +107,18 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+int sumSlice(int nums[], int s, int len) {
+	int sum = 0;
+	if (s < 0 || len < 0)
+		return 0;
+	for (int i = s; i < s + len;) {
+		if (s < 0 || len < 0)
+			return 0;
+		sum += nums[i];
+		i++;
+	}
+	return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -137,7 +168,30 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+void square(int n) {
+	if (n <= 0)
+		return;
+	if (n == 1)
+		std::cout << "+" << std::endl;
+	if (n > 1) {
+		for (int i = 0; i < n; i++) {
+			if (i == 0 || i == n - 1) {
+				std::cout << "+";
+				for (int j = 0; j < n - 2; j++) {
+					std::cout << "-";
+				}
+				std::cout << "+" << std::endl;
+			}
+			else {
+				std::cout << "|";
+				for (int j = 0; j < n - 2; j++) {
+					std::cout << "o";
+				}
+				std::cout << "|" << std::endl;
+			}
+		}
+	}
+}
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -150,7 +204,21 @@ void testSumSlice(){
 //
 //Hint: While loops work better than for loops for this one.
 
-//TODO: Declare and implement listPrimes here
+int* listPrimes(int n) {
+	int* primes;
+	primes = new int [n];
+	int i = 0;
+	int j = 0;
+	while (i < n) {
+		if (prime(j)) {
+			primes[i] = j;
+			i++;
+		}
+		
+		j++;
+	}
+	return primes;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
