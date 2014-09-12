@@ -22,9 +22,13 @@
 // and the % operator.
 
 bool prime(int x){
+	if (x < 2){
+		return false;
+	}
+
 	int counter = 2;
 	while (counter < x){
-		if (x % counter == 0 || x < 2){
+		if (x % counter == 0){
 			return false;
 		}
 		else
@@ -65,9 +69,8 @@ void testPrime(){
 //Hints: Check out the string API documentation at http://www.cplusplus.com/reference/string/string/
 // The find functions and substr function will be easiest.
 
-/**
-String defix(string s){
-
+std::string defix(std::string s){
+	return s.substr(s.find('-') + 1);
 }
 
 //This is a basic tester for "defix"
@@ -85,6 +88,7 @@ void testDefix(){
   std::cout << "testDefix: SUCCESS" << std::endl;
 }
 
+
 //3. Create a function called "sumSlice" that takes 3 inputs. The first is
 //   an array of integers, the second is an integer "s" that represents the
 //   starting index, and the 3rd is an int "len" that represents the length. 
@@ -101,7 +105,18 @@ void testDefix(){
 //
 //Hints: Your answer is going to be very similar to what you would do in Java
 
-//TODO: Declare and implement sumSlice here
+
+
+int sumSlice(int array[], int s, int len){
+	int sum = 0;
+
+	for (int i = s; i < s + len; i++){
+		sum += array[i];
+	}
+
+	return sum;
+
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -116,7 +131,7 @@ void testSumSlice(){
 
   for(int i=0; i<5; i++){
     if(sumSlice(arrays[i],s[i],len[i]) != outputs[i]){
-      std::cout << "testSumSlice: ERROR: on index i=" << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
+      std::cout << "testSumSlice: ERROR: on index i = " << i << " expected " << outputs[i] << " but got " << sumSlice(arrays[i],s[i],len[i]) << std::endl;
       return;
     }
   }
@@ -151,7 +166,16 @@ void testSumSlice(){
 // test it however you can, to try to make sure it does the right thing for
 // all possible inputs.
 
-//TODO: Declare and implement "square" function here
+void square(int n){
+	while (n <= 0){
+		break;
+	}
+
+	//print the first line
+	std::string hello;
+
+}
+
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -163,8 +187,23 @@ void testSumSlice(){
 // listPrimes(5) should return an array containing {2, 3, 5, 7, 11}
 //
 //Hint: While loops work better than for loops for this one.
+int* listPrimes(int n){
+	int* primeList = new int[n];
+	int count = 0;
+	int testNum = 0;
 
-//TODO: Declare and implement listPrimes here
+	while (count < n){
+		if (prime(testNum)){
+			primeList[count] = testNum;
+			count++;
+		}
+		testNum++;
+	}
+
+	return primeList;
+
+}
+
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
@@ -183,13 +222,13 @@ void testListPrimes(){
   
   std::cout << "testListPrimes: SUCCESS" << std::endl;
 }
-*/
+
 
 int main(){
   testPrime();
-  //testDefix();
-  //testSumSlice();
-  //testListPrimes();
+  testDefix();
+  testSumSlice();
+  testListPrimes();
 
   return 0;
 }
