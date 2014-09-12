@@ -35,25 +35,29 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Yes
+2. defix - Yes
+3. sumSlice - Yes
+4. square - Yes
+5. listPrimes - Yes
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
-
+	Header files are necessary so that declarations of other methods and functions can be added to a .cpp file without having to declare each
+	function that is defined in a different .cpp file individually.
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
-
+	The preprocessor takes care of anything preceded by "#", such as header files, so that the compiler doesn't have to deal with "undeclared" functions. The compiler takes each individual
+	source files and turns it into an object file, which consists of machine code corresponding to the source. Finally, the linker takes those object files and combines them into 
+	a single executable file that can be run by the machine.
 #### 3. What is a "pointer"?
-
+	A pointer is a value that "points" to the location of a variable in memory, essentially telling you where the variable is stored in RAM.
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
-
+	Use the reference operator, &. i.e int* xMem = &x;
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
-
+	Use a pointer variable, i.e. int* p;
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-
+	Delete is needed in c++ because it does not have automatic garbage collection such that Java has. Delete is useful to remove variables that we are no longer using, to free up memory.
 #### 7. What is one question about C++ that you would like me to explain in class?
+	Nothing in particular, all my questions have been answered already.
