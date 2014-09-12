@@ -35,20 +35,30 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - Not Working
+1. prime - Working
 2. defix - Working
 3. sumSlice - Working
-4. square - In Progress
-5. listPrimes - TODO
+4. square - Working
+5. listPrimes - Working
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+A function could be used in multiple locations so to avoid declaring it multiple times it is declared once in the header file and referenced from there every time.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
+A preprocessor takes source code and rearranges it so that the compiler can understand it. Anything you #include will get placed where it needs to get placed here.
+
+A compiler takes your rearranged source code and turns it into machine code, or something that can be understood by the computer.  
+
+A program may depend on multiple .cpp files in order to work properly.  When the compiler runs through all the files it just converts them into machine code.  The linker then makes sure that each file that depends on another can find and access one another.
+
 #### 3. What is a "pointer"?
+
+A pointer is a type that stores the address location of something else.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
@@ -60,4 +70,8 @@ You should declare p to be a pointer, int* p.
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+In Java, when there were no more references to an object the garbage collector would get rid of it for us.  In C++ we need to manually delete objects we are no longer using.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Why, if C++ is such a dangerous but fast language, has nothing safer yet just as fast been invented, of if it has why is C++ still used.
