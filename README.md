@@ -35,25 +35,44 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - I think it's...probably working?
+2. defix - Yup! Pretty straightforward string re-arrangement.
+3. sumSlice - Lookin' good.
+4. square - Thanks to a lot of help from classmates, yes.  Was struggling for a while there.
+5. listPrimes - Well...yes.  It passes the tester, but it gives me an error.  But it still works! But it gives me an error?
+
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+Instead of having to put the basic running information / interfaces in each and every .cpp file, they can all just include a single .h file.  Branching is efficient!
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+Before the compiler can read the file, the preprocessor must make sort them out a little to make them readable.  By "sorting out" I mean invisibly attaching all the header files to the proper source files.
+
+I said that the compiler reads the file, but that's actually totally wrong.  In fact, it's actually making the file readable by converting it into code that the computer can actually do as it's told.
+
+Meanwhile, the linker simply takes all the files and turns them into one executable.  I think.  This is the one I'm the least clear on.
 
 #### 3. What is a "pointer"?
 
+A value that "points to" the "address" of another value, object or variable.
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+The ampersand symbol would be used, so you could just print/return "&x" .
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+This type of object uses a star, so you'd declare p as an int* object.  For example: int* p = &x.
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+Quite expectedly, the delete command is for deleting.  We need it in C++ because, unlike in Java, C++ uses allocated memory.  We can have faster, better programs if we remember to delete data after it's neccesary.
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+Although I tried my best to explain it above, I'm still confused on the difference between the * and & operators.
