@@ -56,6 +56,7 @@ The linker puts together all of the object files created by the compiler and mak
 A pointer is a data type that stores the memory address of a variable without creating a variable of that type.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+std::cout << *x
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
