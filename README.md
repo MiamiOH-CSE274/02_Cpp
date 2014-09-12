@@ -35,25 +35,39 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - this function works tko my understanding, however, the tester produces an error saying that "2 returns true" which is correct
+2. defix - this function is a success
+3. sumSlice - this funtion works until I get to the array {1, -1, 1, -1}. len is four but my i starts a 0 and goes to 4 therefore it iterates through the entire array and adds an extra one. i am unsure how to combat this at the moment
+4. square - this function definitely works well
+5. listPrimes - this function should work but has problems because my pime function is iffy
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
+.h files allow for better "organiztion and code structure", allow code to be reused across projects, manage lots of edits at the same time, and make compiling a bit faster.
+
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+
+The preprocessor basically sorts throught the source code and modifies it based on it's directives and the compiler's directives.The output of the preprocessor is more understandable source code. The compiler turns written code by the programmer into "machine code" that the computer can easily read. The output of the compiler is the "transformation of source files to object files". The linker makes files that allow the program to be exectuable after compilation.
 
 #### 3. What is a "pointer"?
 
+A pointer is something that shows the program where a certain uncreated variable is.
+
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+
+Declare a pointer that points to that variable.
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
+You should declare p as a pointer by typing "int *p"
+
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
+The 'delete' command frees a pointer from storing the address of a variable. 
+
 #### 7. What is one question about C++ that you would like me to explain in class?
+
+int operations specifically <, > and <=, >= since I've seen issues with those for some reason
