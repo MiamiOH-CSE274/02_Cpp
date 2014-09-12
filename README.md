@@ -38,7 +38,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 1. prime - Indeed it is.
 2. defix - Yep.
 3. sumSlice - Affirmative.
-4. square - Took longer than expected. Needs a little more work. (Maybe a lot...)
+4. square - Working well.
 5. listPrimes - Works as expected.
 
 Questions

@@ -1,5 +1,7 @@
 /**
  * Chris Mabe 9/9/14 CSE 274 Homework 2!
+ * This all came from either my brain or reading the provided links in the requirements of each methods.
+ * Had to ask a friend how to use string as a return type because I was confused for some reason.
  */
 
 #include <iostream>
@@ -167,13 +169,49 @@ void testSumSlice(){
 // all possible inputs.
 
 void square(int n){
-	while (n <= 0){
-		break;
+	//For a little bit of padding
+	std::cout << "" << std::endl;
+
+
+	for (int x = 0; x < n; x++){
+		for (int y = 0; y < n; y++){
+
+			//For the left corners
+			if ((x == 0 && y == 0) || (x == n - 1 && y == 0)){
+				std::cout << "+";
+			}
+
+			//For the right corners
+			else if ((x == 0 && y == n - 1) || (x == n - 1 && y == n - 1)){	
+				std::cout << "+" << std::endl;
+			}
+
+			//For the top and bottom lines
+			else if ((x == 0) || (x == n - 1)){	
+				std::cout << "-";
+			}
+
+			//For the left side
+			else if (y == 0){		
+				std::cout << "|";
+			}
+
+			//For the right side
+			else if (y == n - 1){
+				std::cout << "|" << std::endl;
+			}
+
+			//For filling in the middle
+			else{
+				std::cout << "o";
+			}
+			
+		}
+			
 	}
 
-	//print the first line
-	std::string hello;
-
+	//More padding
+	std::cout << "" << std::endl;
 }
 
 
@@ -229,6 +267,7 @@ int main(){
   testDefix();
   testSumSlice();
   testListPrimes();
+  square(3);
 
   return 0;
 }
