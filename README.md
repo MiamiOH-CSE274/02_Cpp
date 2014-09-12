@@ -45,6 +45,7 @@ Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+.h files are used to provide the outline of a program and will show what the program will do. The .cpp files will show more of how the program will perform each action. This means that the .h files need to be referenced in the .cpp files so that the .h file can be the thing that connects each .cpp file.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
