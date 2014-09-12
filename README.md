@@ -38,7 +38,7 @@ For each of the following functions in main.cpp, tell me whether or not you thin
 1. prime - Working
 2. defix - Working
 3. sumSlice - Working
-4. square - Working
+4. square - Not working. Could not figure out how to make it look like in the description. Will finish it during the week as I had to delete most of my code, I was using std::cout wrong and had a giant wall of if statements that made no sense. 
 5. listPrimes - Working
 
 Questions
@@ -60,7 +60,7 @@ To find the memory address of a variable you place an & before the variable then
 For p to be able to store an int, you would use a pointer. It would look like int* p
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
-Java automatically collects garbage after big operations to free up memory, c/c++ on the other hand does not. Delete can be used to free up memory if a big loop stores a lot of objects.
+Java automatically collects garbage after big operations to free up memory, c/c++ on the other hand does not. Delete can be used to free up memory if a big loop stores a lot of data.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
-We went over most of the pros and cons of c++, but it would be very interesting if you gave us a short big picture overview comparing the two programming languages (like what each would be better for, like maybe c++ is better for gaming and java for databases or something along those lines)
+We went over most of the pros and cons of c++/java, but it would be very interesting if you gave us a short big picture overview comparing the two programming languages (like what each would be better for, like maybe c++ is better for gaming and java for databases or something along those lines)

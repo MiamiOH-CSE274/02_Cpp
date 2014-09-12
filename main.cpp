@@ -3,6 +3,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -21,7 +22,17 @@
 // and the % operator.
 
 //TODO: Declare and implement "prime" function here
-
+bool prime(int n){
+if (x < 2){
+return false;
+}
+for (int i = 0; i <=n-1; i++){
+if (n % i == 0){
+return false;
+}
+return true;
+}
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -55,6 +66,14 @@ void testPrime(){
 // The find functions and substr function will be easiest.
 
 //TODO: declare and implement "defix" function here
+std::string defix(std::string str){
+std::size_t nope = str.find('-');
+if (found = std::string::npos){
+return str;
+}
+else
+return str.substr(str.find('-') + 1);
+}
 
 //This is a basic tester for "defix"
 void testDefix(){
@@ -88,6 +107,20 @@ void testDefix(){
 //Hints: Your answer is going to be very similar to what you would do in Java
 
 //TODO: Declare and implement sumSlice here
+int sumSlice(int ints[], int s, int len){
+
+if (s || len < 0){
+return 0;
+}
+
+else
+
+sum = 0;
+for (s; s <= s+len-1; s++){
+sum += ints[s];
+}
+return sum;
+}
 
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
@@ -138,6 +171,21 @@ void testSumSlice(){
 // all possible inputs.
 
 //TODO: Declare and implement "square" function here
+/*void square(int n){
+if (n <= 0){
+return;
+}
+
+else
+for (int i = 0; i < n; i++){
+std::cout << "-";
+std::cout << "+";
+std::cout << "|";
+std::cout << "o";
+}
+
+}
+*/
 
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
@@ -151,6 +199,20 @@ void testSumSlice(){
 //Hint: While loops work better than for loops for this one.
 
 //TODO: Declare and implement listPrimes here
+int* listPrimes (int n){
+int* primeNums = new int[n];
+
+int primeNum = 2;
+int counter = 0;
+while (counter < n){
+if (prime(primeNum)){
+primeNums[counter] = primeNum;
+counter++;
+primeNum++;
+}
+}
+return primeNums;
+}
 
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
