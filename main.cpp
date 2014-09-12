@@ -1,5 +1,6 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ * Syntax for string taken from CPlusPlus.com, 
+ * all other syntax and content from myself and class examples.
  */
 
 #include <iostream>
