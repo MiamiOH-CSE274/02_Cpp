@@ -29,6 +29,8 @@ bool prime(int n){
 			return false;
 	return true;
 }
+
+//This is a basic tester for the "prime" function
 void testPrime(){
 	int nums[] = {-5, -1, 0, 1, 2 ,3, 4, 5, 6};
 	bool results[] = {false, false, false, false, true, true, false, true, false};
@@ -43,6 +45,7 @@ void testPrime(){
 	std::cout << "testPrime: SUCCESS" << std::endl;
 }
 
+
 /**
   * This defix(std::string txt) method takes in string object txt and returns a string object without any prefix.
   *
@@ -53,6 +56,8 @@ std::string defix(std::string txt) {
 	std::size_t loc = txt.find('-', 0);
 	return txt.substr(loc + 1, txt.size() - loc);
 }
+
+//This is a basic tester for "defix"
 void testDefix(){
 	std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
 	std::string outputs[] = {"run","-text","ooh","moo","no-no", ""};
@@ -66,6 +71,7 @@ void testDefix(){
 
 	std::cout << "testDefix: SUCCESS" << std::endl;
 }
+
 
 /**
   * This sumSlice method takes in an int array and two ints, named ray, s, and len, respectively.
@@ -83,6 +89,8 @@ int sumSlice(int ray[], int s, int len){
 		sum += ray[i];
 	return sum;
 }
+
+//This is a basic tester for "sumSlice"
 void testSumSlice(){
 	int arrays[5][4] = {{1,  2, 3,  4},
 	{1,  2, 3,  4},
@@ -101,6 +109,7 @@ void testSumSlice(){
 	}
 	std::cout << "testSumSlice: SUCCESS" << std::endl;
 }
+
 
 /**
   * The square method receives int n and draws a neat little picture with it.
@@ -152,6 +161,7 @@ void square(int n){
 	}
 }
 
+
 /**
   * This method builds on prime() in a way, or at least it utilizes it. The listPrimes method takes
   * in an int n, which determines how many prime numbers we will be returning in the list. A while
@@ -171,6 +181,7 @@ int* listPrimes(int n){
 	}
 	return ray;
 }
+
 void testListPrimes(){
 	int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
 	for(int i=1;i<10;i++){
