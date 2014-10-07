@@ -46,7 +46,7 @@ Questions
 
 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
 
-	Every time you want to include something, it would have to be put at the top of the file since CPP has to have it above the method to be able to use 	it. We use .h files to "paste things" by putting them in there, and the pre-compiler takes all of it and moves it to the top of the code before the 		compiler sees it. It essentially makes your code easier to read and organize, as well as stops you from ctrl + c / ctrl + v over and over.
+	Every time you want to include something, it would have to be put at the top of the file since CPP has to have it above the method to be able to use 	it. We use .h files to "paste things" by putting them in there, and the pre-compiler takes all of it and moves it to the top of the code before the compiler sees it. It essentially makes your code easier to read and organize, as well as stops you from ctrl + c / ctrl + v over and over. We use a declaration to describe the type of thing we are using. If you want to create an object of that type, you need a declaration. A definition is where you actually use that declaration to create an entity. If you want to use the entity in more than one place, you need to have the declaration in more than one spot.
 
 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
 
@@ -62,7 +62,7 @@ Questions
 
 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
 
-	You would use "*int x" to find the address that the variable is stored in.
+	You would use "&int x" to find the address that the variable is stored in.
 
 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
 
@@ -70,7 +70,7 @@ Questions
 
 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
 
-	Since C++ uses allocated memory, a variable could serve its purpose, and then the memory space would be wasted. If the programmer 'deletes' it, it 		frees up the space and allows the program to run in a more efficient manner.
+	Since C++ uses allocated memory, a variable could serve its purpose, and then the memory space would be wasted. If the programmer 'deletes' it, it 		frees up the space and allows the program to run in a more efficient manner. We don't need this in java because it is something that happens automatically as the program runs.
 
 7. What is one question about C++ that you would like me to explain in class?
 
