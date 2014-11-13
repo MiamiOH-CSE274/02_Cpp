@@ -183,36 +183,39 @@ void testSumSlice(){
 //TODO: Declare and implement "square" function here
 
 void square(int n){
-	if(n <= 0){
-		std::cout << "Parameter must be 1 or greater" << std::endl;
-		return; //ends the function I think (that's what I want to happen)
-	}
-	//new design for function square
-	//special cases
-	if(n == 1)
-		std::cout << "+" << std::endl;
-	else if(n == 2)
-		std::cout << "++" << "\n" << "++" << std::endl;
-	else{
-		std::vector<std::string> topRow;
-		topRow.assign(1, "+");
-		for(int i = 0; i < n-2; i++){
-			topRow.push_back("-");
-		}
-		topRow.push_back("+");
-	}
+	if(n <= 0)
+		throw std::string("Parameter n must be >= 1");
 	
+	// special case for n = 1
+	if(n == 1) {
+		std::cout << "+" << std::endl;
+		return;
+	}
 
-	//old design for function square
+	// build top row
+	std::string topRow = "+";
 
-	//found this code for initializing an array without hardcoding the parameters on stackoverflow.com/user:Joachim Pileborg
-	std::string** myArray = new std::string* [n];
-	for(int i = 0; i < n; i++)
-		myArray[i] = new std::string[n];
-	myArray[0][0] = {"+"}; //this doesn't work for some reason... error: "expects an expression"
+	for (int i = 0; i < n - 2; i++)
+		topRow += "-";
 
+	topRow += "+";
 
-	delete[] myArray;
+	// display top row
+	std::cout << topRow << std::endl;
+
+	// displays the middle rows
+	for (int i = 0; i < n - 2; i++){
+		std::cout << "|";
+
+		for (int ii = 0; i < n - 2; i++)
+			std::cout << "o";
+
+		std::cout << "|" << std::endl;
+	}
+
+	// prints out the top row to be used as the bottom row
+	std::cout << topRow << std::endl;
+
 }
 
 //5. Create a function called listPrimes which takes an int, n, as input.
