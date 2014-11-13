@@ -233,17 +233,19 @@ void square(int n){
 
 int* listPrimes(int n){
 	int* myArray = new int[n];
-	int number = 0;
-	while(int i = 0 < n){
-		while(!prime(number)){
-			number++;	
+	int number = 2;
+	int i = 0;
+
+	while(i < n){
+		if (prime(number)) {
+			myArray[i] = number;
+			i++;
 		}
-		myArray[i] = number;
-		i++;
+
+		number++;
 	}
 
 	return myArray;
-	delete[] myArray;
 }
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
