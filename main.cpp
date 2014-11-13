@@ -121,24 +121,16 @@ void testDefix(){
 //TODO: Declare and implement sumSlice here
 
 int sumSlice(int numArray[], int s, int len){
-	int numToReturn = 0;
-	bool sInArray = false;
+	int sum = 0;
+	
 	if (s < 0 || len <= 0)
-		return numToReturn;
-	int startingPos;
-	for(int i = 0; i < sizeof(numArray)-1; i++){
-		if(s == numArray[i]){
-			startingPos = i;
-			sInArray = true;
-			break;
-		}
-	}
-	if(sInArray == false)
-		return numToReturn;
-	for(int j = startingPos; j < len; j++)
-		numToReturn += numArray[j+1];
+		return 0;
 
-	return numToReturn;
+	for(int i = s; i < len - 1; i++)
+		sum += numArray[i];
+	
+
+	return sum;
 }
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
