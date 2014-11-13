@@ -1,8 +1,15 @@
 /**
- * TODO: IMPORTANT!! Write your originality/source statement here.
+ Kyle Busdieker
+ Prof. Brinkman
+ CSE 274
+ September 8, 2014
+
+ This code is partially Prof. Brinkman's and partially my own.
  */
 
 #include <iostream>
+#include <string>
+
 
 //1. Create a function, named "prime", which tests an
 // integer, n, to see if it is prime. It should return a bool. 
@@ -22,6 +29,21 @@
 
 //TODO: Declare and implement "prime" function here
 
+bool prime(int n){
+	bool prime = true;
+	
+	// numbers less than 2 are not prime
+	if(n < 2){
+		return false;
+	}
+
+	for(int i = 2; i < n; i++){
+		if(n % i == 0)
+			return false;
+	}
+
+	return true;
+}
 
 //This is a basic tester for the "prime" function
 void testPrime(){
@@ -56,6 +78,15 @@ void testPrime(){
 
 //TODO: declare and implement "defix" function here
 
+std::string defix(std::string txt){
+	int dashPos = txt.find("-");
+	std::string strReturn = txt;
+	if(dashPos != std::string::npos){
+		strReturn = txt.substr(dashPos + 1);
+	}
+
+	return strReturn;
+}
 //This is a basic tester for "defix"
 void testDefix(){
   std::string inputs[] = {"re-run","pre--text","-ooh","moo","no-no-no", "foo-"};
@@ -89,6 +120,18 @@ void testDefix(){
 
 //TODO: Declare and implement sumSlice here
 
+int sumSlice(int numArray[], int s, int len){
+	int sum = 0;
+	
+	if (s < 0 || len <= 0)
+		return 0;
+
+	for(int i = s; i <= s + len - 1; i++)
+		sum += numArray[i];
+	
+
+	return sum;
+}
 //This is a basic tester for "sumSlice"
 void testSumSlice(){
   int arrays[5][4] = { {1, 2, 3, 4},
@@ -139,6 +182,42 @@ void testSumSlice(){
 
 //TODO: Declare and implement "square" function here
 
+void square(int n){
+	if(n <= 0)
+		throw std::string("Parameter n must be >= 1");
+	
+	// special case for n = 1
+	if(n == 1) {
+		std::cout << "+" << std::endl;
+		return;
+	}
+
+	// build top row
+	std::string topRow = "+";
+
+	for (int i = 0; i < n - 2; i++)
+		topRow += "-";
+
+	topRow += "+";
+
+	// display top row
+	std::cout << topRow << std::endl;
+
+	// displays the middle rows
+	for (int i = 0; i < n - 2; i++){
+		std::cout << "|";
+
+		for (int ii = 0; i < n - 2; i++)
+			std::cout << "o";
+
+		std::cout << "|" << std::endl;
+	}
+
+	// prints out the top row to be used as the bottom row
+	std::cout << topRow << std::endl;
+
+}
+
 //5. Create a function called listPrimes which takes an int, n, as input.
 //   It should use "new" to allocate an array of length n, and then put
 //   the first n prime numbers into it, in order. You should re-use your
@@ -152,6 +231,22 @@ void testSumSlice(){
 
 //TODO: Declare and implement listPrimes here
 
+int* listPrimes(int n){
+	int* myArray = new int[n];
+	int number = 2;
+	int i = 0;
+
+	while(i < n){
+		if (prime(number)) {
+			myArray[i] = number;
+			i++;
+		}
+
+		number++;
+	}
+
+	return myArray;
+}
 void testListPrimes(){
   int some_primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   for(int i=1;i<10;i++){
