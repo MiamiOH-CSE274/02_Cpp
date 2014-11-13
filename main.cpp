@@ -81,8 +81,8 @@ void testPrime(){
 std::string defix(std::string txt){
 	int dashPos = txt.find("-");
 	std::string strReturn = txt;
-	if(dashPos != -1){
-		strReturn = txt.substring(dashPos);  //hopefully removes the dash from the returned string, otherwise use dashPos +1
+	if(dashPos != std::string::npos){
+		strReturn = txt.substr(dashPos + 1);
 	}
 
 	return strReturn;
