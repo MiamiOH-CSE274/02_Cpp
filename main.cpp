@@ -9,7 +9,6 @@
 
 #include <iostream>
 #include <string>
-#include <new>
 
 
 //1. Create a function, named "prime", which tests an
@@ -33,17 +32,17 @@
 bool prime(int n){
 	bool prime = true;
 	
+	// numbers less than 2 are not prime
 	if(n < 2){
-		prime = false;
+		return false;
 	}
 
-	for(int i = 2; i <(n-1); i++){
-		int temp = n%i;
-		if(temp == 0)
-			prime = false;
+	for(int i = 2; i < n; i++){
+		if(n % i == 0)
+			return false;
 	}
 
-	return prime;
+	return true;
 }
 
 //This is a basic tester for the "prime" function
