@@ -126,7 +126,7 @@ int sumSlice(int numArray[], int s, int len){
 	if (s < 0 || len <= 0)
 		return 0;
 
-	for(int i = s; i < len - 1; i++)
+	for(int i = s; i <= s + len - 1; i++)
 		sum += numArray[i];
 	
 
