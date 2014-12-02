@@ -35,25 +35,34 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - TODO
-2. defix - TODO
-3. sumSlice - TODO
-4. square - TODO
-5. listPrimes - TODO
+1. prime - Yes, it's working. My loop is a bit odd, but it works efficiently, I guarantee it. The for-loop in this method starts at 3, stops at sqrt(n), and steps by two. I explained why this is in a comment section above the method. The only problem I have with my own code is that I had to check 1, 2, and 5, which I wish I didn't have to do, but these checks are necessary for my... let's say unique for-loop.
+2. defix - This method was simple, I completed it in two lines. It works fine.
+3. sumSlice - Yes, it works just as it is supposed to.
+4. square - I like this one, the little ASCII-type drawings are neat. Mine works.
+5. listPrimes - Working fine, sir
 
 Questions
 =======
 
 #### 1. In C++, the compiler compiles each .cpp file separately, without looking at the others. Explain why this leads to the need for .h files.
+We can easily #include any header file and allude to it in our .cpp files. Header files are for storing little methods or declarations to save space in .cpp files, so we can just reference the relevant .h file when needed.
 
 #### 2. Explain the individual roles of the preprocessor, the compiler, and the linker. What type of inputs do they take? What kind of outputs do they produce? What is the purpose of each?
+The preprocessor directs the compiler on how to process the source code. The compiler can also hold directives to header files and C++ Standard Library (classes, etc.) using the preprocessor (example: #include uses preprocessor directives).
+The compiler translates source code from programming language (source code) to the computer's native language. It translates our code to something the computer can read.
+The linker makes executable files and deals with file/class/object references and links from one place to another.
 
 #### 3. What is a "pointer"?
+A pointer object "points" to another object by storing the address of that object. These are denoted by an asterisk next to the variable type in declaration.
 
 #### 4. If I have a variable declared as `int x`, how do I find out what memory address that variable is stored at?
+By printing out &x like so: std::cout << x << "," << &x; This would print out "x,[address of x]".
 
 #### 5. If I want a variable `p` that can store the address of an int, what type should I declare `p` to be?
+A pointer: int* p
 
 #### 6. Just like Java, C++ has a `new` command. But C++ also has a `delete` command that Java does not have. Why do we need `delete` in C++, but not in Java? What is `delete` good for?
+In c++, as long as a variable is being pointed at, it is using memory to store the address. The delete command is to free up the space used by pointing to objects.
 
 #### 7. What is one question about C++ that you would like me to explain in class?
+How can make Call of Duty
