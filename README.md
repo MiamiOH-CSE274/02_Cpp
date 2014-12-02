@@ -35,7 +35,7 @@ Documentation
 
 For each of the following functions in main.cpp, tell me whether or not you think it is working in your submission.
 
-1. prime - Yes, it's working. My loop is a bit odd, but it works efficiently, I guarantee it. The for-loop in this method starts at 3, stops at n/2, and steps by two. I explained why this is in a comment section above the method. The only problem I have with my own code is that I had to check 1, 2, and 5, which I wish I didn't have to do, but these checks are necessary for my... let's say unique for-loop.
+1. prime - Yes, it's working. My loop is a bit odd, but it works efficiently, I guarantee it. The for-loop in this method starts at 3, stops at sqrt(n), and steps by two. I explained why this is in a comment section above the method. The only problem I have with my own code is that I had to check 1, 2, and 5, which I wish I didn't have to do, but these checks are necessary for my... let's say unique for-loop.
 2. defix - This method was simple, I completed it in two lines. It works fine.
 3. sumSlice - Yes, it works just as it is supposed to.
 4. square - I like this one, the little ASCII-type drawings are neat. Mine works.
