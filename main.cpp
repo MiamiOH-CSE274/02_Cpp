@@ -10,21 +10,21 @@
   *
   * First, the method checks if n is 2 or 5, returning true if so. This is to avoid confusion in the loop.
   *
-  * Next, the method checks to see if n is even, negative, or 1. If so, it is not prime and the method returns false.
+  * Next, the method checks to see if n is even, negative, 1, or 9. If so, it is not prime and the method returns false.
   *
-  * Finally, a for loop iterates int i from 2 to one less than half of n by two to see if n is divisible by any number.
-  * The reason for this range is that we already know it's not even, so any even number is not included (hence
-  * starting with 3 and stepping by two), and once we get to n/2, we know n is not divisible by n/2 as it is odd, and
-  * dividing n by any value more than n/2 would yield a quotient of between 1 and 2.
+  * Finally, a for loop iterates int i from 3 to one less than the square root of n by two to see if n is divisible by any number.
+  * The reason for this range is that we already know it's not even, so any even number is not included (hence starting with
+  * 3 and stepping by two), and once we get to sqrt(n), we are finished as we know n is not divisible by anything greater than
+  * its square root.
   *
   * So now that we know it's not 0 or 1, not even, and not wholly divisible by any number, it must be prime so we return true.
 **/
 bool prime(int n){
 	if (n == 2 || n == 5)
 		return true;
-	if (n % 2 == 0 || n < 2 || n == 1)
+	if (n % 2 == 0 || n < 2 || n == 1 || n == 9)
 		return false;
-	for (int i = 3; i < (n / 2); i += 2)
+	for (int i = 3; i < sqrt(n); i += 2)
 		if (n % i == 0)
 			return false;
 	return true;
@@ -172,7 +172,7 @@ int* listPrimes(int n){
 	int* ray = new int[n];
 	int i = 2;
 	int indx = 0;
-	while(indx < n - 1){
+	while(indx < n){
 		if(prime(i)){
 			ray[indx] = i;
 			indx++;
